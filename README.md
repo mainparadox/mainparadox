@@ -1,11 +1,19 @@
 # Привет, я Павел (mainparadox) 👋
-### Full-Stack & Mobile App Developer | Cloud & Automation Specialist
+### Full-Stack & Mobile App Developer | UI/UX Designer & System Architect
 
-> Разрабатываю высоконагруженные веб-платформы, интернет-магазины и кроссплатформенные мобильные приложения (iOS & Android). Эксперт в создании отказоустойчивых архитектур: от UI/UX в React и Capacitor до серверных Cloud Functions, интеграций с CRM, платёжными шлюзами и IoT-системами доступа (СКУД).
+> Специализируюсь на проектировании и разработке сложных клиент-серверных веб-платформ, e-commerce систем и мобильных экосистем под ключ (iOS & Android). Закрываю полный цикл создания продукта: от прототипирования дизайн-систем в **Figma** до фронтенда на **React / Vite / Capacitor**, серверных микросервисов, интеграций с CRM, банковским эквайрингом и автоматизации облачной инфраструктуры.
 
 ---
 
 ### 🛠️ Стек технологий и ключевые компетенции
+
+#### 🎨 Дизайн-системы & UI/UX Архитектура
+<p>
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
+  <img src="https://img.shields.io/badge/UI%2FUX%20Design-FF61F6?style=for-the-badge&logo=adobexd&logoColor=white" />
+  <img src="https://img.shields.io/badge/Design%20Systems-00C7B7?style=for-the-badge&logo=material-design&logoColor=white" />
+  <img src="https://img.shields.io/badge/Interactive%20Prototyping-0ACF83?style=for-the-badge&logo=figma&logoColor=white" />
+</p>
 
 #### 📱 Мобильная разработка & Frontend
 <p>
@@ -13,12 +21,13 @@
   <img src="https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript%20(ES6+)-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
-  <img src="https://img.shields.io/badge/iOS%20%26%20Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
+  <img src="https://img.shields.io/badge/App%20Store%20(iOS)-000000?style=for-the-badge&logo=apple&logoColor=white" />
+  <img src="https://img.shields.io/badge/Google%20Play%20(Android)-414141?style=for-the-badge&logo=google-play&logoColor=white" />
   <img src="https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white" />
   <img src="https://img.shields.io/badge/Joomla%20CMS-F44321?style=for-the-badge&logo=joomla&logoColor=white" />
 </p>
 
-#### ☁️ Backend, Облачная инфраструктура & Безопасность
+#### ☁️ Backend, Облачные сервисы & Инфраструктура
 <p>
   <img src="https://img.shields.io/badge/Google%20Cloud%20Functions-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" />
   <img src="https://img.shields.io/badge/Firebase%20Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
@@ -34,11 +43,13 @@
 ### 🏆 Избранные проекты (Featured Projects)
 
 #### 1. ❄️ Polar Recovery Club — Master Mobile & Cloud Ecosystem
-*Генеральная экосистема для премиального велнес-клуба криотерапии и контрастных процедур в Риге (Евросоюз).*
-* **Архитектура:** Frontend на **React + Capacitor + Vite**, серверный шлюз BFF на **Google Cloud Functions v2** (регион `europe-west1`), база данных Firestore.
-* **Автоматизация СКУД и замков:** Аппаратный криптографический генератор ПИН-кодов для дверей на базе Web Crypto API (`AES-GCM-256`) и соли Наты с оффлайн-доступом в тамбуре клуба.
-* **Финансы и бронирование:** Двусторонняя синхронизация с **Altegio CRM REST API**, эквайринг **Adyen Pay by Link** (Apple Pay/Google Pay), управление сеткой купелей и абонементами сети.
-* **CI/CD и релизы:** Автоматическая сборка в **Codemagic** (Android AAB / iOS Release для TestFlight) и собственный движок бесшовных OTA-обновлений бандла без прохождения модерации ($0/мес).
+*Генеральная цифровая платформа для премиального велнес-клуба криотерапии и контрастных процедур в Риге (Евросоюз).*
+* **UI/UX Дизайн и Прототипирование:** Полное авторское проектирование дизайн-системы, адаптивных компонентов и интерактивного кликабельного прототипа на 13 экранов в **Figma** (раздельные сценарии для гостей и обладателей клубных карт).
+* **Кроссплатформенный Frontend:** Высокопроизводительное SPA/PWA на **React + Capacitor + Vite** с поддержкой Zero-Scroll архитектуры и нативной адаптации под безопасные зоны экранов (Safe Area / Edge-to-Edge).
+* **Облачный Backend (BFF):** Микросервисная архитектура на **Google Cloud Functions v2** (регион `europe-west1`), Google Secret Manager, распределенные очереди задач Cloud Tasks и кэширование запросов для защиты от квот CRM (429 Shield).
+* **СКУД и IoT-безопасность:** Аппаратный криптографический модуль генерации временных ПИН-кодов доступа на базе Web Crypto API (`AES-GCM-256`, криптографическая соль, PBKDF2) с поддержкой автономного офлайн-режима при сбоях сети контроллера.
+* **Финансы и бизнес-логика:** Бесшовная интеграция с **Altegio CRM REST API**, эквайринг **Adyen Pay by Link** (Apple Pay / Google Pay), учет абонементов сети, бронирование слотов купелей и автоматическое закрытие визитов.
+* **CI/CD и релизы:** Полностью автоматизированный пайплайн в **Codemagic**: сборка релизных бандлов, подписание сертификатами и прямая публикация релизов в **App Store (iOS)** и **Google Play Console (Android)**, а также собственный движок моментальных OTA-обновлений бандла без прохождения повторной модерации в сторах ($0/мес).
 
 <p>
   <a href="https://polar-recovery-app.web.app" target="_blank">
@@ -58,6 +69,7 @@
 * **Экономия 99.98% диска:** Сокращение веса директорий сайтов с 800 МБ до 105 КБ через переменную `TF_DATA_DIR`.
 * **Самовосстановление (Self-Healing Trio):** Автоматический перехват и исправление ошибок API Cloudflare (20217, 1010, 1014) без сбоев деплоя.
 * **WAF Hardening:** 5-уровневая эшелонированная защита CMS (Joomla, WordPress, PrestaShop) без платных подписок.
+* **Полная очистка (Decommissioning):** Безопасный каскадный демонтаж неиспользуемых доменов и зеркал из Cloudflare, Terraform и базы данных в один клик.
 
 <p>
   <a href="https://github.com/mainparadox/cloudflare-manager-iac">
@@ -67,11 +79,11 @@
 
 ---
 
-### 📊 Активность на GitHub
+### 📊 Активность и статистика на GitHub
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=mainparadox&show_icons=true&theme=radical&hide_border=true&count_private=true&hide_rank=true" width="49%" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=mainparadox&theme=radical&hide_border=true" width="49%" />
+  <img src="https://github.com/mainparadox/mainparadox/blob/main/github-metrics.svg" width="49%" alt="Статистика языков (React/JS/Python)" />
 </p>
 
 ---
@@ -79,10 +91,10 @@
 ### 📫 Связаться со мной
 
 <p>
-  <a href="https://t.me/pavelmmx">
+  <a href="https://t.me/ваш_telegram">
     <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
   </a>
-  <a href="mailto:maim.paradox@gmail.com">
+  <a href="mailto:ваш_email@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
 </p>
