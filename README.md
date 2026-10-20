@@ -1,70 +1,77 @@
 # Привет, я Павел (mainparadox) 👋
-### DevOps / Cloud Infrastructure & Automation Engineer
+### Full-Stack & Mobile App Developer | Cloud & Automation Specialist
 
-> Специализируюсь на автоматизации облачной инфраструктуры (**Infrastructure as Code / Data**), сетевой безопасности (**WAF, DDoS mitigation, SSL/TLS**), контейнеризации и разработке инструментов автоматизации на Python.
+> Разрабатываю высоконагруженные веб-платформы, интернет-магазины и кроссплатформенные мобильные приложения (iOS & Android). Эксперт в создании отказоустойчивых архитектур: от UI/UX в React и Capacitor до серверных Cloud Functions, интеграций с CRM, платёжными шлюзами и IoT-системами доступа (СКУД).
 
 ---
 
-### 🛠️ Стек технологий и компетенции
+### 🛠️ Стек технологий и ключевые компетенции
 
-#### ☁️ Облако, Сети и Безопасность
+#### 📱 Мобильная разработка & Frontend
 <p>
-  <img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" />
-  <img src="https://img.shields.io/badge/Terraform-844FBA?style=for-the-badge&logo=terraform&logoColor=white" />
-  <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/SSL/TLS%20Origin%20CA-0052CC?style=for-the-badge&logo=letsencrypt&logoColor=white" />
-  <img src="https://img.shields.io/badge/WAF%20Hardening-D9381E?style=for-the-badge&logo=shield&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript%20(ES6+)-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/iOS%20%26%20Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
+  <img src="https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white" />
+  <img src="https://img.shields.io/badge/Joomla%20CMS-F44321?style=for-the-badge&logo=joomla&logoColor=white" />
 </p>
 
-#### 💻 Языки программирования и разработка
+#### ☁️ Backend, Облачная инфраструктура & Безопасность
 <p>
-  <img src="https://img.shields.io/badge/Python%203.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" />
-  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" />
-  <img src="https://img.shields.io/badge/Jinja2-B41717?style=for-the-badge&logo=jinja&logoColor=white" />
-  <img src="https://img.shields.io/badge/YAML%20(IaD)-CB171E?style=for-the-badge&logo=yaml&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/Google%20Cloud%20Functions-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" />
+  <img src="https://img.shields.io/badge/Firebase%20Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+  <img src="https://img.shields.io/badge/Cloudflare%20(WAF%20%26%20DNS)-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" />
+  <img src="https://img.shields.io/badge/Terraform%20(IaC)-844FBA?style=for-the-badge&logo=terraform&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python%20Automation-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Adyen%20Payments-0ABF53?style=for-the-badge&logo=adyen&logoColor=white" />
+  <img src="https://img.shields.io/badge/Altegio%20CRM%20API-0052CC?style=for-the-badge&logo=airplayvideo&logoColor=white" />
 </p>
 
 ---
 
-### 🚀 Флагманский проект (Featured Project)
+### 🏆 Избранные проекты (Featured Projects)
 
-<table>
-  <tr>
-    <td width="60%">
-      <h3>☁️ <a href="https://github.com/mainparadox/cloudflare-manager-iac">Cloudflare IaC Management Portal</a></h3>
-      <p><em>Enterprise-grade панель управления инфраструктурой Cloudflare по концепции Infrastructure as Data (IaD).</em></p>
-      <ul>
-        <li><b>Автоматизация SSL на 15 лет:</b> Полный отказ от 90-дневных Let's Encrypt в пользу Cloudflare Origin CA с ключами RSA-2048.</li>
-        <li><b>Экономия 99.98% диска:</b> Сокращение веса рабочей папки сайта с 800 МБ до 105 КБ через системный <code>TF_DATA_DIR</code>.</li>
-        <li><b>Самовосстановление стейта (Self-Healing):</b> Автоматический перехват и исправление ошибок API Cloudflare (20217, 1010, 1014) без сбоев деплоя.</li>
-        <li><b>Адаптивный Free-tier WAF:</b> 5-уровневая эшелонированная защита для CMS (Joomla, WordPress, PrestaShop) без платных подписок.</li>
-      </ul>
-      <p>
-        <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
-        <img src="https://img.shields.io/badge/Terraform-844FBA?style=flat&logo=terraform&logoColor=white" />
-        <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white" />
-        <img src="https://img.shields.io/badge/Cloudflare_API_v4-F38020?style=flat&logo=cloudflare&logoColor=white" />
-      </p>
-    </td>
-    <td width="40%" align="center">
-      <a href="https://github.com/mainparadox/cloudflare-manager-iac">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=mainparadox&repo=cloudflare-manager-iac&theme=radical" />
-      </a>
-    </td>
-  </tr>
-</table>
+#### 1. ❄️ Polar Recovery Club — Master Mobile & Cloud Ecosystem
+*Генеральная экосистема для премиального велнес-клуба криотерапии и контрастных процедур в Риге (Евросоюз).*
+* **Архитектура:** Frontend на **React + Capacitor + Vite**, серверный шлюз BFF на **Google Cloud Functions v2** (регион `europe-west1`), база данных Firestore.
+* **Автоматизация СКУД и замков:** Аппаратный криптографический генератор ПИН-кодов для дверей на базе Web Crypto API (`AES-GCM-256`) и соли Наты с оффлайн-доступом в тамбуре клуба.
+* **Финансы и бронирование:** Двусторонняя синхронизация с **Altegio CRM REST API**, эквайринг **Adyen Pay by Link** (Apple Pay/Google Pay), управление сеткой купелей и абонементами сети.
+* **CI/CD и релизы:** Автоматическая сборка в **Codemagic** (Android AAB / iOS Release для TestFlight) и собственный движок бесшовных OTA-обновлений бандла без прохождения модерации ($0/мес).
+
+<p>
+  <a href="https://polar-recovery-app.web.app" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20PWA%20Demo-Firebase%20App-00C7B7?style=flat-square&logo=google&logoColor=white" />
+  </a>
+  <a href="https://www.figma.com/proto/hgLLA1u1zRyAlIDkH8c1JG/Polar-Recovery-App?node-id=0-1&p=f&t=5V6htnUcySOuIE7m-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=68%3A1091&show-proto-sidebar=1" target="_blank">
+    <img src="https://img.shields.io/badge/Figma%20Interactive%20Prototype-13%20Screens-F24E1E?style=flat-square&logo=figma&logoColor=white" />
+  </a>
+</p>
 
 ---
 
-### 📊 Активность и статистика GitHub
+#### 2. ☁️ [Cloudflare IaC Management Portal](https://github.com/mainparadox/cloudflare-manager-iac)
+*Собственная панель управления инфраструктурой распределенных веб-ресурсов по методологии Infrastructure-as-Data (IaD).*
+* **Стек:** Python 3.14, Streamlit, Terraform v5.x, Jinja2, Cloudflare REST API v4.
+* **Автоматизация SSL на 15 лет:** Полная замена Let's Encrypt на долговечные сертификаты Cloudflare Origin CA с ключами RSA-2048.
+* **Экономия 99.98% диска:** Сокращение веса директорий сайтов с 800 МБ до 105 КБ через переменную `TF_DATA_DIR`.
+* **Самовосстановление (Self-Healing Trio):** Автоматический перехват и исправление ошибок API Cloudflare (20217, 1010, 1014) без сбоев деплоя.
+* **WAF Hardening:** 5-уровневая эшелонированная защита CMS (Joomla, WordPress, PrestaShop) без платных подписок.
+
+<p>
+  <a href="https://github.com/mainparadox/cloudflare-manager-iac">
+    <img src="https://img.shields.io/badge/GitHub%20Repository-Open%20Source-181717?style=flat-square&logo=github&logoColor=white" />
+  </a>
+</p>
+
+---
+
+### 📊 Активность на GitHub
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=mainparadox&show_icons=true&theme=radical&hide_border=true&count_private=true" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mainparadox&layout=compact&theme=radical&hide_border=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=mainparadox&show_icons=true&theme=radical&hide_border=true&count_private=true" width="49%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mainparadox&layout=compact&theme=radical&hide_border=true" width="49%" />
 </p>
 
 ---
@@ -72,13 +79,10 @@
 ### 📫 Связаться со мной
 
 <p>
-  <a href="https://t.me/ваш_логин_telegram">
+  <a href="https://t.me/pavelmmx">
     <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
   </a>
-  <a href="mailto:ваш_email@gmail.com">
+  <a href="mailto:maim.paradox@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-  <a href="https://linkedin.com/in/ваш_профиль">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
 </p>
