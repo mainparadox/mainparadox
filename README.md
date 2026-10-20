@@ -90,7 +90,7 @@
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=mainparadox&theme=radical&hide_border=true" width="49%" />
-  <img src="github-metrics.svg" width="49%" alt="Статистика языков" />
+  <img src="https://github-stats-private-tau.vercel.app/api/top-langs/?username=mainparadox&layout=compact&theme=radical&hide_border=true" width="49%" />
 </p>
 
 ---
