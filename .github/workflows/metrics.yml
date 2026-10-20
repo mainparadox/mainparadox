@@ -18,7 +18,7 @@ jobs:
           template: classic
           base: ""
           config_timezone: Europe/Minsk
-          config_theme: dark
+          theme: dark
           output_action: commit
           filename: github-metrics.svg
           
