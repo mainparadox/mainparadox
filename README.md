@@ -89,10 +89,17 @@
 ### 📊 Активность и статистика на GitHub
 
 <p align="center">
-  <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true&hide_rank=true" width="49%" />
-  <img src="https://github-stats-private-tau.vercel.app/api/top-langs/?username=mainparadox&layout=compact&theme=radical&hide_border=true&count_private=true" width="49%" />
+  <!-- Карточка статистики со скрытыми нулями и скруглением -->
+  <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&theme=tokyonight&hide_border=true&border_radius=12&count_private=true&include_all_commits=true&hide=prs,issues&hide_rank=true" width="49%" />
+  
+  <!-- Карточка языков в том же стиле -->
+  <img src="https://github-stats-private-tau.vercel.app/api/top-langs/?username=mainparadox&layout=compact&theme=tokyonight&hide_border=true&border_radius=12&count_private=true" width="49%" />
 </p>
 
+<p align="center">
+  <!-- Полоса непрерывной активности (Стрик) -->
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mainparadox&theme=tokyonight&hide_border=true&border_radius=12" width="98%" />
+</p>
 ---
 
 ### 📫 Связаться со мной
