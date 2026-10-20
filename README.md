@@ -98,10 +98,10 @@
 ### 📫 Связаться со мной
 
 <p>
-  <a href="https://t.me/ваш_telegram">
+  <a href="https://t.me/pavelmmx">
     <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
   </a>
-  <a href="mailto:ваш_email@gmail.com">
+  <a href="mailto:main.paradox@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
 </p>
