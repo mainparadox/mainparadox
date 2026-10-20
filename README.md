@@ -72,29 +72,36 @@
 * **🔒 Пожизненный SSL на 15 лет:** Генерирует приватные ключи RSA-2048 и автоматически заказывает официальные сертификаты Cloudflare Origin CA на 15 лет (до 2041 года). Больше никаких сбоев и ручного продления сертификатов на хостинге!
 * **🛡️ Готовая WAF-защита для CMS:** В 1 клик разворачивает 5-уровневый комплекс фаервола, заточенный под уязвимости конкретных движков (**Joomla, WordPress, PrestaShop**): отсекает ботов, блокирует скачивание дампов баз данных (`.sql`, `.zip`) и закрывает капчей вход в админку.
 * **↪️ Моментальные 301-зеркала:** Настраивает перенаправление трафика с дополнительных доменов на уровне серверов Cloudflare (Edge). Запросы даже не доходят до хостинга, освобождая ресурсы сервера.
-* **💾 Экономия места (IaD + Terraform):** Под капотом работает связка Python, Jinja2 и HashiCorp Terraform v5.x. За счет умного кэширования плагинов вся конфигурация 25 сайтов весит менее 3 МБ (экономия 99.98% диска).
+* **💾 Экономия места (IaC + Terraform):** Под капотом работает связка Python, Jinja2 и HashiCorp Terraform v5.x. За счет умного кэширования плагинов вся конфигурация 25 сайтов весит менее 3 МБ (экономия 99.98% диска).
 * **🚑 Самоисцеление стейта:** Панель сама перехватывает скрытые ошибки Cloudflare API (конфликты контейнеров 20217, сбои кириллицы .бел/.рф 1010, удаленные ключи 1014) и восстанавливает работу без сбоев.
 
+<!-- Живые динамические счетчики звезд, форков и технологий -->
 <p>
   <a href="https://github.com/mainparadox/cloudflare-manager-iac">
-    <img src="https://img.shields.io/badge/GitHub%20Repository-Open%20Source-181717?style=flat-square&logo=github&logoColor=white" />
+    <img src="https://img.shields.io/github/stars/mainparadox/cloudflare-manager-iac?style=social" alt="GitHub Stars" />
   </a>
+  <a href="https://github.com/mainparadox/cloudflare-manager-iac/fork">
+    <img src="https://img.shields.io/github/forks/mainparadox/cloudflare-manager-iac?style=social" alt="GitHub Forks" />
+  </a>
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Streamlit_GUI-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
   <img src="https://img.shields.io/badge/Terraform_v5-844FBA?style=flat-square&logo=terraform&logoColor=white" />
 </p>
+
+> ⭐️ **Понравился инструмент? [Поставьте звёздочку проекту на GitHub](https://github.com/mainparadox/cloudflare-manager-iac) — это мотивирует развивать его дальше!**
 
 ---
 
 ### 📊 Инженерная активность
 
 <p align="center">
-  <!-- Карточка коммитов -->
+  <!-- Карточка коммитов (клик мягко обновляет профиль, а не открывает SVG) -->
   <a href="https://github.com/mainparadox">
     <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&icon_color=2563eb&border_radius=16&count_private=true&include_all_commits=true&hide=prs,issues&hide_rank=true" width="49%" />
   </a>
 
-  <!-- Карточка языков -->
+  <!-- Карточка языков (оставлены ключевые, скрыты системные скрипты) -->
   <a href="https://github.com/mainparadox">
     <img src="https://github-stats-private-tau.vercel.app/api/top-langs/?username=mainparadox&layout=compact&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&border_radius=16&count_private=true&hide=Shell,Batchfile,Jinja" width="49%" />
   </a>
