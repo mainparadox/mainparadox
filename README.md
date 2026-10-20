@@ -96,6 +96,8 @@
   <img src="https://github-stats-private-tau.vercel.app/api/top-langs/?username=mainparadox&layout=compact&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&border_radius=16&count_private=true&hide=Shell,Batchfile,Jinja" width="49%" />
 </p>
 
+---
+
 ### 📫 Связаться со мной
 
 <p>
