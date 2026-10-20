@@ -63,18 +63,25 @@
 ---
 
 #### 2. ☁️ [Cloudflare IaC Management Portal](https://github.com/mainparadox/cloudflare-manager-iac)
-*Собственная панель управления инфраструктурой распределенных веб-ресурсов по методологии Infrastructure-as-Data (IaD).*
-* **Стек:** Python 3.14, Streamlit, Terraform v5.x, Jinja2, Cloudflare REST API v4.
-* **Автоматизация SSL на 15 лет:** Полная замена Let's Encrypt на долговечные сертификаты Cloudflare Origin CA с ключами RSA-2048.
-* **Экономия 99.98% диска:** Сокращение веса директорий сайтов с 800 МБ до 105 КБ через переменную `TF_DATA_DIR`.
-* **Самовосстановление (Self-Healing Trio):** Автоматический перехват и исправление ошибок API Cloudflare (20217, 1010, 1014) без сбоев деплоя.
-* **WAF Hardening:** 5-уровневая эшелонированная защита CMS (Joomla, WordPress, PrestaShop) без платных подписок.
-* **Полная очистка (Decommissioning):** Безопасный каскадный демонтаж неиспользуемых доменов и зеркал из Cloudflare, Terraform и базы данных в один клик.
+*Собственная веб-панель администратора для автоматизации защиты, DNS и SSL десятков сайтов в Cloudflare в 1 клик.*
+
+**Какую проблему решает проект:**
+Когда у веб-разработчика на поддержке находится 20–30 клиентских сайтов и зеркал, настраивать безопасность и DNS вручную через панель Cloudflare превращается в рутину и приводит к ошибкам. А бесплатные сертификаты Let's Encrypt постоянно сбоят при продлении каждые 90 дней из-за блокировок WAF.
+
+**Что делает эта панель (GUI):**
+* **🔒 Пожизненный SSL на 15 лет:** Генерирует приватные ключи RSA-2048 и автоматически заказывает официальные сертификаты Cloudflare Origin CA на 15 лет (до 2041 года). Больше никаких сбоев и ручного продления сертификатов на хостинге!
+* **🛡️ Готовая WAF-защита для CMS:** В 1 клик разворачивает 5-уровневый комплекс фаервола, заточенный под уязвимости конкретных движков (**Joomla, WordPress, PrestaShop**): отсекает ботов, блокирует скачивание дампов баз данных (`.sql`, `.zip`) и закрывает капчей вход в админку.
+* **↪️ Моментальные 301-зеркала:** Настраивает перенаправление трафика с дополнительных доменов на уровне серверов Cloudflare (Edge). Запросы даже не доходят до хостинга, освобождая ресурсы сервера.
+* **💾 Экономия места (IaD + Terraform):** Под капотом работает связка Python, Jinja2 и HashiCorp Terraform v5.x. За счет умного кэширования плагинов вся конфигурация 25 сайтов весит менее 3 МБ (экономия 99.98% диска).
+* **🚑 Самоисцеление стейта:** Панель сама перехватывает скрытые ошибки Cloudflare API (конфликты контейнеров 20217, сбои кириллицы .бел/.рф 1010, удаленные ключи 1014) и восстанавливает работу без сбоев.
 
 <p>
   <a href="https://github.com/mainparadox/cloudflare-manager-iac">
     <img src="https://img.shields.io/badge/GitHub%20Repository-Open%20Source-181717?style=flat-square&logo=github&logoColor=white" />
   </a>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Streamlit_GUI-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
+  <img src="https://img.shields.io/badge/Terraform_v5-844FBA?style=flat-square&logo=terraform&logoColor=white" />
 </p>
 
 ---
