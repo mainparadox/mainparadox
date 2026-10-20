@@ -89,8 +89,8 @@
 ### 📊 Активность и статистика на GitHub
 
 <p align="center">
-  <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&theme=radical&hide_border=true&count_private=true&hide_rank=true" width="49%" />
-  <img src="https://github-stats-private-tau.vercel.app/api/top-langs/?username=mainparadox&layout=compact&theme=radical&hide_border=true" width="49%" />
+  <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true&hide_rank=true" width="49%" />
+  <img src="https://github-stats-private-tau.vercel.app/api/top-langs/?username=mainparadox&layout=compact&theme=radical&hide_border=true&count_private=true" width="49%" />
 </p>
 
 ---
