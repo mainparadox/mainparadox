@@ -86,21 +86,15 @@
 
 ---
 
-### 📊 Активность и статистика на GitHub
+### 📊 Инженерная активность
 
 <p align="center">
-  <!-- Карточка статистики со скрытыми нулями и скруглением -->
-  <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&theme=tokyonight&hide_border=true&border_radius=12&count_private=true&include_all_commits=true&hide=prs,issues&hide_rank=true" width="49%" />
-  
-  <!-- Карточка языков в том же стиле -->
-  <img src="https://github-stats-private-tau.vercel.app/api/top-langs/?username=mainparadox&layout=compact&theme=tokyonight&hide_border=true&border_radius=12&count_private=true" width="49%" />
-</p>
+  <!-- Карточка статистики в стиле Polar Hub -->
+  <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&icon_color=2563eb&border_radius=16&count_private=true&include_all_commits=true&hide=prs,issues&hide_rank=true" width="49%" />
 
-<p align="center">
-  <!-- Полоса непрерывной активности (Стрик) -->
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mainparadox&theme=tokyonight&hide_border=true&border_radius=12" width="98%" />
+  <!-- Карточка языков: скрыт мусор, оставлены только ключевые стеки -->
+  <img src="https://github-stats-private-tau.vercel.app/api/top-langs/?username=mainparadox&layout=compact&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&border_radius=16&count_private=true&hide=Shell,Batchfile,Jinja" width="49%" />
 </p>
----
 
 ### 📫 Связаться со мной
 
