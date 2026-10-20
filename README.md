@@ -90,7 +90,7 @@
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=mainparadox&theme=radical&hide_border=true" width="49%" />
-  <img src="https://github.com/mainparadox/mainparadox/blob/main/github-metrics.svg" width="49%" alt="Статистика языков (React/JS/Python)" />
+  <img src="github-metrics.svg" width="49%" alt="Статистика языков" />
 </p>
 
 ---
