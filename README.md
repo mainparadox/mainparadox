@@ -173,7 +173,7 @@ graph LR
     <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&icon_color=2563eb&border_radius=16&count_private=true&include_all_commits=true&hide=prs,issues&hide_rank=true" width="49%" />
   </a>
   <a href="https://github.com/mainparadox">
-    <img src="https://github-stats-private-tau.vercel.app/api/top-langs/?username=mainparadox&layout=compact&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&border_radius=16&count_private=true&hide=Shell,Batchfile,Jinja" width="49%" />
+    <img src="https://github-stats-private-tau.vercel.app/api/top-langs/?username=mainparadox&layout=compact&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&border_radius=16&count_private=true" width="49%" />
   </a>
 </p>
 
