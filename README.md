@@ -142,30 +142,6 @@ graph LR
 
 ---
 
-### 💻 Консольная выжимка профиля
-
-<details>
-  <summary><b>▶ Нажмите, чтобы выполнить <code>curl -s https://api.mainparadox.dev/v1/profile</code></b></summary>
-  <br />
-
-```json
-{
-  "engineer": "Pavel MX (mainparadox)",
-  "specialization": "Full-Stack, Mobile (iOS/Android) & Cloud Architecture",
-  "experience_focus": [
-    "Capacitor 6 / Swift / Kotlin native bridges",
-    "GCP Cloud Functions v2 BFF & WebCrypto",
-    "PHP 8+ / MySQL / Joomla enterprise customization",
-    "Cloudflare Edge Workers & Terraform IaC"
-  ],
-  "availability": "Открыт к сложным архитектурным задачам и разработке экосистем под ключ",
-  "telegram": "@pavelmmx"
-}
-```
-</details>
-
----
-
 ### 📊 Инженерная активность
 
 <p align="center">
