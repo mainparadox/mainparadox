@@ -1,0 +1,72 @@
+/* ==========================================================================
+   THEME.CSS - Токены и светлая ультрасовременная палитра
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+    /* Фоновые цвета: мягкий жемчужный оттенок, от которого не устают глаза */
+    --bg-page: #f8fafc;
+    --bg-surface: rgba(255, 255, 255, 0.82);
+    --bg-surface-hover: #ffffff;
+    --bg-elevated: #ffffff;
+    
+    /* Текстовые цвета с идеальной типографической иерархией */
+    --text-primary: #0f172a;      /* Глубокий сланец вместо едкого черного */
+    --text-secondary: #475569;    /* Читаемый нейтральный серый */
+    --text-muted: #94a3b8;        /* Второстепенные подписи */
+    
+    /* Акценты технологичности (Apple / Stripe style) */
+    --brand-primary: #4f46e5;     /* Глубокий индиго */
+    --brand-primary-hover: #4338ca;
+    --brand-accent: #0284c7;      /* Небесно-голубой */
+    --brand-gradient: linear-gradient(135deg, #4f46e5 0%, #0284c7 100%);
+    
+    /* Мягкие пастельные индикаторы */
+    --accent-cyan-bg: #e0f2fe;
+    --accent-cyan-text: #0369a1;
+    --accent-amber-bg: #fef3c7;
+    --accent-amber-text: #b45309;
+    --accent-green-bg: #dcfce7;
+    --accent-green-text: #15803d;
+    --accent-purple-bg: #f3e8ff;
+    --accent-purple-text: #7e22ce;
+
+    /* Тонкие полупрозрачные границы */
+    --border-subtle: rgba(226, 232, 240, 0.85);
+    --border-hover: rgba(148, 163, 184, 0.45);
+    
+    /* Сложные многослойные тени (Depth UI) */
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+    --shadow-card: 0 4px 6px -1px rgba(15, 23, 42, 0.04), 0 2px 4px -2px rgba(15, 23, 42, 0.03), 0 0 0 1px rgba(226, 232, 240, 0.8);
+    --shadow-hover: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04), 0 0 0 1px rgba(199, 210, 254, 0.5);
+    --shadow-polar: 0 12px 30px -4px rgba(2, 132, 199, 0.12), 0 4px 8px -2px rgba(2, 132, 199, 0.06);
+
+    /* Скругления */
+    --radius-xl: 20px;
+    --radius-lg: 14px;
+    --radius-md: 10px;
+    --radius-pill: 9999px;
+
+    --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    /* Мягкие, приятные глазу градиентные пятна на фоне */
+    background-image: 
+        radial-gradient(at 10% 10%, rgba(79, 70, 229, 0.04) 0px, transparent 50%),
+        radial-gradient(at 90% 20%, rgba(2, 132, 199, 0.05) 0px, transparent 50%),
+        radial-gradient(at 50% 90%, rgba(244, 63, 94, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+}

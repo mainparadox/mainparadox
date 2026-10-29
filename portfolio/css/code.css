@@ -1,0 +1,63 @@
+/* ==========================================================================
+   CODE.CSS - Статьи, Блоки кода, Таблицы, Предупреждения
+   ========================================================================== */
+
+/* Контрастный блок кода, чтобы не напрягать зрение */
+pre {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    line-height: 1.6;
+    overflow-x: auto;
+    border: 1px solid #1e293b;
+    box-shadow: var(--shadow-card);
+    margin: 18px 0;
+}
+
+code:not(pre code) {
+    background: #f1f5f9;
+    color: #0369a1;
+    padding: 3px 7px;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+}
+
+/* Элегантные уведомления */
+.alert {
+    padding: 16px 20px;
+    border-radius: var(--radius-lg);
+    margin: 20px 0;
+    font-size: 14.5px;
+    line-height: 1.5;
+    border: 1px solid;
+}
+
+.alert-info {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #1e40af;
+}
+
+.alert-warning {
+    background: #fffbeb;
+    border-color: #fde68a;
+    color: #92400e;
+}
+
+.alert-danger {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #991b1b;
+}
+
+.alert-success {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #166534;
+}

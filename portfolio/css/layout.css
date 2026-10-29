@@ -1,0 +1,111 @@
+/* ==========================================================================
+   LAYOUT.CSS - Структура, Центрирование, Сетка
+   ========================================================================== */
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+/* Верхний блок Hero */
+.hero {
+    text-align: center;
+    padding: 45px 20px 35px;
+    max-width: 860px;
+    margin: 0 auto 35px;
+}
+
+.hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-sm);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--brand-primary);
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+}
+
+.hero-pill-dot {
+    width: 7px;
+    height: 7px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+.hero h1 {
+    font-size: 3.1rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.hero h1 .text-gradient {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   БЕСШОВНАЯ КЛАДКА БЕЗ ПУСТОТ (MASONRY COLUMNS)
+   ========================================================================== */
+.masonry-grid {
+    column-count: 3;
+    column-gap: 24px;
+    align-items: start;
+}
+
+.masonry-grid .card {
+    break-inside: avoid;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1100px) {
+    .masonry-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 700px) {
+    .masonry-grid {
+        column-count: 1;
+    }
+}
+
+/* Футер */
+.footer {
+    margin-top: 70px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: var(--text-muted);
+    font-size: 13.5px;
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .masonry-grid { grid-template-columns: 1fr; }
+    .footer { flex-direction: column; text-align: center; }
+}
