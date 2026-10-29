@@ -106,6 +106,24 @@ graph LR
 </p>
 
 ---
+#### 🎬 AI Video Production Pipeline (Closed Source / Studio Tool)
+*Проприетарный автономный конвейер для массового YouTube-продакшна. Превращает сырой литературный текст в готовый кинематографичный фильм.*
+
+**Концепция:** Полностью автоматизированная фабрика контента, где код выступает в роли главного режиссера, управляя ансамблем из десятка различных нейросетей (LLM, TTS, VFI, Diffusion) через единый API-шлюз.
+
+* **Multi-AI Orchestration:** Асинхронная координация облачных и локальных ИИ-агентов (Gemini, Grok, Copilot, Leonardo) для декомпозиции сценария, создания визуальной ДНК персонажей и генерации режиссерских промптов.
+* **Cinematic VFI & Rendering:** Параллельный рендер сцен в 25 потоков, 3D-параллакс (DepthFlow) и матрица локальных нейросетей интерполяции кадров (MoMo, EMA-VFI) для достижения идеальной плавности в 60 FPS.
+* **Semantic Sound Design:** Векторный RAG-поиск по студийной библиотеке (170+ ГБ) через ChromaDB. ИИ сам подбирает музыку по настроению сцены, расставляет Foley SFX эффекты и микширует 4 слоя звука по вещательному стандарту EBU R128.
+* **Hardware Mastering:** Аппаратная сборка фильма на GPU (NVENC), точнейший расчет таймингов и хардсабы через WhisperX, а также уникализация видеоряда для защиты от алгоритмических детектов.
+
+<p>
+  <img src="https://img.shields.io/badge/Status-Private_Enterprise_Tool-E34F26?style=flat-square&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python_3.10+-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/PyTorch_(CUDA)-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
+  <img src="https://img.shields.io/badge/FFmpeg_NVENC-007808?style=flat-square&logo=ffmpeg&logoColor=white" />
+  <img src="https://img.shields.io/badge/ChromaDB-00E5FF?style=flat-square&logo=databricks&logoColor=black" />
+</p>
+---
 
 #### ☁️ Open-Source инструмент: [Cloudflare IaC Management Portal](https://github.com/mainparadox/cloudflare-manager-iac)
 *Собственная веб-панель администратора для автоматизации защиты, DNS и SSL десятков сайтов в Cloudflare в 1 клик.*
