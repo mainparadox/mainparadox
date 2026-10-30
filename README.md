@@ -106,22 +106,29 @@ graph LR
 </p>
 
 ---
-#### 🎬 AI Video Production Pipeline (Closed Source / Studio Tool)
-*Проприетарный автономный конвейер для массового YouTube-продакшна. Превращает сырой литературный текст в готовый кинематографичный фильм.*
+#### 🎬 [AI Video Production Pipeline — Автономная Киностудия](https://mainparadox.github.io/mainparadox/portfolio/ggs-video-engine/)
+*Проприетарный автономный конвейер полного цикла: превращает сырой литературный текст или сценарий в законченный кинематографический фильм за 15 минут вместо 2 недель работы традиционной студии.*
 
-**Концепция:** Полностью автоматизированная фабрика контента, где код выступает в роли главного режиссера, управляя ансамблем из десятка различных нейросетей (LLM, TTS, VFI, Diffusion) через единый API-шлюз.
+**Концепция:** Автономная фабрика контента, заменяющая штат из 10 специалистов (сценариста, актеров дубляжа, колориста, монтажера и саунд-дизайнера). Программный комплекс выступает в роли генерального режиссера, управляя ансамблем из более чем 10 нейросетей через мультимодельный API-шлюз.
 
-* **Multi-AI Orchestration:** Асинхронная координация облачных и локальных ИИ-агентов (Gemini, Grok, Copilot, Leonardo) для декомпозиции сценария, создания визуальной ДНК персонажей и генерации режиссерских промптов.
-* **Cinematic VFI & Rendering:** Параллельный рендер сцен в 25 потоков, 3D-параллакс (DepthFlow) и матрица локальных нейросетей интерполяции кадров (MoMo, EMA-VFI) для достижения идеальной плавности в 60 FPS.
-* **Semantic Sound Design:** Векторный RAG-поиск по студийной библиотеке (170+ ГБ) через ChromaDB. ИИ сам подбирает музыку по настроению сцены, расставляет Foley SFX эффекты и микширует 4 слоя звука по вещательному стандарту EBU R128.
-* **Hardware Mastering:** Аппаратная сборка фильма на GPU (NVENC), точнейший расчет таймингов и хардсабы через WhisperX, а также уникализация видеоряда для защиты от алгоритмических детектов.
+* 🎭 **Сценарный интеллект и ДНК персонажей:** Глубокий анализ сюжета, создание анатомических паспортов героев со сквозной памятью лиц (внешность не «плывет» от кадра к кадру), динамический гардероб под погоду и локации, а также трекинг ключевого сюжетного реквизита.
+* 🎙️ **Актерский дубляж и Саунд-дизайн RAG (170+ ГБ):** Многоголосая озвучка с контролем эмоций и перепадов громкости, пословная синхронизация фонем (до 0.01 сек) через WhisperX, акустические фильтры (рации, шлемы, эхо) и семантический подбор музыки и шумов (Foley SFX) по вещательному стандарту EBU R128.
+* 🎞️ **Кинематографичная анимация 60 FPS:** Параллельный рендер сцен в 25 потоков, локальный 3D-параллакс (DepthFlow) и матрица из 4-х VFI-нейросетей (MoMo, EMA-VFI, AMT, RIFE) для сверхплавного видеоряда без стробоскопа и дерганий.
+* 🎛️ **Аппаратный мастеринг и Golden Master:** Сборка чанков на GPU (NVENC), контрастные вшитые субтитры (Hardsubs), микро-слой пленочного зерна и глубокая зачистка технических метаданных для 100% уникализации видеоряда под алгоритмы YouTube.
+
+<p>
+  <a href="https://mainparadox.github.io/mainparadox/portfolio/ggs-video-engine/" target="_blank">
+    <img src="https://img.shields.io/badge/Interactive_Case_Study-Live_Presentation-4F46E5?style=for-the-badge&logo=safari&logoColor=white" />
+  </a>
+</p>
 
 <p>
   <img src="https://img.shields.io/badge/Status-Private_Enterprise_Tool-E34F26?style=flat-square&logo=github&logoColor=white" />
   <img src="https://img.shields.io/badge/Python_3.10+-3776AB?style=flat-square&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/PyTorch_(CUDA)-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
   <img src="https://img.shields.io/badge/FFmpeg_NVENC-007808?style=flat-square&logo=ffmpeg&logoColor=white" />
-  <img src="https://img.shields.io/badge/ChromaDB-00E5FF?style=flat-square&logo=databricks&logoColor=black" />
+  <img src="https://img.shields.io/badge/ChromaDB_Vector_RAG-00E5FF?style=flat-square&logo=databricks&logoColor=black" />
+  <img src="https://img.shields.io/badge/WhisperX_GPU-FF6F00?style=flat-square&logo=openai&logoColor=white" />
 </p>
 ---
 
