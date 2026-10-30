@@ -3,216 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Production Pipeline | Portfolio Case Study</title>
+    <title>AI Video Production Pipeline | Глубокий Архитектурный Кейс</title>
     
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
     
-    <!-- Подключаем наши стили -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Mermaid.js для отрисовки красивой схемы архитектуры -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true, theme: 'neutral'});</script>
 </head>
 <body class="bg-grid-dots">
 
-<div class="container" style="padding-top: 40px;">
+<div class="container" style="padding-top: 35px; max-width: 1100px;">
     
     <!-- ВЕРХНИЙ БЛОК HERO -->
-    <header class="hero" style="padding: 10px 10px 40px; margin-bottom: 25px; max-width: 1100px;">
+    <header class="hero" style="padding: 10px 10px 30px; margin-bottom: 25px; max-width: 1050px;">
         <div class="hero-status-row">
-            <div class="hero-pill" style="margin-bottom: 14px;">
+            <div class="hero-pill" style="margin-bottom: 16px;">
                 <span class="pulse-dot"></span>
-                <span>PRODUCTION CASE STUDY • SYSTEM ARCHITECTURE</span>
+                <span>PRODUCTION CASE STUDY • NEXT-GEN AI PIPELINE</span>
             </div>
         </div>
 
-        <h1 style="font-size: 3.2rem; margin-bottom: 15px; letter-spacing: -1px;">AI Video <span class="text-gradient">Production Pipeline</span></h1>
-        <p class="hero-desc" style="max-width: 860px; margin: 0 auto 30px; font-size: 1.15rem; color: var(--text-secondary);">
-            Проектирование и разработка автономного закрытого конвейера полного цикла для создания кинематографического видеоконтента. Оркестрация ансамбля из 10+ нейросетей (LLM, TTS, VFI, Diffusion), векторный саунд-дизайн и аппаратный монтаж на лету.
+        <h1 style="font-size: 3.2rem; margin-bottom: 18px; letter-spacing: -1.2px; line-height: 1.15;">
+            Автономная ИИ-Киностудия: <br><span class="text-gradient">Архитектура Фабрики Контента</span>
+        </h1>
+        <p class="hero-desc" style="max-width: 900px; margin: 0 auto 30px; font-size: 1.15rem; color: var(--text-secondary); line-height: 1.65;">
+            Глубокий инженерный кейс создания программного комплекса, заменяющего полный штат продакшн-студии. Система автономно трансформирует литературные тексты и статьи в законченные кинематографические фильмы: от сценарной декомпозиции и многоголосного дубляжа до синхронизации фонем, генерации 60 FPS анимаций и финального вещательного мастеринга.
         </p>
 
-        <!-- ВАУ-МЕТРИКИ (KPI) -->
-        <div class="metrics-row kpi-strip" style="margin-bottom: 30px;">
+        <!-- KPI МЕТРИКИ -->
+        <div class="metrics-row kpi-strip" style="margin-bottom: 10px;">
             <div class="metric-card">
-                <div class="metric-label">Снижение затрат времени</div>
-                <div class="metric-value">~800%</div>
-                <span class="metric-trend trend-up">★ Автоматизация рутины</span>
+                <div class="metric-label">Скорость производства</div>
+                <div class="metric-value">~150 мин</div>
+                <span class="metric-trend trend-up">★ Вместо 2–3 недель студии</span>
             </div>
             <div class="metric-card">
-                <div class="metric-label">Глубина архитектуры</div>
-                <div class="metric-value">25+ Модулей</div>
-                <span class="metric-trend trend-blue">Python & FFmpeg Core</span>
+                <div class="metric-label">Снижение затрат</div>
+                <div class="metric-value">-90%</div>
+                <span class="metric-trend trend-green">✓ Без раздутого штата</span>
             </div>
             <div class="metric-card">
-                <div class="metric-label">Интерполяция кадров</div>
+                <div class="metric-label">Плавность видеоряда</div>
                 <div class="metric-value">60 FPS</div>
-                <span class="metric-trend trend-green">✓ Локальные VFI Сети</span>
+                <span class="metric-trend trend-blue">Матрица VFI-нейросетей</span>
             </div>
             <div class="metric-card">
-                <div class="metric-label">Аудио-библиотека RAG</div>
+                <div class="metric-label">Звуковой банк RAG</div>
                 <div class="metric-value">170+ ГБ</div>
-                <span class="metric-trend trend-purple">🔍 ChromaDB Vector Search</span>
+                <span class="metric-trend trend-purple">Семантический саундтрек</span>
             </div>
         </div>
     </header>
 
-    <!-- ГЛАВНАЯ СХЕМА АРХИТЕКТУРЫ -->
-    <section class="card-border-beam flagship-section" style="margin-bottom: 45px;">
-        <div class="flagship-top">
-            <div class="flagship-badge-group">
-                <span class="badge-flagship">TOP-LEVEL ARCHITECTURE</span>
-                <span class="badge-ai">⚡ MULTI-AGENT SYSTEM</span>
+    <!-- СРАВНЕНИЕ С РЫНКОМ -->
+    <div style="margin-bottom: 50px;">
+        <h2 style="font-size: 1.65rem; font-weight: 800; margin-bottom: 16px; text-align: center;">Традиционный продакшн против Автономного конвейера</h2>
+        
+        <div class="diff-grid" style="margin-top: 15px;">
+            <div class="diff-card diff-bad">
+                <span class="diff-badge">✕ РУЧНОЙ СТУДИЙНЫЙ ПРОДАКШН</span>
+                <h4 style="margin: 12px 0 8px; font-size: 1.15rem;">Дорого, медленно и человеческий фактор</h4>
+                <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                    • <strong>Штат из 8–10 человек:</strong> сценарист, дикторы, колорист, монтажер, иллюстратор, саунд-дизайнер.<br>
+                    • <strong>Сроки:</strong> производство одного 15-минутного ролика занимает от 10 до 20 дней.<br>
+                    • <strong>Проблема типовых AI-генераторов:</strong> лица героев плывут от кадра к кадру, плоский роботизированный голос, обрывы интонаций и рассинхрон видео с аудио.
+                </p>
+            </div>
+            <div class="diff-card diff-good">
+                <span class="diff-badge">✓ НАШ ИНЖЕНЕРНЫЙ КОМБАЙН</span>
+                <h4 style="margin: 12px 0 8px; font-size: 1.15rem;">Полная автоматизация под ключ без потери качества</h4>
+                <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                    • <strong>Абсолютная консистентность:</strong> персонажи сохраняют черты лица, прическу и возраст в сотнях сцен.<br>
+                    • <strong>Живая режиссура:</strong> 18 операторских ракурсов, динамический подбор гардероба под погоду и локации.<br>
+                    • <strong>Голливудский звук:</strong> актеры дубляжа с эмоциями, радиофильтры, шаги, скрипы и адаптивный саундтрек.
+                </p>
             </div>
         </div>
+    </div>
 
-        <div class="flagship-main-content">
-            <div class="flagship-info" style="width: 100%;">
-                <h2 style="font-size: 1.8rem; margin-bottom: 20px;">Оркестрация конвейера (Pipeline Flow)</h2>
-                
-                <!-- Блок Mermaid -->
-                <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: 12px; padding: 20px; text-align: center; overflow-x: auto;">
-                    <div class="mermaid">
-                        graph TD
-                            subgraph Phase1 [1. Сценарий и Промпт Инжиниринг]
-                                A[Литературный текст] --> B(LLM Gateway: Gemini / Grok)
-                                B --> C{Master Excel Database}
-                                C --> D[Выделение ДНК персонажей и локаций]
-                            end
+    <!-- ПОЛНЫЙ РАЗБОР 5 ЭТАПОВ ПРОИЗВОДСТВА -->
+    <div style="margin-bottom: 50px;">
+        <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.5px;">Глубокая анатомия производственного конвейера</h2>
 
-                            subgraph Phase2 [2. Звуковой продакшн и RAG]
-                                D --> E[TTS ElevenLabs & WhisperX Alignment]
-                                E --> F(ChromaDB RAG: Подбор Музыки и SFX)
-                                F --> G[FFmpeg Mixer: Сведение 4 слоев]
-                            end
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+            
+            <!-- ЭТАП 1: СЦЕНАРИИ И РЕЖИССУРА -->
+            <div class="card card-theme-sppb" style="width: 100%; padding: 30px;">
+                <div class="card-badges" style="margin-bottom: 10px;">
+                    <span class="card-tag tag-amber">ЭТАП 01 • PRE-PRODUCTION</span>
+                    <span class="card-articles-counter">Сценарная декомпозиция & Режиссура</span>
+                </div>
+                <h3 style="font-size: 1.45rem; margin-bottom: 12px;">Умный сценарный анализ, ДНК героев и климатический гардероб</h3>
+                <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.65; margin-bottom: 16px;">
+                    Конвейер начинается с загрузки сырого текста книги или лонгрида. Мультимодельный ансамбль ИИ выполняет комплексную режиссерскую работу, которую в киноиндустрии делают целые отделы:
+                </p>
 
-                            subgraph Phase3 [3. Визуальный Рендер Farm]
-                                G --> H[Генерация 3D Мастер-Референсов]
-                                H --> I((Parallel Render: 25 Workers))
-                                I --> J[Kling / Veo / Leonardo API]
-                            end
+                <div class="diff-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 16px 0;">
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">🧬 Анатомические паспорта героев</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            ИИ фиксирует костную структуру лица, скулы, форму носа, разрез глаз и цвет волос. Это исключает главную проблему нейросетей — «дрейф лиц» между сценами.
+                        </span>
+                    </div>
 
-                            subgraph Phase4 [4. Постобработка и Монтаж]
-                                J --> K{VFI SlowMo: RIFE / EMA / MoMo}
-                                K --> L[NVENC Hardware Assembly]
-                                L --> M((FINAL VIDEO READY))
-                            end
-                            
-                            style Phase1 fill:#f8fafc,stroke:#cbd5e1,stroke-width:2px;
-                            style Phase2 fill:#f0fdf4,stroke:#86efac,stroke-width:2px;
-                            style Phase3 fill:#eff6ff,stroke:#93c5fd,stroke-width:2px;
-                            style Phase4 fill:#faf5ff,stroke:#d8b4fe,stroke-width:2px;
-                            style M fill:#4f46e5,stroke:#fff,stroke-width:4px,color:#fff;
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">🧥 Климатическая матрица гардероба</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            Герой не может ходить в домашней одежде под дождем. Система считывает сезон и погоду: на зимней стройке герой одет в теплую куртку и каску, а на кухне — в домашний свитер.
+                        </span>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">💼 Сюжетный реквизит (Key Props)</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            Важные артефакты (старый кожаный портфель, письмо с отказом, пикап) распознаются как самостоятельные сущности и генерируются с сохранением фактуры и потертостей.
+                        </span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- СЕТКА КЛЮЧЕВЫХ ТЕХНОЛОГИЧЕСКИХ ФИЧ (БЕЗ СЕКРЕТОВ) -->
-    <h2 class="section-title">Ключевые инженерные решения</h2>
-    
-    <div class="masonry-grid">
-        
-        <!-- Фича 1 -->
-        <div class="card card-theme-cloudflare">
-            <div class="card-header-row">
-                <div class="card-brand-icon-box" style="font-size: 24px;">🧠</div>
-                <span class="card-tag tag-cyan">Gateway</span>
+                <div class="alert alert-info" style="margin: 14px 0 0;">
+                    <strong>💡 Фирменная фишка — Умный Якорь (Smart Anchor):</strong> если посреди обработки 500-страничной книги моргнет свет или упадет сеть, скрипт не начинает работу с нуля. Он сканирует последние 50 строк таблицы, собирает текстовый якорь и возобновляет декомпозицию ровно с того символа, где остановился!
+                </div>
             </div>
-            <h2 style="font-size: 1.3rem;">Умный API-шлюз и LLM Балансировщик</h2>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 15px;">
-                Единая точка входа (паттерн Singleton) для всех ИИ-моделей проекта. Автоматическое управление пулом прокси-серверов, Rate Limit контроль для бесплатных ключей, бесшовный переход между моделями через конфигуратор без изменения бизнес-логики.
-            </p>
-            <div class="tech-stack-pills">
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">WebSockets</span>
-                <span class="tech-pill">OAuth</span>
-            </div>
-        </div>
 
-        <!-- Фича 2 -->
-        <div class="card card-theme-database">
-            <div class="card-header-row">
-                <div class="card-brand-icon-box" style="font-size: 24px;">🎧</div>
-                <span class="card-tag tag-purple">ChromaDB RAG</span>
-            </div>
-            <h2 style="font-size: 1.3rem;">Семантический Саунд-Дизайн (170+ ГБ)</h2>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 15px;">
-                Локальная векторная база данных. ИИ анализирует настроение сцены и самостоятельно подбирает музыку из 12 категорий. Модуль SFX извлекает звуки (шаги, двери, выстрелы) и накладывает их на мастер-трек с нормализацией громкости по вещательному стандарту EBU R128.
-            </p>
-            <div class="tech-stack-pills">
-                <span class="tech-pill">ChromaDB</span>
-                <span class="tech-pill">FFmpeg</span>
-                <span class="tech-pill">Pydantic v2</span>
-            </div>
-        </div>
+            <!-- ЭТАП 2: ГОЛОС И САУНД-ДИЗАЙН -->
+            <div class="card card-theme-mobile" style="width: 100%; padding: 30px;">
+                <div class="card-badges" style="margin-bottom: 10px;">
+                    <span class="card-tag tag-green">ЭТАП 02 • AUDIO PRODUCTION</span>
+                    <span class="card-articles-counter">Дубляж, WhisperX и Саунд-дизайн RAG</span>
+                </div>
+                <h3 style="font-size: 1.45rem; margin-bottom: 12px;">Актерский дубляж, фонемный тайминг и трехслойный звук</h3>
+                <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.65; margin-bottom: 16px;">
+                    Звуковой тракт конвейера не имеет ничего общего с монотонной зачиткой «роботом». Это профессиональный многоголосый продакшн, сведенный по стандартам телевещания EBU R128 (-23.0 LUFS):
+                </p>
 
-        <!-- Фича 3 -->
-        <div class="card card-theme-sppb">
-            <div class="card-header-row">
-                <div class="card-brand-icon-box" style="font-size: 24px;">⏱️</div>
-                <span class="card-tag tag-amber">Alignment</span>
-            </div>
-            <h2 style="font-size: 1.3rem;">Миллисекундная синхронизация (WhisperX)</h2>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 15px;">
-                Речевые синтезаторы (TTS) не выдают точные таймкоды. В конвейер внедрена CUDA-ускоренная модель WhisperX. Она проводит принудительное выравнивание фонем (Forced Alignment) и привязывает каждый кадр видеоряда к словам диктора с точностью до 0.01 секунды.
-            </p>
-            <div class="tech-stack-pills">
-                <span class="tech-pill">PyTorch</span>
-                <span class="tech-pill">CUDA 11.8</span>
-                <span class="tech-pill">NLTK</span>
-            </div>
-        </div>
+                <div class="diff-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 16px 0;">
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">🎙️ Контроль громкости (QC Filter)</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            Нейросеть ElevenLabs иногда срывается на крик или шепот. Наш алгоритм считает медиану громкости блока: если кусок выбивается более чем на 3.5 dB, он автоматически перегенерируется.
+                        </span>
+                    </div>
 
-        <!-- Фича 4 -->
-        <div class="card card-theme-mobile">
-            <div class="card-header-row">
-                <div class="card-brand-icon-box" style="font-size: 24px;">🎞️</div>
-                <span class="card-tag tag-green">VFI & SlowMo</span>
-            </div>
-            <h2 style="font-size: 1.3rem;">Матрица видео-интерполяции (60 FPS)</h2>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 15px;">
-                Видео-генераторы (Kling/Veo) отдают сырой материал в 24 FPS. Для идеальной кинематографичной плавности реализован математический контур, перехватывающий короткие кадры и прогоняющий их через современные VFI-нейросети (EMA-VFI, MoMo) для масштабирования времени.
-            </p>
-            <div class="tech-stack-pills">
-                <span class="tech-pill">OpenCV</span>
-                <span class="tech-pill">TensorRT</span>
-                <span class="tech-pill">Diffusers</span>
-            </div>
-        </div>
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">⏱️ Выравнивание фонем (WhisperX GPU)</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            ИИ находит точный таймкод начала каждого слова с точностью до 0.01 сек. Видеоряд привязывается к речи диктора с идеальной синхронностью без эффекта «съехавших губ».
+                        </span>
+                    </div>
 
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">🎧 RAG Саундтрек (170+ ГБ)</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            Векторная база ChromaDB сама подбирает музыку из 12 папок под эмоцию сцены, подмешивает постоянный фон (дождь, гул ламп) и расставляет точечные звуки (шаги, двери, выстрелы).
+                        </span>
+                    </div>
+                </div>
+
+                <div class="alert alert-success" style="margin: 14px 0 0;">
+                    <strong>🎬 Фирменная фишка — Защита диктора от удушья:</strong> при генерации длинных монологов (более 15 строк подряд) алгоритм проверяет конец предложения. Если фраза оборвана без точки, висячий хвост переносится на следующую строку, спасая интонацию диктора от фальшивого затухания. А в финале скрипт сам генерирует кликабельные главы для YouTube!
+                </div>
+            </div>
+
+            <!-- ЭТАП 3: РЕНДЕР КАРТИНОК И РЕФЕРЕНСОВ -->
+            <div class="card card-theme-security" style="width: 100%; padding: 30px;">
+                <div class="card-badges" style="margin-bottom: 10px;">
+                    <span class="card-tag tag-cyan">ЭТАП 03 • VISUAL FACTORY</span>
+                    <span class="card-articles-counter">Умный Коллаж & Шквал 25 Потоков</span>
+                </div>
+                <h3 style="font-size: 1.45rem; margin-bottom: 12px;">Сквозная визуальная память, карусель ракурсов и Smart Collage</h3>
+                <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.65; margin-bottom: 16px;">
+                    Производство сотен визуальных сцен фильма требует колоссальной вычислительной мощности и строгой композиционной логики:
+                </p>
+
+                <div class="diff-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 16px 0;">
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">🖼️ Технология Умного Коллажа (2400px)</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            Чтобы сцена не разваливалась на части, алгоритм вырезает фон у персонажей, собирает сцену, героев и реквизит на единый холст и скармливает нейросети как эталонный дизайн-борд.
+                        </span>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">🏛️ Карусель 7 операторских ракурсов</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            Каждая локация отрисовывается в 7 ракурсах: общий план, обратный ракурс, вид сверху, вид снизу, макро-детали и голландский угол. Камера летает по комнате, как на реальных съемках.
+                        </span>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">⚡ Параллельный шквал в 25 потоков</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            Скрипт распределяет задачи по пулу аккаунтов со строгой ротацией по дате: 1 кадр = 1 аккаунт. Это позволяет отрендерить 300 сцен фильма менее чем за 15 минут!
+                        </span>
+                    </div>
+                </div>
+
+                <div class="alert alert-info" style="margin: 14px 0 0;">
+                    <strong>🎨 Фирменная фишка — Оконный пульт режиссера:</strong> если отдельный кадр не понравился, режиссеру не нужно залезать в код. Оконное приложение с предпросмотром прижимается к краю экрана, позволяя в 1 клик перегенерировать сцену, поменять освещение или подставить арт из Photoshop.
+                </div>
+            </div>
+
+            <!-- ЭТАП 4: АНИМАЦИЯ И СЛОУМО -->
+            <div class="card card-theme-prestashop" style="width: 100%; padding: 30px;">
+                <div class="card-badges" style="margin-bottom: 10px;">
+                    <span class="card-tag tag-purple">ЭТАП 04 • MOTION & VFI</span>
+                    <span class="card-articles-counter">Нейросетевое оживление & 60 FPS</span>
+                </div>
+                <h3 style="font-size: 1.45rem; margin-bottom: 12px;">Асинхронная анимация, матрица 4-х VFI-нейросетей и авто-лечение NSFW</h3>
+                <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.65; margin-bottom: 16px;">
+                    Генераторы видео (Kling, Veo, Hailuo) отдают сырой материал длиной 4–5 секунд при 24 FPS. Превращение этих отрезков в плавный фильм — сложнейшая инженерная задача:
+                </p>
+
+                <div class="diff-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 16px 0;">
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">⚙️ Двухконтурный асинхронный пайплайн</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            Воркеры не ждут долгого замедления видео на GPU. Как только сцена скачана из облака, она улетает в фоновую очередь, а генераторы сразу берут следующие сцены в работу.
+                        </span>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">🎞️ Матрица 4-х VFI-нейросетей (60 FPS)</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            RIFE, EMA-VFI, AMT и MoMo. Нейросети дорисовывают промежуточные векторы движения, плавно растягивая короткие сцены точно под длину фразы диктора без стробоскопа.
+                        </span>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">🚑 Самоисцеление от цензуры (NSFW Loop)</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            Если видео-модель отклоняет сцену из-за подозрения на кровь или оружие, скрипт вызывает Copilot, переписывает промпт на безопасный (SFW), заново генерирует картинку и перезапускает видео!
+                        </span>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning" style="margin: 14px 0 0;">
+                    <strong>💰 Фирменная фишка — Гибридный бюджет (DepthFlow 3D):</strong> параметр <code>TARGET_AI_MINUTES</code> позволяет ограничить платную генерацию (например, первыми 5 минутами). Все последующие сцены конвейер анимирует локально на видеокарте через 3D-параллакс глубины, сохраняя кинематографичность при нулевых затратах на токены!
+                </div>
+            </div>
+
+            <!-- ЭТАП 5: СБОРКА И МАСТЕРИНГ -->
+            <div class="card card-theme-github" style="width: 100%; padding: 30px;">
+                <div class="card-badges" style="margin-bottom: 10px;">
+                    <span class="card-tag tag-cyan">ЭТАП 05 • POST-PRODUCTION</span>
+                    <span class="card-articles-counter">NVENC Чанки, Хардсабы & Защита YouTube</span>
+                </div>
+                <h3 style="font-size: 1.45rem; margin-bottom: 12px;">Аппаратный монтаж, читаемые титры и Golden Master уникализация</h3>
+                <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.65; margin-bottom: 16px;">
+                    Финальный этап объединяет сотни видеосегментов, многослойный звук и субтитры в законченный мастер-файл <code>FINAL_UPLOAD_READY.mp4</code>:
+                </p>
+
+                <div class="diff-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 16px 0;">
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">🚀 Аппаратная сборка NVENC Чанками</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            Склейка сотен файлов не забивает оперативную память: видеокарта собирает фильм пачками через промежуточные чанки, а итоговый файл сшивается без единой перекодировки.
+                        </span>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">📝 Читаемые хардсабы (Hardsubs)</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            Субтитры жестко вжигаются в пиксели видео шрифтом Verdana с контрастной черной обводкой. Текст идеально читается на смартфонах и в YouTube Shorts.
+                        </span>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">🛡️ Защита от алгоритмов YouTube</strong>
+                        <span style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+                            На видео накладывается микро-слой пленочного зерна, контраст сдвигается на 1%, а служебные HEX-теги FFmpeg затираются нулями. Для роботов YouTube это уникальное «живое» видео!
+                        </span>
+                    </div>
+                </div>
+
+                <div class="alert alert-success" style="margin: 14px 0 0;">
+                    <strong>📊 Фирменная фишка — Smart Search Audit:</strong> скрипт проводит математический аудит длительности. Если из-за перевода миллисекунд в кадры накопилась погрешность свыше 0.1 секунды, система выводит точный отчет о том, на какой сцене произошел рассинхрон, гарантируя безупречный тайминг.
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <!-- БЛОК GUI ИНТЕРФЕЙСОВ -->
-    <h2 class="section-title">Инструменты режиссера (GUI-Студия)</h2>
-    <p style="color: var(--text-secondary); margin-bottom: 20px;">
-        Для ручного контроля качества на ключевых этапах разработаны нативные оконные приложения на <strong>Tkinter</strong>.
-    </p>
+   
 
-    <div class="diff-grid">
-        <div class="diff-card diff-good" style="background: #ffffff; border-color: var(--border-subtle);">
-            <h4 style="margin: 0 0 10px; font-size: 1.1rem;">🎛️ Audio FX Tester</h4>
-            <p style="font-size: 13.5px; color: var(--text-secondary); margin: 0;">
-                Визуальный интерфейс для наложения каскадных фильтров FFmpeg на голоса персонажей (рации, шлемы, роботы, эхо пещеры). Позволяет в реальном времени сгенерировать тест через API, прослушать его и в 1 клик записать пресет в JSON-паспорт героя.
-            </p>
-        </div>
-        <div class="diff-card diff-good" style="background: #ffffff; border-color: var(--border-subtle);">
-            <h4 style="margin: 0 0 10px; font-size: 1.1rem;">🎨 Scene Visual Editor</h4>
-            <p style="font-size: 13.5px; color: var(--text-secondary); margin: 0;">
-                Режиссерский пульт инспекции сгенерированных кадров. Встроенная связка с Microsoft Copilot позволяет на лету переписывать промпты (обход NSFW-ошибок серверов) и отправлять кадры на точечную фоновую перегенерацию без остановки основного конвейера.
-            </p>
-        </div>
-    </div>
-
-    <!-- ФУТЕР ПОРТФОЛИО -->
-    <footer class="footer" style="margin-top: 50px;">
+    <!-- ФУТЕР -->
+    <footer class="footer">
         <div><strong>Pavel M.</strong> • Full-Stack Developer & System Architect</div>
         <div>
-            <a href="https://github.com/mainparadox" target="_blank" style="color: var(--brand-primary); font-weight: bold; text-decoration: none;">← Вернуться в профиль GitHub</a>
+            <a href="https://github.com/mainparadox" target="_blank" style="color: var(--brand-primary); font-weight: bold; text-decoration: none;">← Вернуться на главную страницу профиля</a>
         </div>
     </footer>
 </div>
