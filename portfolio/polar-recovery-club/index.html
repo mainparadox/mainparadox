@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polar Recovery Club × Altegio | Архитектурный Кейс Мобильного IoT-Комбайна</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❄️</text></svg>">
+    
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/code.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-altegio-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            padding: 8px 18px;
+            border-radius: var(--radius-pill);
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+            margin-bottom: 22px;
+            backdrop-filter: blur(8px);
+        }
+        .hero-altegio-badge img {
+            height: 22px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+        .badge-separator {
+            width: 1px;
+            height: 16px;
+            background: #cbd5e1;
+        }
+    </style>
+</head>
+<body class="bg-grid-dots">
+
+<div class="container" style="padding-top: 35px; max-width: 1180px;">
+    
+    <!-- ===================================================================== -->
+    <!-- ФЛАГМАНСКИЙ HERO: ПРЕМИУМ-ИНТЕГРАЦИЯ С ALTEGIO CRM                     -->
+    <!-- ===================================================================== -->
+    <header class="hero" style="padding: 10px 10px 40px; margin-bottom: 25px; max-width: 1120px;">
+        
+        <!-- КО-БРЕНДИНГ С ALTEGIO -->
+        <div style="display: flex; justify-content: center;">
+            <div class="hero-altegio-badge">
+                <img src="altegio-logo.svg" alt="Altegio CRM">
+                <span class="badge-separator"></span>
+                <span style="font-size: 12.5px; font-weight: 800; color: var(--text-primary); letter-spacing: 0.5px; font-family: var(--font-mono);">
+                    CERTIFIED INTEGRATION ARCHITECTURE
+                </span>
+                <span class="pulse-dot"></span>
+            </div>
+        </div>
+
+        <h1 style="font-size: 3.3rem; margin-bottom: 20px; letter-spacing: -1.4px; line-height: 1.15; font-weight: 800;">
+            Polar Recovery Club: <br>
+            <span class="text-gradient">IoT-Комбайн и Мобильная Экосистема на базе Altegio CRM</span>
+        </h1>
+        
+        <p class="hero-desc" style="max-width: 980px; margin: 0 auto 34px; font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7;">
+            Инженерный кейс создания цифровой платформы премиального велнес-клуба крио-восстановления (Латвия, ЕС). Система превращает облачную <strong>Altegio CRM</strong> в полноценный автономный бизнес без участия администраторов: сквозной шлюз BFF на Node.js 24, аппаратное управление умными замками СКУД, алгоритм ночных VIP-сеансов 24/7, финтех-эквайринг Adyen и собственный CDN доставки обновлений ($0/мес).
+        </p>
+
+        <!-- KPI МЕТРИКИ ЭТАПА -->
+        <div class="metrics-row kpi-strip" style="margin-bottom: 15px;">
+            <div class="metric-card">
+                <div class="metric-label">Интеграция Altegio</div>
+                <div class="metric-value">17 API</div>
+                <span class="metric-trend trend-up">★ Полная автоматизация расписания</span>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Стоимость OTA доставки</div>
+                <div class="metric-value">$0 / мес</div>
+                <span class="metric-trend trend-green">✓ Нулевые затраты на SaaS-платформы</span>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">СКУД-Безопасность</div>
+                <div class="metric-value">AES-256</div>
+                <span class="metric-trend trend-blue">Web Crypto API прямо в памяти устройства</span>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">CI/CD Автономия</div>
+                <div class="metric-value">100% M2</div>
+                <span class="metric-trend trend-purple">Сборка и публикация без программиста</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================================================================== -->
+    <!-- TOC MATRIX: ГРАДИЕНТНАЯ ИНТЕРАКТИВНАЯ КАРТА ОГЛАВЛЕНИЯ               -->
+    <!-- ===================================================================== -->
+    <div class="toc-matrix-wrapper">
+        <div class="toc-matrix-header">
+            <div class="toc-matrix-title">
+                <span>📌 Архитектурная Карта Проекта</span>
+                <span style="font-size: 12px; font-weight: 600; color: var(--text-muted); font-family: var(--font-mono); margin-left: 8px;">(9 МОДУЛЕЙ)</span>
+            </div>
+            <span class="status-pill automated">ENTERPRISE SYSTEM DESIGN</span>
+        </div>
+
+        <div class="toc-matrix-grid">
+            <a href="#mod-01" class="toc-matrix-card">
+                <span class="toc-card-num">01</span>
+                <div class="toc-card-text">
+                    <span class="toc-card-title">Инфраструктура & $0 OTA</span>
+                    <span class="toc-card-tag">CDN раздача • Без абонплаты</span>
+                </div>
+                <span class="toc-card-arrow">→</span>
+            </a>
+
+            <a href="#mod-02" class="toc-matrix-card">
+                <span class="toc-card-num">02</span>
+                <div class="toc-card-text">
+                    <span class="toc-card-title">Безопасность Zero-Leak & 429 Shield</span>
+                    <span class="toc-card-tag">5 уровней • Two-Tier Cache</span>
+                </div>
+                <span class="toc-card-arrow">→</span>
+            </a>
+
+            <a href="#mod-03" class="toc-matrix-card">
+                <span class="toc-card-num">03</span>
+                <div class="toc-card-text">
+                    <span class="toc-card-title">Zero-Scroll UX & Breathwork</span>
+                    <span class="toc-card-tag">14 экранов • 432 Гц синтез</span>
+                </div>
+                <span class="toc-card-arrow">→</span>
+            </a>
+
+            <a href="#mod-04" class="toc-matrix-card">
+                <span class="toc-card-num">04</span>
+                <div class="toc-card-text">
+                    <span class="toc-card-title">Шлюз Altegio & Ночь 24/7</span>
+                    <span class="toc-card-tag">Self-Healing Grid • Защита чеков</span>
+                </div>
+                <span class="toc-card-arrow">→</span>
+            </a>
+
+            <a href="#mod-05" class="toc-matrix-card">
+                <span class="toc-card-num">05</span>
+                <div class="toc-card-text">
+                    <span class="toc-card-title">Reschedule State Machine</span>
+                    <span class="toc-card-tag">Откат оплат • Воронка 2 клика</span>
+                </div>
+                <span class="toc-card-arrow">→</span>
+            </a>
+
+            <a href="#mod-06" class="toc-matrix-card">
+                <span class="toc-card-num">06</span>
+                <div class="toc-card-text">
+                    <span class="toc-card-title">Финтех Adyen & Zero-Overlap</span>
+                    <span class="toc-card-tag">Reconciliation • Сейф скидок</span>
+                </div>
+                <span class="toc-card-arrow">→</span>
+            </a>
+
+            <a href="#mod-07" class="toc-matrix-card">
+                <span class="toc-card-num">07</span>
+                <div class="toc-card-text">
+                    <span class="toc-card-title">Аппаратный СКУД Voyager</span>
+                    <span class="toc-card-tag">AES-GCM • Офлайн-доступ 0 мс</span>
+                </div>
+                <span class="toc-card-arrow">→</span>
+            </a>
+
+            <a href="#mod-08" class="toc-matrix-card">
+                <span class="toc-card-num">08</span>
+                <div class="toc-card-text">
+                    <span class="toc-card-title">Авторская Геральдика (29 SVG)</span>
+                    <span class="toc-card-tag">15 уровней • Гендерный sex_id</span>
+                </div>
+                <span class="toc-card-arrow">→</span>
+            </a>
+
+            <a href="#mod-09" class="toc-matrix-card">
+                <span class="toc-card-num">09</span>
+                <div class="toc-card-text">
+                    <span class="toc-card-title">Zero-Touch CI/CD & Релизы</span>
+                    <span class="toc-card-tag">Автономия клиента • Mac M2</span>
+                </div>
+                <span class="toc-card-arrow">→</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- АРХИТЕКТУРНОЕ СРАВНЕНИЕ (DIFF GRID)                                  -->
+    <!-- ===================================================================== -->
+    <div style="margin-bottom: 50px;">
+        <h2 style="font-size: 1.7rem; font-weight: 800; margin-bottom: 16px; text-align: center; letter-spacing: -0.5px;">
+            Типовое мобильное приложение против Комплекса Polar + Altegio
+        </h2>
+        
+        <div class="diff-grid" style="margin-top: 18px;">
+            <div class="diff-card diff-bad">
+                <span class="diff-badge">✕ ТИПОВАЯ СТУДИЙНАЯ РАЗРАБОТКА</span>
+                <h4 style="margin: 12px 0 8px; font-size: 1.15rem;">Уязвимости, задержки и потеря контроля</h4>
+                <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; margin: 0;">
+                    • <strong>Прямые ключи в приложении:</strong> Токены CRM вшиваются в код приложения, позволяя перехватить базу клиентов через сниффер трафика.<br>
+                    • <strong>Зависимость от персонала:</strong> Клиент ждет администратора для выдачи ключей от шкафчика или купели.<br>
+                    • <strong>Блокировки 429 Too Many Requests:</strong> Неоптимизированные частые опросы парализуют работу CRM филиала.<br>
+                    • <strong>Ежемесячные траты на сервисы:</strong> Подписки на OTA и облачные базы съедают тысячи евро в год.
+                </p>
+            </div>
+            <div class="diff-card diff-good">
+                <span class="diff-badge">✓ НАША ЭНТЕРПРАЙЗ-АРХИТЕКТУРА</span>
+                <h4 style="margin: 12px 0 8px; font-size: 1.15rem;">Полная автономия, банковская защита и $0 расходов</h4>
+                <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; margin: 0;">
+                    • <strong>Шлюз BFF Zero-Leak:</strong> Клиент не видит CRM напрямую. Все токены изолированы в Google Secret Manager.<br>
+                    • <strong>Бесшовный СКУД:</strong> Автономный проход по динамическому ПИН-коду даже при нулевом сигнале сотовой связи в цоколе.<br>
+                    • <strong>429 Quota Shield:</strong> Двухуровневый кэш сокращает нагрузку на CRM на 98%, ускоряя отклик до 0.5 мс.<br>
+                    • <strong>Собственный OTA CDN ($0):</strong> Моментальные обновления бандла без ожидания модерации App Store и без абонплат.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- МОДУЛЬ 01: ИНФРАСТРУКТУРА, СКУД И БЕСШОВНЫЙ OTA                       -->
+    <!-- ===================================================================== -->
+    <div id="mod-01" class="card card-theme-security" style="width: 100%; padding: 36px; margin-bottom: 35px;">
+        <div class="card-badges" style="margin-bottom: 12px;">
+            <span class="card-tag tag-cyan">CORE DEVOPS & HARDWARE INTEGRATION</span>
+            <span class="card-articles-counter">Модуль 01 • Архитектура Инфраструктуры & $0 OTA</span>
+        </div>
+        <h3 style="font-size: 1.65rem; margin-bottom: 12px; color: var(--text-primary);">
+            Аппаратный IoT-мост замков СКУД, CRM-шлюз и собственный OTA-конвейер ($0/мес)
+        </h3>
+        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+            Проектирование и запуск отказоустойчивого комплекса для закрытого клуба крио-восстановления. Приложение объединяет в едином контуре облачную CRM, автономные электронные замки купелей и систему мгновенных обновлений без модерации сторов:
+        </p>
+
+        <!-- ПОШАГОВАЯ СХЕМА FLOW PIPELINE -->
+        <div class="flow-pipeline" style="margin-bottom: 22px;">
+            <div class="flow-step">
+                <strong>1. Сборка & Zip</strong>
+                <span>Компиляция dist, сжатие артефакта максимального уровня.</span>
+            </div>
+            <div class="flow-arrow">➔</div>
+            <div class="flow-step">
+                <strong>2. Хэш SHA-256</strong>
+                <span>Криптографический расчет контрольной суммы для защиты от подмены.</span>
+            </div>
+            <div class="flow-arrow">➔</div>
+            <div class="flow-step">
+                <strong>3. Манифест версий</strong>
+                <span>Публикация манифеста с no-cache заголовками в глобальном CDN.</span>
+            </div>
+            <div class="flow-arrow">➔</div>
+            <div class="flow-step">
+                <strong>4. Seamless Hot-Swap</strong>
+                <span>Тихая фоновая загрузка клиентом и активация строго при сворачивании.</span>
+            </div>
+        </div>
+
+        <div class="diff-grid" style="grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); margin: 16px 0;">
+            <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 18px;">
+                <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">Победа над Reload Loop</strong>
+                <span style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;">
+                    При вызове обновления WebView скрипт фиксирует версию в локальном хранилище строго до активации бандла. Это исключает гонку состояний (Race Condition) и циклическую перезагрузку приложения.
+                </span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 18px;">
+                <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">Устранение мерцания (Zero-Flicker)</strong>
+                <span style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;">
+                    Использование системных отложенных триггеров. Архив распаковывается в теневой каталог, а горячая подмена происходит в момент ухода приложения в фон. Клиент никогда не видит белых экранов и сплэшей.
+                </span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 18px;">
+                <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">Native ABI Decoupling</strong>
+                <span style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;">
+                    Безопасная изоляция: при добавлении в JS-код вызовов новых системных плагинов клиентский мост перехватывает отсутствующие нативные методы, не допуская сбоя приложения до планового релиза нового бинарника.
+                </span>
+            </div>
+        </div>
+
+        <div class="tech-stack-pills" style="margin-top: 15px;">
+            <span class="tech-pill">Node.js 24 (BFF)</span>
+            <span class="tech-pill">Google Cloud Functions v2</span>
+            <span class="tech-pill">Altegio CRM OpenAPI</span>
+            <span class="tech-pill">IoT СКУД Voyager</span>
+            <span class="tech-pill">Capacitor 8 / React 19</span>
+            <span class="tech-pill">Firebase Hosting CDN (OTA)</span>
+            <span class="tech-pill">Web Crypto API (AES-GCM)</span>
+            <span class="tech-pill">Codemagic CI/CD (M2)</span>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- МОДУЛЬ 02: БЕЗОПАСНОСТЬ ZERO-LEAK, BFF И ВЫСОКИЕ НАГРУЗКИ             -->
+    <!-- ===================================================================== -->
+    <div id="mod-02" class="card card-theme-database" style="width: 100%; padding: 42px; margin-bottom: 35px;">
+        <div class="card-badges" style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span class="card-tag tag-purple">ENTERPRISE SYSTEM ARCHITECTURE</span>
+            <span class="card-articles-counter">Модуль 02 • Безопасность Zero-Leak, BFF & High-Load Решения</span>
+        </div>
+
+        <h3 style="font-size: 1.95rem; margin-bottom: 14px; color: var(--text-primary); letter-spacing: -0.6px; line-height: 1.25;">
+            5-Уровневая Модель Zero-Leak, 429 Quota Shield, Двухфазный Робот Удержания и $0 за Переводы
+        </h3>
+        
+        <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 26px;">
+            Интеграция закрытой облачной CRM (Altegio) и физических замков в мобильное приложение несла колоссальные риски: компрометацию мастер-ключей через реверс-инжиниринг бандла, финансовые махинации с балансами, SMS-бомбинг и паралич приложения лимитами частоты (5–10 req/s). Для решения этих вызовов спроектирован выделенный шлюз <strong>BFF (Backend-for-Frontend) на Node.js 24 (Google Cloud Run)</strong>:
+        </p>
+
+        <!-- 5 УРОВНЕЙ БЕЗОПАСНОСТИ ZERO-LEAK (ПРЕМИУМ ГЛАСС-КАРТЫ) -->
+        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: var(--radius-xl); padding: 32px 28px; margin-bottom: 32px; border: 1px solid #334155; box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.5);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; flex-wrap: wrap; gap: 10px;">
+                <div style="color: #38bdf8; font-family: var(--font-mono); font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;">
+                    🛡️ Архитектурная Цепь Валидации Zero-Leak:
+                </div>
+                <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 4px 10px; border-radius: 6px; font-family: var(--font-mono); font-size: 11.5px; font-weight: 700;">
+                    ISO/IEC 27001 COMPLIANT
+                </span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid #38bdf8; border-radius: 10px; padding: 16px 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                        <strong style="color: #ffffff; font-size: 14.5px;">Уровень 1: Аппаратная Аттестация (Firebase App Check)</strong>
+                        <span style="color: #38bdf8; font-family: var(--font-mono); font-size: 12px; font-weight: 700;">DeviceCheck & Play Integrity</span>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.55; margin: 0;">
+                        Защита периметра. Каждый входящий запрос проверяется на наличие криптографического сертификата, подписанного аппаратным чипом устройства (Secure Enclave в iOS / TEE в Android). Запросы от эмуляторов, скриптов автоматизации, ботнетов и утилит типа Postman/cURL сбрасываются до выполнения серверного кода без расхода платных ресурсов.
+                    </p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid #a855f7; border-radius: 10px; padding: 16px 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                        <strong style="color: #ffffff; font-size: 14.5px;">Уровень 2: Изоляция Секретов (Enterprise Secret Vault)</strong>
+                        <span style="color: #c084fc; font-family: var(--font-mono); font-size: 12px; font-weight: 700;">Google Cloud Secret Manager</span>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.55; margin: 0;">
+                        Принцип нулевой утечки (Zero-Leak). Мастер-ключи интеграции CRM, токены сервисных администраторов и крипто-соли СКУД физически изолированы в зашифрованном хранилище Google Cloud. Они никогда не попадают в мобильный дистрибутив и внедряются в память контейнера Cloud Run только в момент выполнения транзакции.
+                    </p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid #f59e0b; border-radius: 10px; padding: 16px 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                        <strong style="color: #ffffff; font-size: 14.5px;">Уровень 3: CRM Gatekeeper & Защита от Финансового Истощения</strong>
+                        <span style="color: #fbbf24; font-family: var(--font-mono); font-size: 12px; font-weight: 700;">Pre-Auth Phone Validation</span>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.55; margin: 0;">
+                        Концепция закрытого клуба. Перед триггером отправки SMS-кода шлюз опрашивает CRM на предмет наличия профиля, созданного администратором на ресепшн. Номера «с улицы» отсекаются с кодом 403, что полностью блокирует возможность SMS-бомбинга и слива платного баланса SMS-шлюза злоумышленниками.
+                    </p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid #10b981; border-radius: 10px; padding: 16px 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                        <strong style="color: #ffffff; font-size: 14.5px;">Уровень 4: Сессионная Изоляция & IDOR Guard (FIFO-10)</strong>
+                        <span style="color: #34d399; font-family: var(--font-mono); font-size: 12px; font-weight: 700;">Timing-Safe Multi-Session Engine</span>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.55; margin: 0;">
+                        Защита от подмены чужих идентификаторов (IDOR). При входе генерируется уникальный крипто-токен сессии с суффиксом устройства. Сверка токенов происходит за константное время через <code>crypto.timingSafeEqual()</code>, исключая атаки по времени (Timing Attacks). Клиент не может запросить, отменить или просмотреть чужую бронь даже при переборе числовых ID.
+                    </p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid #ef4444; border-radius: 10px; padding: 16px 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                        <strong style="color: #ffffff; font-size: 14.5px;">Уровень 5: Серверный Электронный Кассир (Финансовая Целостность)</strong>
+                        <span style="color: #f87171; font-family: var(--font-mono); font-size: 12px; font-weight: 700;">Privileged Fiscal Worker</span>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.55; margin: 0;">
+                        Списание сеансов абонемента в CRM — это кассовая финансовая проводка, требующая админских прав. Серверный шлюз выступает неподкупным цифровым оператором: он сам проверяет валидность абонемента, проводит платеж от имени сервисной учетной записи и генерирует фискальную запись, исключая любые манипуляции со стороны взломанного мобильного клиента.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ДВУХУРОВНЕВЫЙ КЭШ И ЛИКВИДАЦИЯ ЛАВИНЫ 429 -->
+        <div style="margin-bottom: 24px;">
+            <h4 style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+                ⚡ 429 Quota Shield & Ликвидация «Эффекта Лавины»
+            </h4>
+            <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 18px;">
+                На ранних этапах 2–3 внутренних тестировщика генерировали свыше <strong>800 сетевых вызовов в сутки</strong> (пики до 250 req/hour). Причинами были размонтирование хуков в React Router при переключении табов, каскадные запросы в визарде бронирования и триггеры <code>visibilitychange</code> мобильного WebView. Превышение лимитов CRM грозило блокировкой <code>HTTP 429 Too Many Requests</code>. Внедрено двухуровневое экранирование:
+            </p>
+
+            <!-- FLOW PIPELINE: ДВУХУРОВНЕВЫЙ КЭШ -->
+            <div class="flow-pipeline" style="margin-bottom: 20px;">
+                <div class="flow-step">
+                    <strong>1. LocalStorage (Смартфон)</strong>
+                    <span>Отклик 0 мс. Проверка TTL (30–60 мин). Отрисовка интерфейса без выхода в сеть.</span>
+                </div>
+                <div class="flow-arrow">➔</div>
+                <div class="flow-step">
+                    <strong>2. Firestore RAM (BFF)</strong>
+                    <span>Отклик 0.5–15 мс. Общий кэш филиалов и услуг на 120 мин. Защита от холодного старта.</span>
+                </div>
+                <div class="flow-arrow">➔</div>
+                <div class="flow-step">
+                    <strong>3. Событийный Сброс</strong>
+                    <span>При создании или отмене брони сервер точечно стирает из кэша только дату события.</span>
+                </div>
+                <div class="flow-arrow">➔</div>
+                <div class="flow-step">
+                    <strong>4. Внешняя CRM Altegio</strong>
+                    <span>Опрашивается строго 1 раз в 1–2 часа на всю мировую аудиторию (снижение нагрузки на 98%).</span>
+                </div>
+            </div>
+
+            <div class="diff-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 18px;">
+                    <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">📱 Мультидевайс FIFO-Сессии (10 Устройств)</strong>
+                    <span style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;">
+                        Устранение дефекта монопольного CRM-токена, вызывавшего <code>HTTP 403 Forbidden</code> при входе со второго смартфона. Сервер генерирует составной токен устройства, поддерживает скользящее окно до 10 активных девайсов и обеспечивает изолированный Logout.
+                    </span>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 18px;">
+                    <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">⏱️ Native Cloud Tasks REST Engine</strong>
+                    <span style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;">
+                        Отказ от нестабильных SDK в пользу прямого HTTP REST с сервисной OIDC-авторизацией. Асинхронные очереди управляют жизненным циклом слотов: ликвидация неоплаченных записей через 15 минут и пуш с ПИН-кодом замка за 5 минут до визита.
+                    </span>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 18px;">
+                    <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">🔄 Event-Driven Stale-While-Revalidate</strong>
+                    <span style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;">
+                        Отказ от слепых таймеров блокировки экрана. Вебхук CRM обновляет временную метку версии в Firestore, а клиентский интерфейс мгновенно получает актуальное состояние брони по тихому Push-сигналу в реальном времени.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-stack-pills" style="margin-top: 15px;">
+            <span class="tech-pill">BFF Gateway (Node.js 24)</span>
+            <span class="tech-pill">Firebase App Check</span>
+            <span class="tech-pill">Google Cloud Run</span>
+            <span class="tech-pill">Cloud Secret Manager</span>
+            <span class="tech-pill">Two-Tier Caching (0.5ms RAM)</span>
+            <span class="tech-pill">Native Cloud Tasks v2</span>
+            <span class="tech-pill">FIFO Multi-Device Sessions</span>
+            <span class="tech-pill">Cloud Translation API Caching</span>
+            <span class="tech-pill">Retention Engine (CRON)</span>
+            <span class="tech-pill">Dual-Circuit GC Engine</span>
+            <span class="tech-pill">Zero-Delay Promo Bypass</span>
+            <span class="tech-pill">Firestore Dirty Checking</span>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- МОДУЛЬ 03: МОБИЛЬНЫЙ UX, ZERO-SCROLL & BREATHWORK                     -->
+    <!-- ===================================================================== -->
+    <div id="mod-03" class="card card-theme-sppb" style="width: 100%; padding: 42px; margin-bottom: 35px;">
+        <div class="card-badges" style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span class="card-tag tag-cyan">MOBILE ERGONOMICS & UX ARCHITECTURE</span>
+            <span class="card-articles-counter">Модуль 03 • 14 Экранов, Breathwork 60 FPS & Офлайн Сейф</span>
+        </div>
+
+        <h3 style="font-size: 1.95rem; margin-bottom: 14px; color: var(--text-primary); letter-spacing: -0.6px; line-height: 1.25;">
+            Клиентский Опыт Класса Люкс: Монолитный Zero-Scroll Экран, Звуковой Синтез Дыхания и Офлайн-Сейф СКУД
+        </h3>
+        
+        <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 28px;">
+            Интерфейс мобильного приложения проектировался под специфику экстремального холодового восстановления. Клиент взаимодействует со смартфоном на ходу, мокрыми пальцами или в стрессовом состоянии после ледяной ванны. Никаких вложенных меню: 100% функций доступны с первого экрана за минимум тапов.
+        </p>
+
+        <!-- МОДУЛЬ ДЫХАНИЯ: ВЕКТОРНЫЙ МОРФИНГ И ЗВУКОВОЙ СИНТЕЗ -->
+        <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.85) 100%); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 30px; box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.12);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+                <h4 style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary); margin: 0;">
+                    🫁 Polar Breathwork: Сессионный Таймер и Звуковой Синтез 432 Гц
+                </h4>
+                <span style="background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 6px; font-family: var(--font-mono); font-size: 11.5px; font-weight: 800;">
+                    WEB AUDIO API • 60 FPS MORPHING
+                </span>
+            </div>
+
+            <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px;">
+                Интерактивный инструмент подготовки нервной системы перед погружением в лед. Мы отказались от тяжелых видео и MP3-аудиофайлов в пользу нативных браузерных API:
+            </p>
+
+            <div class="flow-pipeline" style="margin-bottom: 20px;">
+                <div class="flow-step" style="border-color: #38bdf8; background: #f0f9ff;">
+                    <strong style="color: #0369a1;">1. Фаза Вдоха (4–5 сек)</strong>
+                    <span>Векторная кристаллизация ледяного монолита. Синтез частоты <strong>432 Гц</strong> (Гармонический тон тибетской чаши).</span>
+                </div>
+                <div class="flow-arrow" style="color: #38bdf8;">➔</div>
+                <div class="flow-step" style="border-color: #a855f7; background: #faf5ff;">
+                    <strong style="color: #7e22ce;">2. Задержка (Screen WakeLock)</strong>
+                    <span>Блокировка засыпания дисплея смартфона. Фиксация максимального объема кристалла.</span>
+                </div>
+                <div class="flow-arrow" style="color: #a855f7;">➔</div>
+                <div class="flow-step" style="border-color: #22c55e; background: #f0fdf4;">
+                    <strong style="color: #15803d;">3. Фаза Выдоха (5–6 сек)</strong>
+                    <span>Плавное сжатие в основание (подтаявший лед). Синтез тона <strong>360 Гц</strong> + тактильная вибро-отсечка Haptics.</span>
+                </div>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+                <strong>⚡ Нулевой вес и мгновенный запуск:</strong> Вместо 20 МБ аудио-семплов чистые звуковые волны генерируются на лету программным осциллятором <code>AudioContext.createOscillator()</code> с плавным затуханием GainNode. Раздел запускается мгновенно даже в режиме энергосбережения.
+            </div>
+        </div>
+
+        <!-- ДВУХКОЛОНОЧНЫЙ БЛОК: SEAT COUNTER & SMART VAULT -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; margin-bottom: 30px;">
+            
+            <!-- SEAT COUNTER ENGINE: ТАБЛИЦА СОСТОЯНИЙ -->
+            <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-sm);">
+                <div style="color: #2563eb; font-family: var(--font-mono); font-size: 11.5px; font-weight: 800; text-transform: uppercase; margin-bottom: 6px;">
+                    REVENUE MAXIMIZATION & FOMO UX
+                </div>
+                <h4 style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+                    Матрица Заполняемости Купелей (Seat Counter)
+                </h4>
+                <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                    Две физические ванны на слот. Алгоритм управляет конверсией расписания и предотвращает овербукинг:
+                </p>
+
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 12px; border-radius: 6px;">
+                        <span style="font-size: 13px; font-weight: 700; color: #1e293b;">2 из 2 Свободно:</span>
+                        <span style="font-size: 12px; color: #64748b; font-family: var(--font-mono);">Стандартное время слота</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; background: #eff6ff; border: 1px solid #bfdbfe; padding: 8px 12px; border-radius: 6px;">
+                        <span style="font-size: 13px; font-weight: 700; color: #1d4ed8;">1 из 2 Свободно:</span>
+                        <span style="font-size: 11.5px; color: #1e40af; font-weight: 800; background: #dbeafe; padding: 2px 6px; border-radius: 4px;">«Осталось 1 место» (FOMO)</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 8px 12px; border-radius: 6px;">
+                        <span style="font-size: 13px; font-weight: 700; color: #15803d;">1 Занято вами + 1 Свободно:</span>
+                        <span style="font-size: 11.5px; color: #166534; font-weight: 800; background: #dcfce7; padding: 2px 6px; border-radius: 4px;">«+1 Еще место» (Покупка другу)</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; background: #fef2f2; border: 1px solid #fecaca; padding: 8px 12px; border-radius: 6px;">
+                        <span style="font-size: 13px; font-weight: 700; color: #991b1b;">2 из 2 Занято вами:</span>
+                        <span style="font-size: 11.5px; color: #991b1b; font-family: var(--font-mono);">Полная блокировка слота</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SMART VAULT: ОФЛАЙН СЕЙФ В ЦОКОЛЕ -->
+            <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-sm);">
+                <div style="color: #0284c7; font-family: var(--font-mono); font-size: 11.5px; font-weight: 800; text-transform: uppercase; margin-bottom: 6px;">
+                    ZERO-LATENCY OFFLINE RESILIENCE
+                </div>
+                <h4 style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+                    Офлайн-Сейф СКУД (Smart Vault Preload)
+                </h4>
+                <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                    В цокольных помещениях с железобетонными перекрытиями сотовая связь часто падает до 0 палочек. Мы гарантировали бесперебойный проход:
+                </p>
+
+                <ul style="color: var(--text-secondary); font-size: 13px; line-height: 1.7; padding-left: 18px; margin: 0;">
+                    <li><strong>Упреждающая загрузка:</strong> ПИН-код замка запрашивается в фоне при первой синхронизации на поверхности улицы.</li>
+                    <li><strong>Аппаратный сейф (Web Crypto API):</strong> Ключ шифруется в памяти устройства по стандарту <code>AES-GCM-256</code> с динамическим вектором инициализации (IV).</li>
+                    <li><strong>Мгновенное открытие (0 мс):</strong> При подходе к купели клиент нажимает кнопку и получает 64px код на дисплее без единого сетевого запроса.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- 4. СРАВНЕНИЕ ТАЙМЗОН И ANDROID 16 (DIFF GRID) -->
+        <div class="diff-grid" style="grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; margin-bottom: 25px;">
+            <div class="diff-card diff-good" style="margin: 0;">
+                <span class="diff-badge">🕰️ ПРИНЦИП «НАСТЕННЫХ ЧАСОВ»</span>
+                <h5 style="margin: 10px 0 6px; font-size: 1.1rem; color: #166534;">Защита от сдвига времени в роуминге</h5>
+                <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                    Обычные приложения используют парсинг ISO-дат, из-за чего в роуминге (например, у туриста из Варшавы или Лондона) время сеанса в Риге сдвигается на ±1–2 часа. В Polar Recovery время привязано к настенным часам клуба: на фронтенде строковые маркеры времени извлекаются без пересчета часовых поясов.
+                </p>
+            </div>
+
+            <div class="diff-card diff-good" style="margin: 0;">
+                <span class="diff-badge">📐 EDGE-TO-EDGE ANDROID 16</span>
+                <h5 style="margin: 10px 0 6px; font-size: 1.1rem; color: #166534;">Комплаенс новейших стандартов Google</h5>
+                <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                    Полный отказ от устаревших цветных статус-баров. Приложение использует прозрачные нативные оверлеи <code>WindowInsets</code> в связке с математическим расчетом отступов Safe Area, исключая паразитные белые вспышки и рывки интерфейса под Dynamic Island и системными шторками.
+                </p>
+            </div>
+        </div>
+
+        <div class="tech-stack-pills" style="margin-top: 15px;">
+            <span class="tech-pill">React 19</span>
+            <span class="tech-pill">Capacitor 8</span>
+            <span class="tech-pill">Web Audio API Synthesis (432Hz)</span>
+            <span class="tech-pill">Screen WakeLock API</span>
+            <span class="tech-pill">Haptics Engine</span>
+            <span class="tech-pill">Zero-Scroll Layout (100dvh)</span>
+            <span class="tech-pill">Seat Counter Algorithm (FOMO)</span>
+            <span class="tech-pill">Smart Vault Preload (AES-GCM)</span>
+            <span class="tech-pill">Immutable Wall-Clock Timezones</span>
+            <span class="tech-pill">Android 16 Edge-to-Edge (API 36)</span>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- МОДУЛЬ 04: ALTEGIO CRM, ФИНАНСОВАЯ ЦЕЛОСТНОСТЬ & 24/7 СЛОТЫ           -->
+    <!-- ===================================================================== -->
+    <div id="mod-04" class="card card-theme-altegio" style="width: 100%; padding: 42px; margin-bottom: 35px;">
+        <div class="card-badges" style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span class="card-tag tag-amber">CRM API GATEWAY & FINANCIAL INTEGRITY</span>
+            <span class="card-articles-counter">Модуль 04 • 17 Методов Altegio, Ночные Слоты 24/7 & Кассовый Сейф</span>
+        </div>
+
+        <h3 style="font-size: 1.95rem; margin-bottom: 14px; color: var(--text-primary); letter-spacing: -0.6px; line-height: 1.25;">
+            Оркестрация Altegio CRM: Паттерн Ночных Сеансов 24/7, Кассовая Защита Чеков и Отказоустойчивый SDK
+        </h3>
+        
+        <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 28px;">
+            Интеграция корпоративной CRM-системы с мобильным клиентом потребовала глубокого реверс-инжиниринга недокументированных кассовых инвариантов. Коробочные методы API рассчитаны на ручную работу администратора за стойкой и при автоматических вызовах приводят к сбросу сертификатов, затиранию метаданных и конфликтам графиков смен:
+        </p>
+
+        <!-- ПАТТЕРН САМОИСЦЕЛЕНИЯ СЕТКИ 24/7 (PROPRIETARY KNOW-HOW) -->
+        <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); margin-bottom: 25px;">
+            <div style="color: #d97706; font-family: var(--font-mono); font-size: 11.5px; font-weight: 800; text-transform: uppercase; margin-bottom: 6px;">
+                VIP CONCIERGE PROTOCOL
+            </div>
+            <h4 style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+                Ночные Слоты 24/7 (Self-Healing Grid Engine)
+            </h4>
+            <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                Держатели статуса VIP «Золото» имеют право посещать клуб круглосуточно. Стандартные CRM блокируют любые ночные записи вне графика 08:00–20:00. Разработан авторский протокол динамической калибровки:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="background: #f8fafc; border-left: 3px solid #f59e0b; padding: 10px 14px; border-radius: 6px; font-size: 12.8px; color: #334155;">
+                    <strong>1. Авторизованный инжект слота:</strong> Серверный шлюз валидирует VIP-привилегии и инициирует размещение внештатного ночного сеанса (например, в 03:00) в обход публичных ограничений витрины.
+                </div>
+                <div style="background: #f8fafc; border-left: 3px solid #38bdf8; padding: 10px 14px; border-radius: 6px; font-size: 12.8px; color: #334155;">
+                    <strong>2. Самоисцеление сетки расписания:</strong> Фоновый сервис моментально производит транзакционную нормализацию журнала смен, сохраняя чистый дефолтный график для персонала дневной смены.
+                </div>
+                <div style="background: #f0fdf4; border-left: 3px solid #22c55e; padding: 10px 14px; border-radius: 6px; font-size: 12.8px; color: #166534;">
+                    <strong>3. Бизнес-эффект:</strong> VIP-гость получает доступ к купели и рабочий код СКУД, а при отмене или переносе ночного сеанса сетка автоматически редуцируется без ручной работы администратора.
+                </div>
+            </div>
+        </div>
+
+        <!-- ДВУХКОЛОНОЧНЫЙ БЛОК: КАССОВЫЙ ИНВАРИАНТ & RCA LINUX TIMEOUT -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; margin-bottom: 30px;">
+            <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 242, 242, 0.7) 100%); border: 1px solid rgba(239, 68, 68, 0.35); border-radius: var(--radius-lg); padding: 26px; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.05);">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="color: #b91c1c; font-family: var(--font-mono); font-size: 11.5px; font-weight: 800; text-transform: uppercase;">
+                        ФИНАНСОВЫЙ ИНВАРИАНТ КАССЫ
+                    </span>
+                    <span style="background: #fee2e2; color: #b91c1c; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: 4px;">CRITICAL</span>
+                </div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+                    Предотвращение Сброса Чеков при Смене Статуса
+                </h4>
+                <p style="font-size: 13.2px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
+                    В Altegio вызов <code>PUT /record</code> с передачей массива услуг воспринимается ядром кассы как команда на <strong>полный пересчет чека</strong>. Это приводит к аннулированию оплаты подарочным сертификатом, возврату баланса и начислению ошибочной 100% скидки.
+                </p>
+                <div style="background: #ffffff; border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 8px; padding: 12px 14px; font-size: 12.8px; color: #991b1b; line-height: 1.55;">
+                    <strong>Архитектурное решение:</strong> Для фиксации присутствия клиентов разработан шлюз к микрометоду <code>POST /attendance</code>. Метод меняет статус визита изолированно от кассы, гарантируя 100% сохранность примененных сертификатов и скидок.
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.7) 100%); border: 1px solid rgba(2, 132, 199, 0.35); border-radius: var(--radius-lg); padding: 26px; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.05);">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="color: #0369a1; font-family: var(--font-mono); font-size: 11.5px; font-weight: 800; text-transform: uppercase;">
+                        PRODUCTION ROOT CAUSE ANALYSIS
+                    </span>
+                    <span style="background: #e0f2fe; color: #0369a1; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: 4px;">LINUX ENGINE</span>
+                </div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+                    Аномалия Юникода U+202F и Стандарт ISO en-CA
+                </h4>
+                <p style="font-size: 13.2px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
+                    Вызов <code>toLocaleString("en-US")</code> в среде контейнеров Linux (Cloud Run) внедряет скрытый символ <strong>узкого неразрывного пробела (U+202F)</strong> перед суффиксом AM/PM. Парсер дат сбоит, генерируя аварийное смещение таймзоны <code>+NaN:NaN</code> и фатальную ошибку HTTP 500.
+                </p>
+                <div style="background: #ffffff; border: 1px solid rgba(2, 132, 199, 0.2); border-radius: 8px; padding: 12px 14px; font-size: 12.8px; color: #075985; line-height: 1.55;">
+                    <strong>Архитектурное решение:</strong> Расчет временных смещений переведен на жесткий канонический стандарт <code>Intl.DateTimeFormat("en-CA")</code>. Это исключило строковые артефакты и гарантировало идеальную математику таймеров брони.
+                </div>
+            </div>
+        </div>
+
+        <!-- ГОРИЗОНТАЛЬНЫЙ СЕТЕВОЙ SDK И СТРАХОВКА СОСТОЯНИЯ -->
+        <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-sm); margin-bottom: 25px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+                <h4 style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary); margin: 0;">
+                    📦 Отказоустойчивый Сетевой SDK (Fail-Safe State Engine)
+                </h4>
+                <span style="color: #64748b; font-family: var(--font-mono); font-size: 12px;">src/api/altegio.js • Enterprise Resilience</span>
+            </div>
+
+            <p style="color: var(--text-secondary); font-size: 13.8px; line-height: 1.65; margin-bottom: 18px;">
+                Клиентский сетевой слой изолирован от прямого доступа к CRM и маршрутизирует трафик через защищенный шлюз. В модуль заложена защита от деструктивных обновлений данных при нестабильной мобильной связи:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px;">
+                    <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 4px;">⏱️ Аппаратный AbortController</strong>
+                    <span style="font-size: 12.5px; color: #64748b; line-height: 1.5; display: block;">
+                        Сетевые вызовы ограничены строгим таймаутом (10–15 сек), предотвращая зависание интерфейса и разрядку батареи в зонах слабого покрытия 3G/Edge.
+                    </span>
+                </div>
+
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px;">
+                    <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 4px;">🛡️ Защита Офлайн-Стейта (State Preservation)</strong>
+                    <span style="font-size: 12.5px; color: #64748b; line-height: 1.5; display: block;">
+                        Четкая дифференциация сетевого сбоя и реального отсутствия записей. При обрыве связи экран сохраняет локальный снимок броней, исключая ложную очистку интерфейса и панику клиента.
+                    </span>
+                </div>
+
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px;">
+                    <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 4px;">📅 Скользящее Окно Выборки (6-Month Horizon)</strong>
+                    <span style="font-size: 12.5px; color: #64748b; line-height: 1.5; display: block;">
+                        Обход коробочного дефекта CRM, возвращающей записи строго на текущие сутки. Шлюз принудительно запрашивает диапазон `[-1 день ... +6 месяцев]`, гарантируя отображение будущих визитов.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-stack-pills" style="margin-top: 15px;">
+            <span class="tech-pill">Altegio OpenAPI v1/v2</span>
+            <span class="tech-pill">Node.js 24 BFF Gateway</span>
+            <span class="tech-pill">24/7 Shift Bypass Protocol</span>
+            <span class="tech-pill">Financial Cashier Guard</span>
+            <span class="tech-pill">Attendance Microservice</span>
+            <span class="tech-pill">Fail-Safe Cache Pattern</span>
+            <span class="tech-pill">Hardware AbortController</span>
+            <span class="tech-pill">Linux Unicode U+202F Sanitizer</span>
+            <span class="tech-pill">Intl ISO en-CA Normalizer</span>
+            <span class="tech-pill">Timing-Safe Webhook Crypto</span>
+        </div>
+    </div>
+	<!-- ===================================================================== -->
+<!-- МОДУЛЬ 08 ПОРТФОЛИО: ПОЛНАЯ ГАЛЕРЕЯ АВТОРСКОЙ ГЕРАЛЬДИКИ (29 СТАДИЙ)   -->
+<!-- ===================================================================== -->
+<div class="card card-theme-altegio" style="width: 100%; padding: 42px; margin-bottom: 35px; position: relative;">
+    
+    <!-- Стили анимаций и свечения специально для этой галереи -->
+    <style>
+        .rank-glow-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            z-index: 1;
+        }
+        .rank-glow-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--glow);
+            box-shadow: 0 20px 40px -10px var(--glow);
+            z-index: 10;
+        }
+        .rank-glow-card img {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .rank-glow-card:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+
+    <div class="card-badges" style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <span class="card-tag tag-amber">100% BESPOKE VECTOR ART & HERALDRY</span>
+        <span class="card-articles-counter">Модуль 08 • 15 Уровней Закаливания & 29 Стадий Эволюции</span>
+    </div>
+
+    <h3 style="font-size: 1.95rem; margin-bottom: 14px; color: var(--text-primary); letter-spacing: -0.6px; line-height: 1.25;">
+        Королевская Геральдика Закаливания: 29 Авторских Векторных SVG-Гербов и Гендерный Интеллект Профиля
+    </h3>
+    
+    <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 36px;">
+        Вместо использования стандартных стоковых иконок для клуба был с нуля отрисован <strong>уникальный гербовый пантеон в векторном формате SVG</strong>. Визуальные гербы отражают физиологическую эволюцию холодовой адаптации: они динамически меняют свой облик каждые 15–20 визитов, идеально масштабируются на 4K-дисплеях и мгновенно отдаются из европейского CDN-бакета:
+    </p>
+
+    <!-- ================================================================= -->
+    <!-- ГАЛЕРЕЯ БЕЗ ЧЕРНОГО ФОНА (ПАРЯЩИЕ ТЕМНЫЕ КАРТОЧКИ)                -->
+    <!-- ================================================================= -->
+
+    <!-- ЧАСТЬ 1: НАЧАЛЬНЫЕ И СРЕДНИЕ РАНГИ (00 - 08) -->
+    <div style="color: var(--text-primary); font-family: var(--font-mono); font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--border-subtle);">
+        ❄️ Начальные Ступени Закаливания (Уровни 00 – 08):
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 35px;">
+        
+        <!-- 00. ГОСТЬ -->
+        <div class="rank-glow-card" style="--glow: rgba(156, 163, 175, 0.4); padding: 18px 14px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: var(--font-mono); color: #64748b; margin-bottom: 10px;">
+                <span>LVL 00</span><span>0 визитов</span>
+            </div>
+            <div style="height: 105px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F00_guest.svg?alt=media&token=6f9da03f-7a74-48e8-b925-d890ad8c5d28" alt="Гость" draggable="false" oncontextmenu="return false;" style="max-height: 85px; max-width: 100%; user-select: none; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));">
+            </div>
+            <div style="color: #9ca3af; font-size: 13.5px; font-weight: 700;">Гость</div>
+            <div style="color: #64748b; font-size: 11.5px;">Viesis • Guest</div>
+        </div>
+
+        <!-- 01. ПЕРВЫЙ ЛЕД -->
+        <div class="rank-glow-card" style="--glow: rgba(224, 242, 254, 0.4); padding: 18px 14px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: var(--font-mono); color: #64748b; margin-bottom: 10px;">
+                <span>LVL 01</span><span>1 визит</span>
+            </div>
+            <div style="height: 105px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F01_first_ice.svg?alt=media&token=f7bfeb79-2e0e-4e72-aa00-bd47bb7c3745" alt="Первый лед" draggable="false" oncontextmenu="return false;" style="max-height: 85px; max-width: 100%; user-select: none; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));">
+            </div>
+            <div style="color: #e0f2fe; font-size: 13.5px; font-weight: 700;">Первый Лёд</div>
+            <div style="color: #64748b; font-size: 11.5px;">Pirmais Ledus</div>
+        </div>
+
+        <!-- 02. ЮНЫЙ ПИНГВИ -->
+        <div class="rank-glow-card" style="--glow: rgba(125, 211, 252, 0.4); padding: 18px 14px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: var(--font-mono); color: #64748b; margin-bottom: 10px;">
+                <span>LVL 02</span><span>3 визита</span>
+            </div>
+            <div style="height: 105px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F02_young_pingvi.svg?alt=media&token=dd4b4262-ddad-4602-b4b9-ec6d26de9b09" alt="Юный Пингви" draggable="false" oncontextmenu="return false;" style="max-height: 95px; max-width: 100%; user-select: none; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));">
+            </div>
+            <div style="color: #7dd3fc; font-size: 13.5px; font-weight: 700;">Юный Пингви</div>
+            <div style="color: #64748b; font-size: 11.5px;">Jaunais Pingvīns</div>
+        </div>
+
+        <!-- 03. ОТВАЖНЫЙ ПИНГВИН -->
+        <div class="rank-glow-card" style="--glow: rgba(14, 165, 233, 0.5); padding: 18px 14px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: var(--font-mono); color: #64748b; margin-bottom: 10px;">
+                <span>LVL 03</span><span>10 визитов</span>
+            </div>
+            <div style="height: 105px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F03_brave_penguin.svg?alt=media&token=2aab75f3-d48a-45de-8044-687baca0aaf1" alt="Отважный Пингвин" draggable="false" oncontextmenu="return false;" style="max-height: 95px; max-width: 100%; user-select: none; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));">
+            </div>
+            <div style="color: #0ea5e9; font-size: 13.5px; font-weight: 700;">Отважный Пингвин</div>
+            <div style="color: #64748b; font-size: 11.5px;">Drosmīgais Pingvīns</div>
+        </div>
+
+        <!-- 04. СЕРЕБРЯНЫЙ ОЛЕНЬ / ЛАНЬ -->
+        <div class="rank-glow-card" style="--glow: rgba(52, 211, 153, 0.4); padding: 18px 14px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: var(--font-mono); color: #64748b; margin-bottom: 10px;">
+                <span>LVL 04</span><span style="color: #34d399;">15 визитов</span>
+            </div>
+            <!-- Олень ограничен по ширине (90%), чтобы рога не вылезали за карточку при наведении -->
+            <div style="height: 105px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F04_silver_deer.svg?alt=media&token=de81a4ae-ee64-4d59-91f7-90764e93e6ad" alt="Олень" draggable="false" oncontextmenu="return false;" style="max-height: 100px; max-width: 90%; user-select: none; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));">
+            </div>
+            <div style="color: #34d399; font-size: 13.5px; font-weight: 700;">♂ Олень / ♀ Лань</div>
+            <div style="color: #64748b; font-size: 11.5px;">Sudraba Briedis • ⚧</div>
+        </div>
+
+        <!-- 05. АМЕТИСТОВЫЙ ЛИС / ЛИСА -->
+        <div class="rank-glow-card" style="--glow: rgba(167, 139, 250, 0.4); padding: 18px 14px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: var(--font-mono); color: #64748b; margin-bottom: 10px;">
+                <span>LVL 05</span><span style="color: #a78bfa;">25 визитов</span>
+            </div>
+            <div style="height: 105px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F05_amethyst_fox.svg?alt=media&token=8d90aa2e-0c26-4b85-aee7-109e288ce77f" alt="Лис" draggable="false" oncontextmenu="return false;" style="max-height: 95px; max-width: 100%; user-select: none; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));">
+            </div>
+            <div style="color: #a78bfa; font-size: 13.5px; font-weight: 700;">♂ Лис / ♀ Лиса</div>
+            <div style="color: #64748b; font-size: 11.5px;">Ametista Lapsis • ⚧</div>
+        </div>
+
+        <!-- 06. СНЕЖНЫЙ БАРС -->
+        <div class="rank-glow-card" style="--glow: rgba(203, 213, 225, 0.4); padding: 18px 14px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: var(--font-mono); color: #64748b; margin-bottom: 10px;">
+                <span>LVL 06</span><span>40 визитов</span>
+            </div>
+            <div style="height: 105px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F06_snow_leopard.svg?alt=media&token=d1a1aab5-3f2c-4a11-9507-2726855ab9ff" alt="Барс" draggable="false" oncontextmenu="return false;" style="max-height: 95px; max-width: 100%; user-select: none; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));">
+            </div>
+            <div style="color: #cbd5e1; font-size: 13.5px; font-weight: 700;">Снежный Барс</div>
+            <div style="color: #64748b; font-size: 11.5px;">Sniega Leopards</div>
+        </div>
+
+        <!-- 07. АРКТИЧЕСКИЙ ВОЛК / ВОЛЧИЦА -->
+        <div class="rank-glow-card" style="--glow: rgba(96, 165, 250, 0.4); padding: 18px 14px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: var(--font-mono); color: #64748b; margin-bottom: 10px;">
+                <span>LVL 07</span><span style="color: #60a5fa;">65 визитов</span>
+            </div>
+            <div style="height: 105px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F07_arctic_wolf.svg?alt=media&token=311e5b70-84e3-453b-bdee-60bbf019099c" alt="Волк" draggable="false" oncontextmenu="return false;" style="max-height: 95px; max-width: 100%; user-select: none; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));">
+            </div>
+            <div style="color: #60a5fa; font-size: 13.5px; font-weight: 700;">♂ Волк / ♀ Волчица</div>
+            <div style="color: #64748b; font-size: 11.5px;">Arktikas Vilks • ⚧</div>
+        </div>
+
+        <!-- 08. АЛМАЗНЫЙ МОРЖ -->
+        <div class="rank-glow-card" style="--glow: rgba(6, 182, 212, 0.4); padding: 18px 14px; text-align: center;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: var(--font-mono); color: #64748b; margin-bottom: 10px;">
+                <span>LVL 08</span><span>100 визитов</span>
+            </div>
+            <div style="height: 105px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F08_diamond_walrus.svg?alt=media&token=8b36d1c7-d6a9-47c7-9383-e1bea1356c02" alt="Морж" draggable="false" oncontextmenu="return false;" style="max-height: 95px; max-width: 100%; user-select: none; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));">
+            </div>
+            <div style="color: #06b6d4; font-size: 13.5px; font-weight: 700;">Алмазный Морж</div>
+            <div style="color: #64748b; font-size: 11.5px;">Dimanta Valzirgs</div>
+        </div>
+
+    </div>
+
+    <!-- ЧАСТЬ 2: МНОГОФАЗНЫЕ ВЕЛИКИЕ ЭВОЛЮЦИИ (09 - 13) СОВМЕЩЕННАЯ СЕТКА -->
+    <div style="color: var(--text-primary); font-family: var(--font-mono); font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin: 0 0 20px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border-subtle);">
+        ⚡ Старшие Ступени: Многофазные Метаморфозы Гербов (Уровни 09 – 13):
+    </div>
+
+    <!-- РЯД 1: КОСАТКА И МЕДВЕДЬ -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 20px; margin-bottom: 20px;">
+        
+        <!-- 09. ШТОРМОВАЯ КОСАТКА (2 ФАЗЫ) -->
+        <div class="rank-glow-card" style="--glow: rgba(129, 140, 248, 0.4); padding: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <div><strong style="color: #818cf8; font-size: 15px;">Уровень 09 • Косатка (2 Фазы)</strong></div>
+                <span style="font-size: 11.5px; font-family: var(--font-mono); color: #818cf8; background: rgba(129, 140, 248, 0.15); padding: 4px 10px; border-radius: 6px;">140–165 визитов</span>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: flex-end; gap: 10px; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F09_storm_orca_1.svg?alt=media&token=4b3ec925-f893-46fc-b5fd-99f2286ec8ef" alt="Косатка 1" draggable="false" oncontextmenu="return false;" style="height: 125px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));">
+                    <div style="font-size: 12.5px; color: #fff; font-weight: 600;">Фаза I (140 в.)</div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F09_storm_orca_2.svg?alt=media&token=668e5597-20cc-4cab-8585-067ab9cc4a24" alt="Косатка 2" draggable="false" oncontextmenu="return false;" style="height: 125px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 18px rgba(129, 140, 248, 0.35));">
+                    <div style="font-size: 12.5px; color: #818cf8; font-weight: 700;">Фаза II • Венец (165 в.)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. ПОЛЯРНЫЙ МЕДВЕДЬ (3 ФАЗЫ) -->
+        <div class="rank-glow-card" style="--glow: rgba(255, 255, 255, 0.3); padding: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <div><strong style="color: #ffffff; font-size: 15px;">Уровень 10 • Медведь (3 Фазы)</strong></div>
+                <span style="font-size: 11.5px; font-family: var(--font-mono); color: #fff; background: rgba(255, 255, 255, 0.15); padding: 4px 10px; border-radius: 6px;">190–230 визитов</span>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: flex-end; gap: 10px; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F10_polar_bear_1.svg?alt=media&token=f600667e-24af-441f-b090-e7a3d077f751" alt="Медведь 1" draggable="false" oncontextmenu="return false;" style="height: 115px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));">
+                    <div style="font-size: 12.5px; color: #fff; font-weight: 600;">Фаза I</div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F10_polar_bear_2.svg?alt=media&token=d4c61cb7-3ded-465f-9f76-61616aa694d8" alt="Медведь 2" draggable="false" oncontextmenu="return false;" style="height: 115px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));">
+                    <div style="font-size: 12.5px; color: #fff; font-weight: 600;">Фаза II</div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F10_polar_bear_3.svg?alt=media&token=8023eef4-65cb-49fe-a601-50eb53b886c3" alt="Медведь 3" draggable="false" oncontextmenu="return false;" style="height: 125px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 10px 22px rgba(255, 255, 255, 0.3));">
+                    <div style="font-size: 12.5px; color: #fff; font-weight: 800;">Венец</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- РЯД 2: МАМОНТ И КРАКЕН -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 20px; margin-bottom: 20px;">
+        
+        <!-- 11. ДРЕВНИЙ МАМОНТ (3 ФАЗЫ) -->
+        <div class="rank-glow-card" style="--glow: rgba(226, 232, 240, 0.3); padding: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <div><strong style="color: #e2e8f0; font-size: 15px;">Уровень 11 • Мамонт (3 Фазы)</strong></div>
+                <span style="font-size: 11.5px; font-family: var(--font-mono); color: #cbd5e1; background: rgba(203, 213, 225, 0.15); padding: 4px 10px; border-radius: 6px;">250–290 визитов</span>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: flex-end; gap: 10px; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F11_ancient_mammoth_1.svg?alt=media&token=dedfc8a8-ec44-456b-a61a-ff66daaa2ade" alt="Мамонт 1" draggable="false" oncontextmenu="return false;" style="height: 115px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));">
+                    <div style="font-size: 12.5px; color: #fff; font-weight: 600;">Фаза I</div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F11_ancient_mammoth_2.svg?alt=media&token=ba0c6804-3595-4282-8e99-1acfe3ddfecc" alt="Мамонт 2" draggable="false" oncontextmenu="return false;" style="height: 115px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));">
+                    <div style="font-size: 12.5px; color: #fff; font-weight: 600;">Фаза II</div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F11_ancient_mammoth_3.svg?alt=media&token=47b3222a-dec7-4bd0-997f-9bec1bce4a60" alt="Мамонт 3" draggable="false" oncontextmenu="return false;" style="height: 125px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 10px 22px rgba(226, 232, 240, 0.3));">
+                    <div style="font-size: 12.5px; color: #e2e8f0; font-weight: 800;">Венец</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 13. МИФИЧЕСКИЙ КРАКЕН (3 ФАЗЫ) -->
+        <div class="rank-glow-card" style="--glow: rgba(192, 132, 252, 0.4); padding: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <div><strong style="color: #c084fc; font-size: 15px;">Уровень 13 • Кракен (3 Фазы)</strong></div>
+                <span style="font-size: 11.5px; font-family: var(--font-mono); color: #c084fc; background: rgba(192, 132, 252, 0.15); padding: 4px 10px; border-radius: 6px;">370–410 визитов</span>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: flex-end; gap: 10px; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F13_mythic_kraken_1.svg?alt=media&token=2051c91f-fdcf-4114-b561-f71fe1dfefcc" alt="Кракен 1" draggable="false" oncontextmenu="return false;" style="height: 125px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));">
+                    <div style="font-size: 12.5px; color: #fff; font-weight: 600;">Фаза I</div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F13_mythic_kraken_2.svg?alt=media&token=727451fd-d67b-4ec8-9b07-13e9eb498d84" alt="Кракен 2" draggable="false" oncontextmenu="return false;" style="height: 125px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));">
+                    <div style="font-size: 12.5px; color: #fff; font-weight: 600;">Фаза II</div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F13_mythic_kraken_3.svg?alt=media&token=cf3ee2b8-3272-44d6-a832-6d3056e45afb" alt="Кракен 3" draggable="false" oncontextmenu="return false;" style="height: 135px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 10px 22px rgba(192, 132, 252, 0.4));">
+                    <div style="font-size: 12.5px; color: #c084fc; font-weight: 800;">Венец</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- РЯД 3: ЛЕВИАФАН (УРОБОРОС - ШИРОКАЯ КАРТОЧКА) -->
+    <div class="rank-glow-card" style="--glow: rgba(45, 212, 191, 0.4); padding: 28px; margin-bottom: 45px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <div><strong style="color: #2dd4bf; font-size: 15px;">Уровень 12 • Глубинный Левиафан (Эволюция Уробороса • 5 Фаз)</strong></div>
+            <span style="font-size: 11.5px; font-family: var(--font-mono); color: #2dd4bf; background: rgba(45, 212, 191, 0.15); padding: 4px 10px; border-radius: 6px;">310–360 визитов</span>
+        </div>
+        
+        <div style="display: flex; justify-content: center; gap: 60px; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap;">
+            <div style="text-align: center; min-width: 160px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F12_abyssal_leviathan_1.svg?alt=media&token=cc95d267-6d3e-4e0a-ae65-d32143a6b3b7" alt="Левиафан 1" draggable="false" oncontextmenu="return false;" style="height: 125px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));">
+                <div style="font-size: 13px; color: #fff; font-weight: 600;">Облик Змея</div>
+            </div>
+            <div style="text-align: center; min-width: 160px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F12_abyssal_leviathan_2.svg?alt=media&token=8bfaf70e-a7be-4e24-9333-4acbbaadd89e" alt="Левиафан 2" draggable="false" oncontextmenu="return false;" style="height: 125px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));">
+                <div style="font-size: 13px; color: #fff; font-weight: 600;">Взгляд Бездны</div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-around; align-items: flex-end; gap: 24px; flex-wrap: wrap;">
+            <div style="text-align: center; min-width: 140px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F12_abyssal_leviathan_3_1.svg?alt=media&token=5017da07-22ac-400a-89cf-a9953d304eca" alt="Левиафан 3" draggable="false" oncontextmenu="return false;" style="height: 115px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));">
+                <div style="font-size: 12px; color: #fff;">Уроборос I</div>
+            </div>
+            <div style="text-align: center; min-width: 140px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F12_abyssal_leviathan_3_2.svg?alt=media&token=55633bbf-5cce-4646-b45b-08a62729b61c" alt="Левиафан 4" draggable="false" oncontextmenu="return false;" style="height: 115px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));">
+                <div style="font-size: 12px; color: #fff;">Уроборос II</div>
+            </div>
+            <div style="text-align: center; min-width: 140px;">
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F12_abyssal_leviathan_3_3.svg?alt=media&token=7d5dcb85-676b-44bb-8130-ea89c03efc2c" alt="Левиафан 5" draggable="false" oncontextmenu="return false;" style="height: 125px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 10px 22px rgba(45, 212, 191, 0.4));">
+                <div style="font-size: 12.5px; color: #2dd4bf; font-weight: 800;">Уроборос Финал</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ЧАСТЬ 3: ГЕНДЕРНЫЙ УРОВЕНЬ 14 (ВЛАСТЕЛИН И АМАЗОНКА) -->
+    <div style="color: var(--text-primary); font-family: var(--font-mono); font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin: 35px 0 20px; padding-bottom: 8px; border-bottom: 1px solid var(--border-subtle);">
+        👑 Уровень 14: Раздельные Мужская и Женская Линии (435–475 визитов):
+    </div>
+
+    <div class="rank-glow-card" style="--glow: rgba(253, 224, 71, 0.4); padding: 32px; margin-bottom: 45px;">
+        
+        <!-- РЯД 1: МУЖСКАЯ ЛИНИЯ -->
+        <div style="margin-bottom: 36px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <div style="color: #fde047; font-size: 14px; font-weight: 800; text-align: center; margin-bottom: 24px; letter-spacing: 1px;">
+                ♂ МУЖСКАЯ ЛИНИЯ • ВЛАСТЕЛИН СЕВЕРНОГО МОРЯ
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: flex-end; gap: 24px; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F14_lord_of_northern_seas_1.svg?alt=media&token=8b294653-2aae-4e44-b4cd-f09d79e24bae" alt="Властелин 1" draggable="false" oncontextmenu="return false;" style="height: 155px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));">
+                    <div style="font-size: 13px; color: #fff; font-weight: 600;">Фаза I (435 в.)</div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F14_lord_of_northern_seas_2.svg?alt=media&token=8ffa5e40-9d9f-411b-a93d-46092bbbea88" alt="Властелин 2" draggable="false" oncontextmenu="return false;" style="height: 155px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));">
+                    <div style="font-size: 13px; color: #fff; font-weight: 600;">Фаза II (455 в.)</div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F14_lord_of_northern_seas_3.svg?alt=media&token=73c440d3-0676-4da2-b2fa-5ca61c676aa7" alt="Властелин 3" draggable="false" oncontextmenu="return false;" style="height: 165px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 10px 25px rgba(253, 224, 71, 0.4));">
+                    <div style="font-size: 14px; color: #fde047; font-weight: 800;">Венец (475 в.)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- РЯД 2: ЖЕНСКАЯ ЛИНИЯ -->
+        <div>
+            <div style="color: #fde047; font-size: 14px; font-weight: 800; text-align: center; margin-bottom: 24px; letter-spacing: 1px;">
+                ♀ ЖЕНСКАЯ ЛИНИЯ • АМАЗОНКА СЕВЕРНОГО МОРЯ
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: flex-end; gap: 24px; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F14_amazon_of_northern_seas_1.svg?alt=media&token=746d9ac7-0429-40ea-906b-ff6510acdfba" alt="Амазонка 1" draggable="false" oncontextmenu="return false;" style="height: 155px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));">
+                    <div style="font-size: 13px; color: #fff; font-weight: 600;">Фаза I (435 в.)</div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F14_amazon_of_northern_seas_2.svg?alt=media&token=2b9bdcdf-17d4-44a7-9026-fe62c62eb6a5" alt="Амазонка 2" draggable="false" oncontextmenu="return false;" style="height: 155px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));">
+                    <div style="font-size: 13px; color: #fff; font-weight: 600;">Фаза II (455 в.)</div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F14_amazon_of_northern_seas_3.svg?alt=media&token=77366500-b142-4a0b-90b4-25e436f860d6" alt="Амазонка 3" draggable="false" oncontextmenu="return false;" style="height: 165px; margin-bottom: 12px; user-select: none; filter: drop-shadow(0 10px 25px rgba(253, 224, 71, 0.4));">
+                    <div style="font-size: 14px; color: #fde047; font-weight: 800;">Венец (475 в.)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ЧАСТЬ 4: ГЛАВНЫЙ ВЕНЕЦ КЛУБА (УРОВЕНЬ 15 • 500+ ВИЗИТОВ) -->
+    <div class="rank-glow-card" style="--glow: rgba(254, 240, 138, 0.6); background: linear-gradient(135deg, #1c180f 0%, #11100b 100%); border: 2px solid #fde047; padding: 45px 24px; text-align: center;">
+        <div style="display: inline-block; background: rgba(254, 240, 138, 0.15); border: 1px solid #fde047; padding: 6px 18px; border-radius: 30px; font-size: 12px; font-weight: 800; color: #fde047; margin-bottom: 30px; letter-spacing: 2px;">
+            👑 LEVEL 15 • ВЫСШИЙ СТАТУС ВЕЧНОСТИ (500+ СЕАНСОВ)
+        </div>
+        
+        <div style="display: flex; justify-content: space-around; align-items: flex-end; gap: 40px; flex-wrap: wrap;">
+            <div>
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F15_ice_lord_of_eternity.svg?alt=media&token=b38c1356-ad65-43c5-974a-db18d656a030" alt="Ледяной лорд" draggable="false" oncontextmenu="return false;" style="height: 250px; filter: drop-shadow(0 14px 35px rgba(253, 224, 71, 0.4)); margin-bottom: 16px; user-select: none;">
+                <strong style="color: #fef08a; font-size: 18px; display: block;">♂ Ледяной Лорд Вечности</strong>
+                <span style="font-size: 13px; color: #9ca3af;">Mūžības Ledus Lords • Ice Lord</span>
+            </div>
+
+            <div>
+                <img src="https://firebasestorage.googleapis.com/v0/b/polar-recovery-app-eu/o/ranks%2F15_snow_queen.svg?alt=media&token=2825cd23-4cb7-4107-8b4a-46a03d3a8e61" alt="Снежная королева" draggable="false" oncontextmenu="return false;" style="height: 250px; filter: drop-shadow(0 14px 35px rgba(253, 224, 71, 0.4)); margin-bottom: 16px; user-select: none;">
+                <strong style="color: #fef08a; font-size: 18px; display: block;">♀ Снежная Королева</strong>
+                <span style="font-size: 13px; color: #9ca3af;">Sniega Karaliene • Snow Queen</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 2 КОЛОНКИ: ГЕНДЕРНАЯ АРХИТЕКТУРА И ШЕРИНГ                         -->
+    <!-- ================================================================= -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; margin-top: 35px;">
+        
+        <!-- ГЕНДЕРНЫЙ ИНТЕЛЛЕКТ -->
+        <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-sm);">
+            <div style="color: #a855f7; font-family: var(--font-mono); font-size: 11.5px; font-weight: 800; text-transform: uppercase; margin-bottom: 6px;">
+                POLYMORPHIC ASSET ENGINE
+            </div>
+            <h4 style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+                Гендерная Дифференциация Профиля (`sex_id`)
+            </h4>
+            <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
+                CRM-шлюз извлекает точный пол гостя (<code>sex_id: 1/2</code>) из расширенной анкеты клиента. Полиморфный резолвер динамически генерирует мужские или женские пары гербов без дублирования сущностей в кодовой базе.
+            </p>
+            <div style="background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 8px; padding: 12px; font-size: 12.5px; color: #7e22ce; line-height: 1.5;">
+                <strong>Анти-сдвиг верстки (Zero CLS):</strong> Контейнер аватара динамически расширяется со 135px до 185px для Топ-рангов, сохраняя строгую вертикальную сетку мобильного экрана.
+            </div>
+        </div>
+
+        <!-- РЕФЕРАЛЬНЫЙ ШЕРИНГ -->
+        <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-sm);">
+            <div style="color: #0284c7; font-family: var(--font-mono); font-size: 11.5px; font-weight: 800; text-transform: uppercase; margin-bottom: 6px;">
+                VIRAL GROWTH ENGINE
+            </div>
+            <h4 style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+                Нативный Шеринг Флаеров (WhatsApp Cascade)
+            </h4>
+            <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
+                Модуль «Пригласить друга» в один тап формирует персонализированный дизайнерский флаер со штрихкодом на языке клиента (LV/RU/EN) и прямой ссылкой в чат консьержа клуба.
+            </p>
+            <div style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 12px; font-size: 12.5px; color: #0369a1; line-height: 1.5;">
+                <strong>3-Уровневый каскад:</strong> <code>@capacitor/share</code> (системное меню iOS/Android с прикреплением картинки) ➔ Web Share API ➔ буфер обмена для десктопа.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="tech-stack-pills" style="margin-top: 20px;">
+        <span class="tech-pill">29 Custom SVG Evolution Stages</span>
+        <span class="tech-pill">Polymorphic Gender Engine</span>
+        <span class="tech-pill">European CDN (Cache-Control 1 Year)</span>
+        <span class="tech-pill">Capacitor Share Cascade</span>
+        <span class="tech-pill">Zero-Hardcode Firestore Schema</span>
+        <span class="tech-pill">Cumulative Layout Shift Guard</span>
+        <span class="tech-pill">Zustand 5 State Hydration</span>
+        <span class="tech-pill">Scroll-to-Accept Legal Onboarding</span>
+    </div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- МОДУЛЬ 09 ПОРТФОЛИО: ZERO-TOUCH CI/CD & ПОЛНАЯ АВТОНОМИЯ ЗАКАЗЧИКА     -->
+<!-- ===================================================================== -->
+<div id="mod-09" class="card card-theme-github" style="width: 100%; padding: 40px; margin-bottom: 35px;">
+    
+    <div class="card-badges" style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <span class="card-tag tag-cyan">ZERO-TOUCH CI/CD & CLIENT AUTONOMY</span>
+        <span class="card-articles-counter">Модуль 09 • Автоматизация Сторовых Релизов & Real-Time Пуши</span>
+    </div>
+
+    <h3 style="font-size: 1.85rem; margin-bottom: 14px; color: var(--text-primary); letter-spacing: -0.6px; line-height: 1.25;">
+        Полная Автономия Заказчика: Zero-Touch Сборка в Стоpы и Мгновенные Пуши Сквозь Спящий Режим ОС
+    </h3>
+    
+    <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 24px;">
+        Архитектура проекта изначально создавалась по принципу <strong>«Бизнес не должен зависеть от рук разработчика»</strong>. Вся нативная инфраструктура сборки упакована в облачный конвейер (CI/CD), позволяя владельцу клуба выпускать обновления мобильных приложений без открытия Xcode, Android Studio и привлечения программистов:
+    </p>
+
+    <!-- СЕТКА ИЗ 3 ТЕХНОЛОГИЧНЫХ РЕШЕНИЙ -->
+    <div class="diff-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; margin-bottom: 22px;">
+        
+        <div style="background: rgba(255,255,255,0.85); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 22px; box-shadow: var(--shadow-sm);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 1.2rem;">🤖</span>
+                <strong style="color: var(--text-primary); font-size: 1.05rem;">Zero-Touch Релизы (Без Программиста)</strong>
+            </div>
+            <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                Конвейер на базе облачных <strong>Apple Silicon (Mac mini M2)</strong> автоматизирует 100% рутины: виртуальная машина сама считывает версию, инкрементирует номера сборок (Android <code>versionCode</code> / iOS <code>agvtool</code>), подписывает бинарники корпоративными сертификатами и напрямую публикует релизы в App Store Connect и Google Play Console.
+            </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.85); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 22px; box-shadow: var(--shadow-sm);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 1.2rem;">⚡</span>
+                <strong style="color: var(--text-primary); font-size: 1.05rem;">Пробитие Doze Mode (СКУД Реального Времени)</strong>
+            </div>
+            <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                В современных ОС заблокированные смартфоны уходят в глубокий сон, задерживая обычные пуши на 10–15 минут. Для сервиса умных замков задержка критична. Внедрена конфигурация максимального приоритета (<strong>Android High Priority + iOS APNs Priority 10</strong>), гарантирующая пробуждение заблокированного экрана и доставку кода двери за 1–2 секунды.
+            </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.85); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 22px; box-shadow: var(--shadow-sm);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 1.2rem;">🍏</span>
+                <strong style="color: var(--text-primary); font-size: 1.05rem;">Конвертация Токенов APNs ➔ FCM</strong>
+            </div>
+            <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                Устранена классическая уязвимость гибридных приложений, когда iOS отдает сырой 64-значный hex-токен, приводящий к сбою Firebase Admin SDK. Серверный шлюз на лету конвертирует токены Apple в формат Google IID API с фоновой самоочисткой сгоревших устройств (FCM Hygiene).
+            </p>
+        </div>
+    </div>
+
+    <div class="tech-stack-pills" style="margin-top: 15px;">
+        <span class="tech-pill">Zero-Touch CI/CD</span>
+        <span class="tech-pill">Apple Silicon Mac mini M2</span>
+        <span class="tech-pill">Automated Keystore Signing</span>
+        <span class="tech-pill">Apple Distribution Pipeline</span>
+        <span class="tech-pill">Google Play API Publishing</span>
+        <span class="tech-pill">Android Doze Mode Bypass</span>
+        <span class="tech-pill">APNs Priority 10 Real-Time</span>
+        <span class="tech-pill">Google IID Token Bridge</span>
+    </div>
+
+</div>
+
+<!-- ===================================================================== -->
+<!-- ФУТЕР ПОРТФОЛИО                                                       -->
+<!-- ===================================================================== -->
+<footer class="footer">
+    <div><strong>Pavel M.</strong> • Full-Stack Developer & System Architect</div>
+    <div>
+        <a href="https://github.com/mainparadox" target="_blank" style="color: var(--brand-primary); font-weight: bold; text-decoration: none;">
+            ← Вернуться в профиль GitHub
+        </a>
+    </div>
+</footer>
+
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
