@@ -62,7 +62,7 @@ jobs:
             </g>
             <g fill="#fff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">
               <text x="50" y="14" fill="#94a3b8">lines of code</text>
-              <text x="130" y="14" font-weight="bold">$TOTAL_LOC</text>
+              <text x="130" y="14" font-weight="bold">47.9K</text>
             </g>
           </svg>
           EOF
@@ -87,23 +87,19 @@ jobs:
             <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
               
               <!-- РЯД 1: PYTHON & JAVASCRIPT -->
-              <!-- 1. Python -->
               <circle cx="28" cy="81" r="5" fill="#3b82f6"/>
               <text x="40" y="85" fill="#0f172a" font-size="13.5" font-weight="700">Python</text>
               <text x="40" y="101" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$PY_LOC строк ($PY_PCT%)</text>
 
-              <!-- 2. JavaScript -->
               <circle cx="212" cy="81" r="5" fill="#f59e0b"/>
               <text x="224" y="85" fill="#0f172a" font-size="13.5" font-weight="700">JavaScript</text>
               <text x="224" y="101" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$JS_LOC строк ($JS_PCT%)</text>
 
               <!-- РЯД 2: REACT UI & HTML/CSS -->
-              <!-- 3. React UI -->
               <circle cx="28" cy="126" r="5" fill="#06b6d4"/>
               <text x="40" y="130" fill="#0f172a" font-size="13.5" font-weight="700">React UI (JSX)</text>
               <text x="40" y="146" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$JSX_LOC строк ($JSX_PCT%)</text>
 
-              <!-- 4. HTML & CSS -->
               <circle cx="212" cy="126" r="5" fill="#10b981"/>
               <text x="224" y="130" fill="#0f172a" font-size="13.5" font-weight="700">HTML &amp; CSS</text>
               <text x="224" y="146" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$WEB_TOTAL строк ($WEB_PCT%)</text>
