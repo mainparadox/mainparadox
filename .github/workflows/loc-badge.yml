@@ -2,8 +2,8 @@ name: Generate Lines of Code Badge
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Раз в сутки ночью
-  workflow_dispatch:     # Кнопка ручного запуска
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   build-loc:
@@ -22,42 +22,52 @@ jobs:
           chmod +x tokei
           sudo mv tokei /usr/local/bin/
 
-      - name: Auto-Discover & Clone ALL Repositories (Public, Private, Orgs)
+      - name: Auto-Discover & Clone ALL Repositories
         env:
           GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
         run: |
           mkdir -p workspace
           cd workspace
 
-          echo "🔍 Опрашиваем GitHub API на наличие всех доступных репозиториев..."
-          
-          # Получаем список всех ваших репозиториев (личные + организации), исключая форки:
-          REPO_URLS=$(curl -s -H "Authorization: token $GH_TOKEN" \
-            "https://api.github.com/user/repos?per_page=100&affiliation=owner,organization_member" \
-            | jq -r '.[] | select(.fork == false) | .clone_url')
+          echo "🔍 1. Запрашиваем через API все репозитории профиля..."
+          REPO_URLS=$(curl -s -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/user/repos?per_page=100&affiliation=owner,collaborator,organization_member" \
+            | jq -r '.[] | select(.fork == false) | .clone_url' 2>/dev/null || true)
+
+          echo "Найдено репозиториев через API:"
+          echo "$REPO_URLS"
 
           for url in $REPO_URLS; do
             repo_name=$(basename "$url" .git)
-            # Внедряем токен для безопасного клонирования закрытых репозиториев:
             auth_url=$(echo "$url" | sed -e "s|https://|https://mainparadox:${GH_TOKEN}@|")
-            
             echo "📥 Скачиваем срез: $repo_name ..."
             git clone --depth 1 "$auth_url" "$repo_name" || true
           done
 
+          # 🔥 2. ПРИНУДИТЕЛЬНОЕ ПОДКЛЮЧЕНИЕ КОММЕРЧЕСКИХ РЕПОЗИТОРИЕВ
+          # Если репозиторий организации Polar Club еще не скачался через общий список — забираем напрямую:
+          if [ ! -d "polar-recovery-club" ]; then
+            echo "📥 Принудительно скачиваем Polar Recovery Club..."
+            git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/polarrecoveryapp/polar-recovery-club.git" polar-recovery-club || true
+          fi
+
+          # Если у вас есть отдельный репо под GGS Engine или другие закрытые проекты, допишите аналогично:
+          # if [ ! -d "ggs-engine" ]; then
+          #   git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/mainparadox/ggs-engine.git" ggs-engine || true
+          # fi
+
           cd ..
 
-          echo "⚡ Запускаем подсчет чистого кода утилитой Tokei..."
-          
-          # Считаем только реальный код (отсекаем package-lock, json, svg, dist, build, min.js)
+          echo "================ ПОДРОБНЫЙ ОТЧЕТ TOKEI ПО ЯЗЫКАМ ================"
+          tokei workspace -e "*.json" -e "*.svg" -e "*.min.js" -e "node_modules" -e "dist" -e "build" -e "vendor"
+          echo "=================================================================="
+
           RAW_JSON=$(tokei workspace -e "*.json" -e "*.svg" -e "*.min.js" -e "node_modules" -e "dist" -e "build" -e "vendor" -o json)
           TOTAL_LOC=$(echo "$RAW_JSON" | jq '.Total.code // 0')
           
-          echo "=============================================="
-          echo "ИТОГО ЧИСТЫХ СТРОК КОДА ВО ВСЕХ РЕПОЗИТОРИЯХ: $TOTAL_LOC"
-          echo "=============================================="
+          echo "ИТОГО ЧИСТЫХ СТРОК КОДА: $TOTAL_LOC"
 
-          # Форматируем число (например, 142500 -> 142.5K)
           if [ $TOTAL_LOC -ge 1000000 ]; then
             FORMATTED_LOC=$(awk "BEGIN {printf \"%.1fM\", $TOTAL_LOC/1000000}")
           elif [ $TOTAL_LOC -ge 1000 ]; then
@@ -66,7 +76,6 @@ jobs:
             FORMATTED_LOC=$TOTAL_LOC
           fi
 
-          # Генерируем компактный SVG-бейдж
           cat <<EOF > loc-badge.svg
           <svg xmlns="http://www.w3.org/2000/svg" width="160" height="20" role="img">
             <clipPath id="r"><rect width="160" height="20" rx="4" fill="#fff"/></clipPath>
