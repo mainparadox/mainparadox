@@ -3,7 +3,7 @@ name: Generate Lines of Code Badge
 on:
   schedule:
     - cron: '0 0 * * *' # Раз в сутки ночью
-  workflow_dispatch:     # Кнопка ручного запуска в меню
+  workflow_dispatch:     # Кнопка ручного запуска
 
 jobs:
   build-loc:
@@ -22,27 +22,40 @@ jobs:
           chmod +x tokei
           sudo mv tokei /usr/local/bin/
 
-      - name: Clone Key Repositories & Count LOC
+      - name: Auto-Discover & Clone ALL Repositories (Public, Private, Orgs)
         env:
           GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
         run: |
           mkdir -p workspace
           cd workspace
 
-          # Скачиваем поверхностный срез ваших главных кодовых баз:
-          # 1. Cloudflare Manager IaC
-          git clone --depth 1 https://mainparadox:$GH_TOKEN@github.com/mainparadox/cloudflare-manager-iac.git cloudflare || true
+          echo "🔍 Опрашиваем GitHub API на наличие всех доступных репозиториев..."
           
-          # 2. Если хотите учесть Polar Club или GGS, просто добавьте их сюда (токен увидит и приватные):
-          # git clone --depth 1 https://mainparadox:$GH_TOKEN@github.com/polarrecoveryapp/polar-recovery-club.git polar || true
+          # Получаем список всех ваших репозиториев (личные + организации), исключая форки:
+          REPO_URLS=$(curl -s -H "Authorization: token $GH_TOKEN" \
+            "https://api.github.com/user/repos?per_page=100&affiliation=owner,organization_member" \
+            | jq -r '.[] | select(.fork == false) | .clone_url')
+
+          for url in $REPO_URLS; do
+            repo_name=$(basename "$url" .git)
+            # Внедряем токен для безопасного клонирования закрытых репозиториев:
+            auth_url=$(echo "$url" | sed -e "s|https://|https://mainparadox:${GH_TOKEN}@|")
+            
+            echo "📥 Скачиваем срез: $repo_name ..."
+            git clone --depth 1 "$auth_url" "$repo_name" || true
+          done
 
           cd ..
 
-          # Запуск Tokei (отсекаем package-lock, svg, css-библиотеки)
-          RAW_JSON=$(tokei workspace -e "*.json" -e "*.svg" -e "*.min.js" -e "node_modules" -e "dist" -o json)
+          echo "⚡ Запускаем подсчет чистого кода утилитой Tokei..."
+          
+          # Считаем только реальный код (отсекаем package-lock, json, svg, dist, build, min.js)
+          RAW_JSON=$(tokei workspace -e "*.json" -e "*.svg" -e "*.min.js" -e "node_modules" -e "dist" -e "build" -e "vendor" -o json)
           TOTAL_LOC=$(echo "$RAW_JSON" | jq '.Total.code // 0')
           
-          echo "Всего строк чистого кода: $TOTAL_LOC"
+          echo "=============================================="
+          echo "ИТОГО ЧИСТЫХ СТРОК КОДА ВО ВСЕХ РЕПОЗИТОРИЯХ: $TOTAL_LOC"
+          echo "=============================================="
 
           # Форматируем число (например, 142500 -> 142.5K)
           if [ $TOTAL_LOC -ge 1000000 ]; then
@@ -53,7 +66,7 @@ jobs:
             FORMATTED_LOC=$TOTAL_LOC
           fi
 
-          # Рисуем лаконичный SVG-бейдж под светлую тему (высота 20px)
+          # Генерируем компактный SVG-бейдж
           cat <<EOF > loc-badge.svg
           <svg xmlns="http://www.w3.org/2000/svg" width="160" height="20" role="img">
             <clipPath id="r"><rect width="160" height="20" rx="4" fill="#fff"/></clipPath>
@@ -73,4 +86,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add loc-badge.svg
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update lines of code badge [skip ci]" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update total lines of code [skip ci]" && git push)
