@@ -179,7 +179,8 @@ graph LR
 <p align="center">
   <!-- Карточка коммитов Vercel -->
   <a href="https://github.com/mainparadox">
-    <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&icon_color=2563eb&border_radius=16&count_private=true&include_all_commits=true&hide=prs,issues&hide_rank=true" width="49%" />
+  <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&icon_color=2563eb&border_radius=16&count_private=true&include_all_commits=true&hide=prs,issues&custom_title=Production%20Code%20Activity" width="49%" />
+</a>
   </a>
   <!-- Карточка языков со строками кода (Идеально подогнана 400x195) -->
   <a href="https://github.com/mainparadox">
