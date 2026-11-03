@@ -1,44 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" fill="none">
-  <rect width="495" height="195" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="195" viewBox="0 0 400 195" fill="none">
+  <rect width="400" height="195" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
   
-  <!-- Заголовок и общий объем -->
-  <text x="25" y="38" fill="#0f172a" font-family="Plus Jakarta Sans, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="17" font-weight="700">Codebase Breakdown</text>
-  <text x="390" y="37" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700">47,888 LOC</text>
+  <!-- Заголовок и общий объем (Крупный, четкий) -->
+  <text x="22" y="36" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="16.5" font-weight="700">Codebase Languages</text>
+  <text x="312" y="35" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">47.9K LOC</text>
   
-  <!-- Прогресс-бар языков (ширина 445px) -->
-  <rect x="25" y="52" width="445" height="9" rx="4.5" fill="#f1f5f9"/>
-  <rect x="25" y="52" width="178" height="9" rx="4.5" fill="#3b82f6"/>
-  <rect x="203" y="52" width="169" height="9" fill="#f59e0b"/>
-  <rect x="372" y="52" width="48" height="9" fill="#06b6d4"/>
-  <rect x="420" y="52" width="22" height="9" fill="#10b981"/>
+  <!-- Прогресс-бар языков (ширина 356px) -->
+  <rect x="22" y="49" width="356" height="8" rx="4" fill="#f1f5f9"/>
+  <rect x="22" y="49" width="142" height="8" rx="4" fill="#3b82f6"/>
+  <rect x="164" y="49" width="135" height="8" fill="#f59e0b"/>
+  <rect x="299" y="49" width="39" height="8" fill="#06b6d4"/>
+  <rect x="338" y="49" width="17" height="8" fill="#10b981"/>
 
-  <!-- Сетка языков с просторным интервалом (строки не слипаются!) -->
-  <g font-family="Plus Jakarta Sans, -apple-system, sans-serif">
+  <!-- Сетка языков: крупный шрифт и просторный интервал -->
+  <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
     
     <!-- РЯД 1: PYTHON & JAVASCRIPT -->
-    <!-- 1. Python (№1) -->
-    <circle cx="32" cy="86" r="5" fill="#3b82f6"/>
-    <text x="45" y="90" fill="#0f172a" font-size="13.5" font-weight="700">Python</text>
-    <text x="45" y="107" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">17742 строк (40%)</text>
+    <circle cx="28" cy="81" r="5" fill="#3b82f6"/>
+    <text x="40" y="85" fill="#0f172a" font-size="13.5" font-weight="700">Python</text>
+    <text x="40" y="101" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">17742 строк (40%)</text>
 
-    <!-- 2. JavaScript (Core Logic) -->
-    <circle cx="260" cy="86" r="5" fill="#f59e0b"/>
-    <text x="273" y="90" fill="#0f172a" font-size="13.5" font-weight="700">JavaScript</text>
-    <text x="273" y="107" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">17129 строк (38%)</text>
+    <circle cx="212" cy="81" r="5" fill="#f59e0b"/>
+    <text x="224" y="85" fill="#0f172a" font-size="13.5" font-weight="700">JavaScript</text>
+    <text x="224" y="101" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">17129 строк (38%)</text>
 
-    <!-- РЯД 2: REACT (JSX) & HTML/CSS -->
-    <!-- 3. React UI (JSX) -->
-    <circle cx="32" cy="132" r="5" fill="#06b6d4"/>
-    <text x="45" y="136" fill="#0f172a" font-size="13.5" font-weight="700">React UI (JSX)</text>
-    <text x="45" y="153" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">5058 строк (11%)</text>
+    <!-- РЯД 2: REACT UI & HTML/CSS -->
+    <circle cx="28" cy="126" r="5" fill="#06b6d4"/>
+    <text x="40" y="130" fill="#0f172a" font-size="13.5" font-weight="700">React UI (JSX)</text>
+    <text x="40" y="146" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">5058 строк (11%)</text>
 
-    <!-- 4. HTML & CSS -->
-    <circle cx="260" cy="132" r="5" fill="#10b981"/>
-    <text x="273" y="136" fill="#0f172a" font-size="13.5" font-weight="700">HTML &amp; CSS</text>
-    <text x="273" y="153" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">2582 строк (5%)</text>
+    <circle cx="212" cy="126" r="5" fill="#10b981"/>
+    <text x="224" y="130" fill="#0f172a" font-size="13.5" font-weight="700">HTML &amp; CSS</text>
+    <text x="224" y="146" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">2582 строк (5%)</text>
   </g>
 
-  <!-- Нижняя авторитетная плашка: Native Mobile + Документация -->
-  <line x1="25" y1="168" x2="470" y2="168" stroke="#f1f5f9" stroke-width="1"/>
-  <text x="25" y="183" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="10.5">📱 Mobile Native: Swift &amp; Java BLE  •  📚 7.5K строк документации</text>
+  <!-- Нижняя плашка -->
+  <line x1="22" y1="162" x2="378" y2="162" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="22" y="179" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="10.5">📱 Swift/Java BLE  •  📚 7.5K строк документации</text>
 </svg>
