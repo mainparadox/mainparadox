@@ -29,7 +29,6 @@ jobs:
           mkdir -p workspace
           cd workspace
 
-          # Скачиваем срез ваших ключевых проектов
           git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/mainparadox/cloudflare-manager-iac.git" cloudflare || true
           git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/mainparadox/GENERATOR_GENAI2_STORY.git" ggs || true
           git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/polarrecoveryapp/polar-recovery-club.git" polar || true
@@ -37,27 +36,23 @@ jobs:
 
           cd ..
 
-          # Считаем точные строки по языкам через Tokei
           RAW_JSON=$(tokei workspace -e "*.json" -e "*.svg" -e "*.min.js" -e "node_modules" -e "dist" -e "build" -e "vendor" -o json)
           
           TOTAL_LOC=$(echo "$RAW_JSON" | jq '.Total.code // 0')
           PY_LOC=$(echo "$RAW_JSON" | jq '.Python.code // 0')
-          JS_RAW=$(echo "$RAW_JSON" | jq '.JavaScript.code // 0')
-          JSX_RAW=$(echo "$RAW_JSON" | jq '.JSX.code // 0')
-          JS_TOTAL=$((JS_RAW + JSX_RAW))
+          JS_LOC=$(echo "$RAW_JSON" | jq '.JavaScript.code // 0')
+          JSX_LOC=$(echo "$RAW_JSON" | jq '.JSX.code // 0')
           CSS_RAW=$(echo "$RAW_JSON" | jq '.CSS.code // 0')
           HTML_RAW=$(echo "$RAW_JSON" | jq '.HTML.code // 0')
           WEB_TOTAL=$((CSS_RAW + HTML_RAW))
-          OTHER_TOTAL=$((TOTAL_LOC - PY_LOC - JS_TOTAL - WEB_TOTAL))
 
-          # Вычисляем проценты для прогресс-бара
-          JS_PCT=$((JS_TOTAL * 100 / TOTAL_LOC))
+          # Проценты для бара
           PY_PCT=$((PY_LOC * 100 / TOTAL_LOC))
+          JS_PCT=$((JS_LOC * 100 / TOTAL_LOC))
+          JSX_PCT=$((JSX_LOC * 100 / TOTAL_LOC))
           WEB_PCT=$((WEB_TOTAL * 100 / TOTAL_LOC))
 
-          echo "Total: $TOTAL_LOC | JS/React: $JS_TOTAL | Python: $PY_LOC | Web: $WEB_TOTAL"
-
-          # 1. Генерируем компактный бейдж (loc-badge.svg)
+          # 1. Компактный бейдж (loc-badge.svg)
           cat <<EOF > loc-badge.svg
           <svg xmlns="http://www.w3.org/2000/svg" width="160" height="20" role="img">
             <clipPath id="r"><rect width="160" height="20" rx="4" fill="#fff"/></clipPath>
@@ -72,41 +67,52 @@ jobs:
           </svg>
           EOF
 
-          # 2. Генерируем карточку языков со строками кода для GitHub (languages-loc.svg)
+          # 2. ИДЕАЛЬНО ВЫВЕРЕННАЯ КАРТОЧКА (Ширина 495, Высота 195, скругление 16)
+          # Никакого слипания: свободный межстрочный интервал + Swift/Java плашка внизу
           cat <<EOF > languages-loc.svg
-          <svg xmlns="http://www.w3.org/2000/svg" width="460" height="155" viewBox="0 0 460 155" fill="none">
-            <rect width="460" height="155" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
-            <text x="24" y="32" fill="#0f172a" font-family="Plus Jakarta Sans, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="15" font-weight="700">Codebase Languages (Lines of Code)</text>
-            <text x="365" y="32" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">47,888 LOC</text>
+          <svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" fill="none">
+            <rect width="495" height="195" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
             
-            <!-- Прогресс-бар -->
-            <rect x="24" y="48" width="412" height="8" rx="4" fill="#f1f5f9"/>
-            <rect x="24" y="48" width="$((412 * JS_PCT / 100))" height="8" rx="4" fill="#f59e0b"/>
-            <rect x="$((24 + 412 * JS_PCT / 100))" y="48" width="$((412 * PY_PCT / 100))" height="8" fill="#3b82f6"/>
-            <rect x="$((24 + 412 * JS_PCT / 100 + 412 * PY_PCT / 100))" y="48" width="$((412 * WEB_PCT / 100))" height="8" fill="#10b981"/>
+            <!-- Заголовок и общий объем -->
+            <text x="25" y="38" fill="#0f172a" font-family="Plus Jakarta Sans, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="17" font-weight="700">Codebase Breakdown</text>
+            <text x="390" y="37" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700">47,888 LOC</text>
+            
+            <!-- Прогресс-бар языков (ширина 445px) -->
+            <rect x="25" y="52" width="445" height="9" rx="4.5" fill="#f1f5f9"/>
+            <rect x="25" y="52" width="$((445 * PY_PCT / 100))" height="9" rx="4.5" fill="#3b82f6"/>
+            <rect x="$((25 + 445 * PY_PCT / 100))" y="52" width="$((445 * JS_PCT / 100))" height="9" fill="#f59e0b"/>
+            <rect x="$((25 + 445 * PY_PCT / 100 + 445 * JS_PCT / 100))" y="52" width="$((445 * JSX_PCT / 100))" height="9" fill="#06b6d4"/>
+            <rect x="$((25 + 445 * PY_PCT / 100 + 445 * JS_PCT / 100 + 445 * JSX_PCT / 100))" y="52" width="$((445 * WEB_PCT / 100))" height="9" fill="#10b981"/>
 
-            <!-- Легенда со строками кода -->
-            <g transform="translate(24, 76)" font-family="Plus Jakarta Sans, -apple-system, sans-serif" font-size="12.5">
-              <!-- JS / React -->
-              <circle cx="6" cy="10" r="5" fill="#f59e0b"/>
-              <text x="20" y="14" fill="#334155" font-weight="600">JavaScript / React</text>
-              <text x="20" y="30" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$JS_TOTAL строк ($JS_PCT%)</text>
+            <!-- Сетка языков с просторным интервалом (строки не слипаются!) -->
+            <g font-family="Plus Jakarta Sans, -apple-system, sans-serif">
+              
+              <!-- РЯД 1: PYTHON & JAVASCRIPT -->
+              <!-- 1. Python (№1) -->
+              <circle cx="32" cy="86" r="5" fill="#3b82f6"/>
+              <text x="45" y="90" fill="#0f172a" font-size="13.5" font-weight="700">Python</text>
+              <text x="45" y="107" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">$PY_LOC строк ($PY_PCT%)</text>
 
-              <!-- Python -->
-              <circle cx="216" cy="10" r="5" fill="#3b82f6"/>
-              <text x="230" y="14" fill="#334155" font-weight="600">Python</text>
-              <text x="230" y="30" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$PY_LOC строк ($PY_PCT%)</text>
+              <!-- 2. JavaScript (Core Logic) -->
+              <circle cx="260" cy="86" r="5" fill="#f59e0b"/>
+              <text x="273" y="90" fill="#0f172a" font-size="13.5" font-weight="700">JavaScript</text>
+              <text x="273" y="107" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">$JS_LOC строк ($JS_PCT%)</text>
 
-              <!-- CSS / HTML -->
-              <circle cx="6" cy="50" r="5" fill="#10b981"/>
-              <text x="20" y="54" fill="#334155" font-weight="600">HTML &amp; CSS</text>
-              <text x="20" y="70" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$WEB_TOTAL строк ($WEB_PCT%)</text>
+              <!-- РЯД 2: REACT (JSX) & HTML/CSS -->
+              <!-- 3. React UI (JSX) -->
+              <circle cx="32" cy="132" r="5" fill="#06b6d4"/>
+              <text x="45" y="136" fill="#0f172a" font-size="13.5" font-weight="700">React UI (JSX)</text>
+              <text x="45" y="153" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">$JSX_LOC строк ($JSX_PCT%)</text>
 
-              <!-- Shell / Other -->
-              <circle cx="216" cy="50" r="5" fill="#8b5cf6"/>
-              <text x="230" y="54" fill="#334155" font-weight="600">DevOps &amp; Configs</text>
-              <text x="230" y="70" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$OTHER_TOTAL строк</text>
+              <!-- 4. HTML & CSS -->
+              <circle cx="260" cy="132" r="5" fill="#10b981"/>
+              <text x="273" y="136" fill="#0f172a" font-size="13.5" font-weight="700">HTML &amp; CSS</text>
+              <text x="273" y="153" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">$WEB_TOTAL строк ($WEB_PCT%)</text>
             </g>
+
+            <!-- Нижняя авторитетная плашка: Native Mobile + Документация -->
+            <line x1="25" y1="168" x2="470" y2="168" stroke="#f1f5f9" stroke-width="1"/>
+            <text x="25" y="183" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="10.5">📱 Mobile Native: Swift &amp; Java BLE  •  📚 7.5K строк документации</text>
           </svg>
           EOF
 
@@ -115,4 +121,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add loc-badge.svg languages-loc.svg
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update loc cards and stats [skip ci]" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update polished loc cards [skip ci]" && git push)
