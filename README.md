@@ -175,18 +175,16 @@ graph LR
 > ⚡ **Верификация чистого кода (Zero-Bloat Standard):** Вся приведенная ниже статистика рассчитывается автоматически независимым синтаксическим анализатором **Tokei (Rust Engine)** и бессерверным шлюзом Vercel на базе коммитов в открытые и закрытые коммерческие репозитории. В подсчет включены **исключительно чистые строки авторской логики** (Lines of Code). Сторонние библиотеки (`node_modules`), вендорные пакеты, сгенерированные сборщиками бандлы (`dist/`), lock-файлы и дампы жестко отфильтрованы.
 
 <p align="center">
-  <!-- Левая карточка: убран позорный ранг "C", заголовок "Production Activity", высота 150px -->
   <a href="https://github.com/mainparadox">
     <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&icon_color=2563eb&border_radius=16&count_private=true&include_all_commits=true&hide=prs,issues&hide_rank=true&custom_title=Production%20Code%20Activity" width="49%" />
   </a>
-  <!-- Правая карточка: ровно 150px в высоту, пиксель в пиксель с левой -->
   <a href="https://github.com/mainparadox">
     <img src="https://raw.githubusercontent.com/mainparadox/mainparadox/main/languages-loc.svg" width="49%" />
   </a>
 </p>
 
 ---
-> 🔒 О коммерческом опыте и корпоративных контурах (2018 — настоящее время):
+> 🔒 О коммерческом опыте и корпоративных контурах (2015 — настоящее время):
 > Метрики выше отражают активную кодовую базу актуального облачного и мобильного стека (2026).
 Проекты предыдущих лет (корпоративные порталы, e-commerce экосистемы на PHP/MySQL/Joomla, CRM-интеграции) разрабатывались в изолированных корпоративных репозиториях клиентов (GitLab / Bitbucket / On-Premise) под действием NDA и переданы заказчикам на закрытую эксплуатацию.
 
