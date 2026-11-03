@@ -2,8 +2,8 @@ name: Generate Lines of Code Badge & Cards
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Раз в сутки ночью
-  workflow_dispatch:     # Кнопка ручного запуска в меню
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   build-loc:
@@ -29,7 +29,6 @@ jobs:
           mkdir -p workspace
           cd workspace
 
-          # Скачиваем срез ваших ключевых проектов
           git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/mainparadox/cloudflare-manager-iac.git" cloudflare || true
           git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/mainparadox/GENERATOR_GENAI2_STORY.git" ggs || true
           git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/polarrecoveryapp/polar-recovery-club.git" polar || true
@@ -37,7 +36,6 @@ jobs:
 
           cd ..
 
-          # 1. ОБЩИЙ РАСЧЕТ ПО ЯЗЫКАМ
           RAW_JSON=$(tokei workspace -e "*.json" -e "*.svg" -e "*.min.js" -e "node_modules" -e "dist" -e "build" -e "vendor" -o json)
           
           TOTAL_LOC=$(echo "$RAW_JSON" | jq '.Total.code // 0')
@@ -48,27 +46,20 @@ jobs:
           HTML_RAW=$(echo "$RAW_JSON" | jq '.HTML.code // 0')
           WEB_TOTAL=$((CSS_RAW + HTML_RAW))
 
-          # Проценты для бара
           PY_PCT=$((PY_LOC * 100 / TOTAL_LOC))
           JS_PCT=$((JS_LOC * 100 / TOTAL_LOC))
           JSX_PCT=$((JSX_LOC * 100 / TOTAL_LOC))
           WEB_PCT=$((WEB_TOTAL * 100 / TOTAL_LOC))
 
-          # 2. РАСЧЕТ ПО ОТДЕЛЬНЫМ ПРОЕКТАМ (ДИНАМИЧЕСКИЙ)
           POLAR_LOC=$(tokei workspace/polar -e "*.json" -e "*.svg" -e "*.min.js" -e "node_modules" -e "dist" -o json | jq '.Total.code // 0')
           GGS_LOC=$(tokei workspace/ggs -e "*.json" -e "*.svg" -e "*.min.js" -e "node_modules" -e "dist" -o json | jq '.Total.code // 0')
           CF_LOC=$(tokei workspace/cloudflare -e "*.json" -e "*.svg" -e "*.min.js" -e "node_modules" -e "dist" -o json | jq '.Total.code // 0')
 
-          # Форматируем в красивый вид (23400 -> 23.4K)
           F_POLAR=$(awk "BEGIN {printf \"%.1fK\", $POLAR_LOC/1000}")
           F_GGS=$(awk "BEGIN {printf \"%.1fK\", $GGS_LOC/1000}")
           F_CF=$(awk "BEGIN {printf \"%.1fK\", $CF_LOC/1000}")
 
-          # ========================================================
-          # ГЕНЕРАЦИЯ ФАЙЛОВ SVG
-          # ========================================================
-
-          # А. Главный бейдж суммарного объема (loc-badge.svg)
+          # 1. Бейдж суммарного объема
           cat <<EOF > loc-badge.svg
           <svg xmlns="http://www.w3.org/2000/svg" width="160" height="20" role="img">
             <clipPath id="r"><rect width="160" height="20" rx="4" fill="#fff"/></clipPath>
@@ -83,48 +74,43 @@ jobs:
           </svg>
           EOF
 
-          # Б. Карточка языков (ИДЕАЛЬНАЯ ГЕОМЕТРИЯ 400x195 ПОД КАРТОЧКУ VERCEL)
+          # 2. ИДЕАЛЬНАЯ ВЫСОТА 150px (Ровно как у 3-строчной карточки Vercel!)
           cat <<EOF > languages-loc.svg
-          <svg xmlns="http://www.w3.org/2000/svg" width="400" height="195" viewBox="0 0 400 195" fill="none">
-            <rect width="400" height="195" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="400" height="150" viewBox="0 0 400 150" fill="none">
+            <rect width="400" height="150" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
             
-            <text x="22" y="36" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="16.5" font-weight="700">Codebase Languages</text>
-            <text x="312" y="35" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">47.9K LOC</text>
+            <text x="22" y="32" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="16" font-weight="700">Codebase Breakdown</text>
+            <text x="316" y="31" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">47.9K LOC</text>
             
-            <rect x="22" y="49" width="356" height="8" rx="4" fill="#f1f5f9"/>
-            <rect x="22" y="49" width="$((356 * PY_PCT / 100))" height="8" rx="4" fill="#3b82f6"/>
-            <rect x="$((22 + 356 * PY_PCT / 100))" y="49" width="$((356 * JS_PCT / 100))" height="8" fill="#f59e0b"/>
-            <rect x="$((22 + 356 * PY_PCT / 100 + 356 * JS_PCT / 100))" y="49" width="$((356 * JSX_PCT / 100))" height="8" fill="#06b6d4"/>
-            <rect x="$((22 + 356 * PY_PCT / 100 + 356 * JS_PCT / 100 + 356 * JSX_PCT / 100))" y="49" width="$((356 * WEB_PCT / 100))" height="8" fill="#10b981"/>
+            <rect x="22" y="44" width="356" height="7" rx="3.5" fill="#f1f5f9"/>
+            <rect x="22" y="44" width="$((356 * PY_PCT / 100))" height="7" rx="3.5" fill="#3b82f6"/>
+            <rect x="$((22 + 356 * PY_PCT / 100))" y="44" width="$((356 * JS_PCT / 100))" height="7" fill="#f59e0b"/>
+            <rect x="$((22 + 356 * PY_PCT / 100 + 356 * JS_PCT / 100))" y="44" width="$((356 * JSX_PCT / 100))" height="7" fill="#06b6d4"/>
+            <rect x="$((22 + 356 * PY_PCT / 100 + 356 * JS_PCT / 100 + 356 * JSX_PCT / 100))" y="44" width="$((356 * WEB_PCT / 100))" height="7" fill="#10b981"/>
 
             <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
-              <!-- Python -->
-              <circle cx="28" cy="81" r="5" fill="#3b82f6"/>
-              <text x="40" y="85" fill="#0f172a" font-size="13.5" font-weight="700">Python</text>
-              <text x="40" y="101" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$PY_LOC строк ($PY_PCT%)</text>
+              <!-- Ряд 1 -->
+              <circle cx="28" cy="72" r="5" fill="#3b82f6"/>
+              <text x="40" y="76" fill="#0f172a" font-size="13" font-weight="700">Python</text>
+              <text x="40" y="91" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">$PY_LOC строк ($PY_PCT%)</text>
 
-              <!-- JavaScript -->
-              <circle cx="212" cy="81" r="5" fill="#f59e0b"/>
-              <text x="224" y="85" fill="#0f172a" font-size="13.5" font-weight="700">JavaScript</text>
-              <text x="224" y="101" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$JS_LOC строк ($JS_PCT%)</text>
+              <circle cx="212" cy="72" r="5" fill="#f59e0b"/>
+              <text x="224" y="76" fill="#0f172a" font-size="13" font-weight="700">JavaScript</text>
+              <text x="224" y="91" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">$JS_LOC строк ($JS_PCT%)</text>
 
-              <!-- React UI -->
-              <circle cx="28" cy="126" r="5" fill="#06b6d4"/>
-              <text x="40" y="130" fill="#0f172a" font-size="13.5" font-weight="700">React UI (JSX)</text>
-              <text x="40" y="146" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$JSX_LOC строк ($JSX_PCT%)</text>
+              <!-- Ряд 2 -->
+              <circle cx="28" cy="114" r="5" fill="#06b6d4"/>
+              <text x="40" y="118" fill="#0f172a" font-size="13" font-weight="700">React UI (JSX)</text>
+              <text x="40" y="133" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">$JSX_LOC строк ($JSX_PCT%)</text>
 
-              <!-- HTML & CSS -->
-              <circle cx="212" cy="126" r="5" fill="#10b981"/>
-              <text x="224" y="130" fill="#0f172a" font-size="13.5" font-weight="700">HTML &amp; CSS</text>
-              <text x="224" y="146" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$WEB_TOTAL строк ($WEB_PCT%)</text>
+              <circle cx="212" cy="114" r="5" fill="#10b981"/>
+              <text x="224" y="118" fill="#0f172a" font-size="13" font-weight="700">HTML &amp; CSS</text>
+              <text x="224" y="133" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">$WEB_TOTAL строк ($WEB_PCT%)</text>
             </g>
-
-            <line x1="22" y1="162" x2="378" y2="162" stroke="#f1f5f9" stroke-width="1"/>
-            <text x="22" y="179" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="10.5">📱 Swift/Java BLE  •  📚 7.5K строк документации</text>
           </svg>
           EOF
 
-          # В. Динамический бейдж для Polar Club (badge-polar.svg)
+          # Бейджи проектов
           cat <<EOF > badge-polar.svg
           <svg xmlns="http://www.w3.org/2000/svg" width="145" height="20" role="img">
             <clipPath id="r"><rect width="145" height="20" rx="4" fill="#fff"/></clipPath>
@@ -139,7 +125,6 @@ jobs:
           </svg>
           EOF
 
-          # Г. Динамический бейдж для GGS Video Engine (badge-ggs.svg)
           cat <<EOF > badge-ggs.svg
           <svg xmlns="http://www.w3.org/2000/svg" width="145" height="20" role="img">
             <clipPath id="r"><rect width="145" height="20" rx="4" fill="#fff"/></clipPath>
@@ -154,7 +139,6 @@ jobs:
           </svg>
           EOF
 
-          # Д. Динамический бейдж для Cloudflare IaC (badge-cloudflare.svg)
           cat <<EOF > badge-cloudflare.svg
           <svg xmlns="http://www.w3.org/2000/svg" width="140" height="20" role="img">
             <clipPath id="r"><rect width="140" height="20" rx="4" fill="#fff"/></clipPath>
@@ -169,10 +153,9 @@ jobs:
           </svg>
           EOF
 
-      # ШАГ КОММИТА: Забираем все 5 файлов и пушим в репозиторий
       - name: Commit Badge & Cards to Repository
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add loc-badge.svg languages-loc.svg badge-polar.svg badge-ggs.svg badge-cloudflare.svg
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update dynamic project badges [skip ci]" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: align cards to exact 150px height [skip ci]" && git push)
