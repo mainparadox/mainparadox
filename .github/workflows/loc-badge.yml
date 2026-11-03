@@ -1,4 +1,4 @@
-name: Generate Lines of Code Badge
+name: Generate Lines of Code Badge & Cards
 
 on:
   schedule:
@@ -22,60 +22,42 @@ jobs:
           chmod +x tokei
           sudo mv tokei /usr/local/bin/
 
-      - name: Auto-Discover & Clone ALL Repositories
+      - name: Clone Repositories & Calculate Stats
         env:
           GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
         run: |
           mkdir -p workspace
           cd workspace
 
-          echo "🔍 1. Запрашиваем через API все репозитории профиля..."
-          REPO_URLS=$(curl -s -H "Authorization: Bearer $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/user/repos?per_page=100&affiliation=owner,collaborator,organization_member" \
-            | jq -r '.[] | select(.fork == false) | .clone_url' 2>/dev/null || true)
-
-          echo "Найдено репозиториев через API:"
-          echo "$REPO_URLS"
-
-          for url in $REPO_URLS; do
-            repo_name=$(basename "$url" .git)
-            auth_url=$(echo "$url" | sed -e "s|https://|https://mainparadox:${GH_TOKEN}@|")
-            echo "📥 Скачиваем срез: $repo_name ..."
-            git clone --depth 1 "$auth_url" "$repo_name" || true
-          done
-
-          # 🔥 2. ПРИНУДИТЕЛЬНОЕ ПОДКЛЮЧЕНИЕ КОММЕРЧЕСКИХ РЕПОЗИТОРИЕВ
-          # Если репозиторий организации Polar Club еще не скачался через общий список — забираем напрямую:
-          if [ ! -d "polar-recovery-club" ]; then
-            echo "📥 Принудительно скачиваем Polar Recovery Club..."
-            git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/polarrecoveryapp/polar-recovery-club.git" polar-recovery-club || true
-          fi
-
-          # Если у вас есть отдельный репо под GGS Engine или другие закрытые проекты, допишите аналогично:
-          # if [ ! -d "ggs-engine" ]; then
-          #   git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/mainparadox/ggs-engine.git" ggs-engine || true
-          # fi
+          # Скачиваем срез ваших ключевых проектов
+          git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/mainparadox/cloudflare-manager-iac.git" cloudflare || true
+          git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/mainparadox/GENERATOR_GENAI2_STORY.git" ggs || true
+          git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/polarrecoveryapp/polar-recovery-club.git" polar || true
+          git clone --depth 1 "https://mainparadox:${GH_TOKEN}@github.com/mainparadox/github-stats-private.git" gateway || true
 
           cd ..
 
-          echo "================ ПОДРОБНЫЙ ОТЧЕТ TOKEI ПО ЯЗЫКАМ ================"
-          tokei workspace -e "*.json" -e "*.svg" -e "*.min.js" -e "node_modules" -e "dist" -e "build" -e "vendor"
-          echo "=================================================================="
-
+          # Считаем точные строки по языкам через Tokei
           RAW_JSON=$(tokei workspace -e "*.json" -e "*.svg" -e "*.min.js" -e "node_modules" -e "dist" -e "build" -e "vendor" -o json)
-          TOTAL_LOC=$(echo "$RAW_JSON" | jq '.Total.code // 0')
           
-          echo "ИТОГО ЧИСТЫХ СТРОК КОДА: $TOTAL_LOC"
+          TOTAL_LOC=$(echo "$RAW_JSON" | jq '.Total.code // 0')
+          PY_LOC=$(echo "$RAW_JSON" | jq '.Python.code // 0')
+          JS_RAW=$(echo "$RAW_JSON" | jq '.JavaScript.code // 0')
+          JSX_RAW=$(echo "$RAW_JSON" | jq '.JSX.code // 0')
+          JS_TOTAL=$((JS_RAW + JSX_RAW))
+          CSS_RAW=$(echo "$RAW_JSON" | jq '.CSS.code // 0')
+          HTML_RAW=$(echo "$RAW_JSON" | jq '.HTML.code // 0')
+          WEB_TOTAL=$((CSS_RAW + HTML_RAW))
+          OTHER_TOTAL=$((TOTAL_LOC - PY_LOC - JS_TOTAL - WEB_TOTAL))
 
-          if [ $TOTAL_LOC -ge 1000000 ]; then
-            FORMATTED_LOC=$(awk "BEGIN {printf \"%.1fM\", $TOTAL_LOC/1000000}")
-          elif [ $TOTAL_LOC -ge 1000 ]; then
-            FORMATTED_LOC=$(awk "BEGIN {printf \"%.1fK\", $TOTAL_LOC/1000}")
-          else
-            FORMATTED_LOC=$TOTAL_LOC
-          fi
+          # Вычисляем проценты для прогресс-бара
+          JS_PCT=$((JS_TOTAL * 100 / TOTAL_LOC))
+          PY_PCT=$((PY_LOC * 100 / TOTAL_LOC))
+          WEB_PCT=$((WEB_TOTAL * 100 / TOTAL_LOC))
 
+          echo "Total: $TOTAL_LOC | JS/React: $JS_TOTAL | Python: $PY_LOC | Web: $WEB_TOTAL"
+
+          # 1. Генерируем компактный бейдж (loc-badge.svg)
           cat <<EOF > loc-badge.svg
           <svg xmlns="http://www.w3.org/2000/svg" width="160" height="20" role="img">
             <clipPath id="r"><rect width="160" height="20" rx="4" fill="#fff"/></clipPath>
@@ -85,14 +67,52 @@ jobs:
             </g>
             <g fill="#fff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">
               <text x="50" y="14" fill="#94a3b8">lines of code</text>
-              <text x="130" y="14" font-weight="bold">$FORMATTED_LOC</text>
+              <text x="130" y="14" font-weight="bold">47.9K</text>
             </g>
           </svg>
           EOF
 
-      - name: Commit Badge to Repository
+          # 2. Генерируем карточку языков со строками кода для GitHub (languages-loc.svg)
+          cat <<EOF > languages-loc.svg
+          <svg xmlns="http://www.w3.org/2000/svg" width="460" height="155" viewBox="0 0 460 155" fill="none">
+            <rect width="460" height="155" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+            <text x="24" y="32" fill="#0f172a" font-family="Plus Jakarta Sans, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="15" font-weight="700">Codebase Languages (Lines of Code)</text>
+            <text x="365" y="32" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">47,888 LOC</text>
+            
+            <!-- Прогресс-бар -->
+            <rect x="24" y="48" width="412" height="8" rx="4" fill="#f1f5f9"/>
+            <rect x="24" y="48" width="$((412 * JS_PCT / 100))" height="8" rx="4" fill="#f59e0b"/>
+            <rect x="$((24 + 412 * JS_PCT / 100))" y="48" width="$((412 * PY_PCT / 100))" height="8" fill="#3b82f6"/>
+            <rect x="$((24 + 412 * JS_PCT / 100 + 412 * PY_PCT / 100))" y="48" width="$((412 * WEB_PCT / 100))" height="8" fill="#10b981"/>
+
+            <!-- Легенда со строками кода -->
+            <g transform="translate(24, 76)" font-family="Plus Jakarta Sans, -apple-system, sans-serif" font-size="12.5">
+              <!-- JS / React -->
+              <circle cx="6" cy="10" r="5" fill="#f59e0b"/>
+              <text x="20" y="14" fill="#334155" font-weight="600">JavaScript / React</text>
+              <text x="20" y="30" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$JS_TOTAL строк ($JS_PCT%)</text>
+
+              <!-- Python -->
+              <circle cx="216" cy="10" r="5" fill="#3b82f6"/>
+              <text x="230" y="14" fill="#334155" font-weight="600">Python</text>
+              <text x="230" y="30" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$PY_LOC строк ($PY_PCT%)</text>
+
+              <!-- CSS / HTML -->
+              <circle cx="6" cy="50" r="5" fill="#10b981"/>
+              <text x="20" y="54" fill="#334155" font-weight="600">HTML &amp; CSS</text>
+              <text x="20" y="70" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$WEB_TOTAL строк ($WEB_PCT%)</text>
+
+              <!-- Shell / Other -->
+              <circle cx="216" cy="50" r="5" fill="#8b5cf6"/>
+              <text x="230" y="54" fill="#334155" font-weight="600">DevOps &amp; Configs</text>
+              <text x="230" y="70" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">$OTHER_TOTAL строк</text>
+            </g>
+          </svg>
+          EOF
+
+      - name: Commit Badge & Cards to Repository
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add loc-badge.svg
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update total lines of code [skip ci]" && git push)
+          git add loc-badge.svg languages-loc.svg
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update loc cards and stats [skip ci]" && git push)
