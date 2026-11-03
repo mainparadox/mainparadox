@@ -1,0 +1,76 @@
+name: Generate Lines of Code Badge
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Раз в сутки ночью
+  workflow_dispatch:     # Кнопка ручного запуска в меню
+
+jobs:
+  build-loc:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Profile Repository
+        uses: actions/checkout@v4
+
+      - name: Install Tokei (Rust Engine)
+        run: |
+          curl -L -o tokei.tar.gz https://github.com/XAMPPRocky/tokei/releases/download/v12.1.2/tokei-x86_64-unknown-linux-musl.tar.gz
+          tar -xzf tokei.tar.gz
+          chmod +x tokei
+          sudo mv tokei /usr/local/bin/
+
+      - name: Clone Key Repositories & Count LOC
+        env:
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          mkdir -p workspace
+          cd workspace
+
+          # Скачиваем поверхностный срез ваших главных кодовых баз:
+          # 1. Cloudflare Manager IaC
+          git clone --depth 1 https://mainparadox:$GH_TOKEN@github.com/mainparadox/cloudflare-manager-iac.git cloudflare || true
+          
+          # 2. Если хотите учесть Polar Club или GGS, просто добавьте их сюда (токен увидит и приватные):
+          # git clone --depth 1 https://mainparadox:$GH_TOKEN@github.com/polarrecoveryapp/polar-recovery-club.git polar || true
+
+          cd ..
+
+          # Запуск Tokei (отсекаем package-lock, svg, css-библиотеки)
+          RAW_JSON=$(tokei workspace -e "*.json" -e "*.svg" -e "*.min.js" -e "node_modules" -e "dist" -o json)
+          TOTAL_LOC=$(echo "$RAW_JSON" | jq '.Total.code // 0')
+          
+          echo "Всего строк чистого кода: $TOTAL_LOC"
+
+          # Форматируем число (например, 142500 -> 142.5K)
+          if [ $TOTAL_LOC -ge 1000000 ]; then
+            FORMATTED_LOC=$(awk "BEGIN {printf \"%.1fM\", $TOTAL_LOC/1000000}")
+          elif [ $TOTAL_LOC -ge 1000 ]; then
+            FORMATTED_LOC=$(awk "BEGIN {printf \"%.1fK\", $TOTAL_LOC/1000}")
+          else
+            FORMATTED_LOC=$TOTAL_LOC
+          fi
+
+          # Рисуем лаконичный SVG-бейдж под светлую тему (высота 20px)
+          cat <<EOF > loc-badge.svg
+          <svg xmlns="http://www.w3.org/2000/svg" width="160" height="20" role="img">
+            <clipPath id="r"><rect width="160" height="20" rx="4" fill="#fff"/></clipPath>
+            <g clip-path="url(#r)">
+              <rect width="100" height="20" fill="#0f172a"/>
+              <rect x="100" width="60" height="20" fill="#2563eb"/>
+            </g>
+            <g fill="#fff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11">
+              <text x="50" y="14" fill="#94a3b8">lines of code</text>
+              <text x="130" y="14" font-weight="bold">$FORMATTED_LOC</text>
+            </g>
+          </svg>
+          EOF
+
+      - name: Commit Badge to Repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add loc-badge.svg
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update lines of code badge [skip ci]" && git push)
