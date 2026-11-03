@@ -1,37 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="195" viewBox="0 0 400 195" fill="none">
-  <rect width="400" height="195" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="150" viewBox="0 0 400 150" fill="none">
+  <rect width="400" height="150" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
   
-  <text x="22" y="36" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="16.5" font-weight="700">Codebase Languages</text>
-  <text x="312" y="35" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">47.9K LOC</text>
+  <text x="22" y="32" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="16" font-weight="700">Codebase Breakdown</text>
+  <text x="316" y="31" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">47.9K LOC</text>
   
-  <rect x="22" y="49" width="356" height="8" rx="4" fill="#f1f5f9"/>
-  <rect x="22" y="49" width="142" height="8" rx="4" fill="#3b82f6"/>
-  <rect x="164" y="49" width="135" height="8" fill="#f59e0b"/>
-  <rect x="299" y="49" width="39" height="8" fill="#06b6d4"/>
-  <rect x="338" y="49" width="17" height="8" fill="#10b981"/>
+  <rect x="22" y="44" width="356" height="7" rx="3.5" fill="#f1f5f9"/>
+  <rect x="22" y="44" width="142" height="7" rx="3.5" fill="#3b82f6"/>
+  <rect x="164" y="44" width="135" height="7" fill="#f59e0b"/>
+  <rect x="299" y="44" width="39" height="7" fill="#06b6d4"/>
+  <rect x="338" y="44" width="17" height="7" fill="#10b981"/>
 
   <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
-    <!-- Python -->
-    <circle cx="28" cy="81" r="5" fill="#3b82f6"/>
-    <text x="40" y="85" fill="#0f172a" font-size="13.5" font-weight="700">Python</text>
-    <text x="40" y="101" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">17742 строк (40%)</text>
+    <!-- Ряд 1 -->
+    <circle cx="28" cy="72" r="5" fill="#3b82f6"/>
+    <text x="40" y="76" fill="#0f172a" font-size="13" font-weight="700">Python</text>
+    <text x="40" y="91" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">17742 строк (40%)</text>
 
-    <!-- JavaScript -->
-    <circle cx="212" cy="81" r="5" fill="#f59e0b"/>
-    <text x="224" y="85" fill="#0f172a" font-size="13.5" font-weight="700">JavaScript</text>
-    <text x="224" y="101" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">17129 строк (38%)</text>
+    <circle cx="212" cy="72" r="5" fill="#f59e0b"/>
+    <text x="224" y="76" fill="#0f172a" font-size="13" font-weight="700">JavaScript</text>
+    <text x="224" y="91" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">17129 строк (38%)</text>
 
-    <!-- React UI -->
-    <circle cx="28" cy="126" r="5" fill="#06b6d4"/>
-    <text x="40" y="130" fill="#0f172a" font-size="13.5" font-weight="700">React UI (JSX)</text>
-    <text x="40" y="146" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">5058 строк (11%)</text>
+    <!-- Ряд 2 -->
+    <circle cx="28" cy="114" r="5" fill="#06b6d4"/>
+    <text x="40" y="118" fill="#0f172a" font-size="13" font-weight="700">React UI (JSX)</text>
+    <text x="40" y="133" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">5058 строк (11%)</text>
 
-    <!-- HTML & CSS -->
-    <circle cx="212" cy="126" r="5" fill="#10b981"/>
-    <text x="224" y="130" fill="#0f172a" font-size="13.5" font-weight="700">HTML &amp; CSS</text>
-    <text x="224" y="146" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">2582 строк (5%)</text>
+    <circle cx="212" cy="114" r="5" fill="#10b981"/>
+    <text x="224" y="118" fill="#0f172a" font-size="13" font-weight="700">HTML &amp; CSS</text>
+    <text x="224" y="133" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">2582 строк (5%)</text>
   </g>
-
-  <line x1="22" y1="162" x2="378" y2="162" stroke="#f1f5f9" stroke-width="1"/>
-  <text x="22" y="179" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="10.5">📱 Swift/Java BLE  •  📚 7.5K строк документации</text>
 </svg>
