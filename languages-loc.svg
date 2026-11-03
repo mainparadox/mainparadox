@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="155" viewBox="0 0 460 155" fill="none">
+  <rect width="460" height="155" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="24" y="32" fill="#0f172a" font-family="Plus Jakarta Sans, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="15" font-weight="700">Codebase Languages (Lines of Code)</text>
+  <text x="365" y="32" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">47,888 LOC</text>
+  
+  <!-- Прогресс-бар -->
+  <rect x="24" y="48" width="412" height="8" rx="4" fill="#f1f5f9"/>
+  <rect x="24" y="48" width="206" height="8" rx="4" fill="#f59e0b"/>
+  <rect x="230" y="48" width="164" height="8" fill="#3b82f6"/>
+  <rect x="394" y="48" width="20" height="8" fill="#10b981"/>
+
+  <!-- Легенда со строками кода -->
+  <g transform="translate(24, 76)" font-family="Plus Jakarta Sans, -apple-system, sans-serif" font-size="12.5">
+    <!-- JS / React -->
+    <circle cx="6" cy="10" r="5" fill="#f59e0b"/>
+    <text x="20" y="14" fill="#334155" font-weight="600">JavaScript / React</text>
+    <text x="20" y="30" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">22187 строк (50%)</text>
+
+    <!-- Python -->
+    <circle cx="216" cy="10" r="5" fill="#3b82f6"/>
+    <text x="230" y="14" fill="#334155" font-weight="600">Python</text>
+    <text x="230" y="30" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">17742 строк (40%)</text>
+
+    <!-- CSS / HTML -->
+    <circle cx="6" cy="50" r="5" fill="#10b981"/>
+    <text x="20" y="54" fill="#334155" font-weight="600">HTML &amp; CSS</text>
+    <text x="20" y="70" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">2582 строк (5%)</text>
+
+    <!-- Shell / Other -->
+    <circle cx="216" cy="50" r="5" fill="#8b5cf6"/>
+    <text x="230" y="54" fill="#334155" font-weight="600">DevOps &amp; Configs</text>
+    <text x="230" y="70" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11.5">1577 строк</text>
+  </g>
+</svg>
