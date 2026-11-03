@@ -89,3 +89,113 @@ graph LR
     style Client fill:#eff6ff,stroke:#2563eb,stroke-width:2px;
     style Cloud fill:#faf5ff,stroke:#8b5cf6,stroke-width:2px;
     style External fill:#f0fdf4,stroke:#16a34a,stroke-width:2px;
+```
+
+* **UI/UX Дизайн и Прототипирование:** Полное авторское проектирование дизайн-системы, компонентов и интерактивного прототипа на 13 экранов в **Figma** (раздельные сценарии для гостей и резидентов).
+* **Кроссплатформенный Frontend:** Высокопроизводительное SPA/PWA на **React + Capacitor + Vite** с поддержкой Zero-Scroll архитектуры и нативной адаптации под безопасные зоны экранов (Safe Area).
+* **Облачный Backend (BFF):** Микросервисная архитектура на **Google Cloud Functions v2** (регион `europe-west1`), Google Secret Manager, распределенные очереди задач Cloud Tasks и кэширование запросов для защиты от квот CRM (429 Shield).
+* **СКУД и IoT-безопасность:** Аппаратный криптографический модуль генерации временных ПИН-кодов доступа на базе Web Crypto API (`AES-GCM-256`, криптографическая соль, PBKDF2) с поддержкой автономного офлайн-режима при сбоях сети контроллера.
+* **Финансы и бизнес-логика:** Бесшовная интеграция с **Altegio CRM REST API**, эквайринг **Adyen Pay by Link** (Apple Pay / Google Pay), учет абонементов сети, бронирование слотов купелей и автоматическое закрытие визитов.
+* **CI/CD и релизы:** Полностью автоматизированный пайплайн в **Codemagic**: сборка релизных бандлов, подписание сертификатами и прямая публикация релизов в **App Store** и **Google Play**, а также собственный движок моментальных OTA-обновлений бандла без прохождения повторной модерации в сторах ($0/мес).
+
+<p>
+  <img src="https://img.shields.io/badge/Codebase-~23.5K_LOC-0284c7?style=flat-square&logo=react&logoColor=white" />
+  <a href="https://mainparadox.github.io/mainparadox/portfolio/polar-recovery-club/" target="_blank">
+    <img src="https://img.shields.io/badge/Case_Study-Live_Presentation-2563eb?style=flat-square&logo=safari&logoColor=white" />
+  </a>
+  <a href="https://polar-recovery-app.web.app" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20PWA%20Demo-Firebase%20App-00C7B7?style=flat-square&logo=google&logoColor=white" />
+  </a>
+  <a href="https://www.figma.com/proto/hgLLA1u1zRyAlIDkH8c1JG/Polar-Recovery-App?node-id=0-1&p=f&t=5V6htnUcySOuIE7m-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=68%3A1091&show-proto-sidebar=1" target="_blank">
+    <img src="https://img.shields.io/badge/Figma%20Interactive%20Prototype-13%20Screens-F24E1E?style=flat-square&logo=figma&logoColor=white" />
+  </a>
+</p>
+
+---
+
+#### 🎬 [AI Video Production Pipeline — Автономная Киностудия](https://mainparadox.github.io/mainparadox/portfolio/ggs-video-engine/)
+*Проприетарный автономный конвейер полного цикла: превращает сырой литературный текст или сценарий в законченный кинематографический фильм за 2.5 часа вместо 2 недель работы традиционной студии.*
+
+**Концепция:** Автономная фабрика контента, заменяющая штат из 10 специалистов (сценариста, актеров дубляжа, колориста, монтажера и саунд-дизайнера). Программный комплекс выступает в роли генерального режиссера, управляя ансамблем из более чем 10 нейросетей через мультимодельный API-шлюз.
+
+* 🎭 **Сценарный интеллект и ДНК персонажей:** Глубокий анализ сюжета, создание анатомических паспортов героев со сквозной памятью лиц (внешность не «плывет» от кадра к кадру), динамический гардероб под погоду и локации, а также трекинг ключевого сюжетного реквизита.
+* 🎙️ **Актерский дубляж и Саунд-дизайн RAG (170+ ГБ):** Многоголосая озвучка с контролем эмоций и перепадов громкости, пословная синхронизация фонем (до 0.01 сек) через WhisperX, акустические фильтры (рации, шлемы, эхо) и семантический подбор музыки и шумов (Foley SFX) по вещательному стандарту EBU R128.
+* 🎞️ **Кинематографичная анимация 60 FPS:** Параллельный рендер сцен в 25 потоков, локальный 3D-параллакс (DepthFlow) и матрица из 4-х VFI-нейросетей (MoMo, EMA-VFI, AMT, RIFE) для сверхплавного видеоряда без стробоскопа и дерганий.
+* 🎛️ **Аппаратный мастеринг и Golden Master:** Сборка чанков на GPU (NVENC), контрастные вшитые субтитры (Hardsubs), микро-слой пленочного зерна и глубокая зачистка технических метаданных для 100% уникализации видеоряда под алгоритмы YouTube.
+
+<p>
+  <img src="https://img.shields.io/badge/Codebase-~17.2K_LOC-dc2626?style=flat-square&logo=python&logoColor=white" />
+  <a href="https://mainparadox.github.io/mainparadox/portfolio/ggs-video-engine/" target="_blank">
+    <img src="https://img.shields.io/badge/Interactive_Case_Study-Live_Presentation-4F46E5?style=flat-square&logo=safari&logoColor=white" />
+  </a>
+  <img src="https://img.shields.io/badge/Status-Private_Enterprise_Tool-E34F26?style=flat-square&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python_3.10+-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/PyTorch_(CUDA)-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
+  <img src="https://img.shields.io/badge/FFmpeg_NVENC-007808?style=flat-square&logo=ffmpeg&logoColor=white" />
+  <img src="https://img.shields.io/badge/ChromaDB_Vector_RAG-00E5FF?style=flat-square&logo=databricks&logoColor=black" />
+  <img src="https://img.shields.io/badge/WhisperX_GPU-FF6F00?style=flat-square&logo=openai&logoColor=white" />
+</p>
+
+---
+
+#### ☁️ Open-Source инструмент: [Cloudflare IaC Management Portal](https://github.com/mainparadox/cloudflare-manager-iac)
+*Собственная веб-панель администратора для автоматизации защиты, DNS и SSL десятков сайтов в Cloudflare в 1 клик.*
+
+**Какую проблему решает проект:**  
+Когда у веб-разработчика на поддержке находится 20–30 клиентских сайтов и зеркал, настраивать безопасность и DNS вручную через панель Cloudflare превращается в рутину и приводит к ошибкам. А бесплатные сертификаты Let's Encrypt постоянно сбоят при продлении каждые 90 дней из-за блокировок WAF.
+
+**Ключевые возможности:**
+* **🔒 Пожизненный SSL на 15 лет:** Генерирует приватные ключи RSA-2048 и автоматически заказывает официальные сертификаты Cloudflare Origin CA на 15 лет (до 2041 года).
+* **🛡️ Готовая WAF-защита для CMS:** В 1 клик разворачивает 5-уровневый комплекс фаервола под уязвимости движков (**Joomla, WordPress, PrestaShop**): отсекает ботов, блокирует дампы баз (`.sql`, `.zip`) и закрывает капчей вход в админку.
+* **↪️ Моментальные 301-зеркала:** Перенаправление трафика на уровне серверов Cloudflare (Edge) без нагрузки на хостинг.
+* **💾 Экономия диска (IaC + Terraform):** Связка Python, Jinja2 и HashiCorp Terraform v5.x. За счет умного кэширования плагинов конфигурация 25 сайтов весит менее 3 МБ (экономия 99.98% места).
+* **🚑 Самоисцеление стейта:** Автоматический перехват скрытых ошибок Cloudflare API (конфликты контейнеров 20217, сбои кириллицы .бел/.рф 1010, удаленные ключи 1014).
+
+<p>
+  <img src="https://img.shields.io/badge/Codebase-2.1K_LOC-ea580c?style=flat-square&logo=cloudflare&logoColor=white" />
+  <a href="https://github.com/mainparadox/cloudflare-manager-iac">
+    <img src="https://img.shields.io/github/stars/mainparadox/cloudflare-manager-iac?style=social" alt="GitHub Stars" />
+  </a>
+  <a href="https://github.com/mainparadox/cloudflare-manager-iac/fork">
+    <img src="https://img.shields.io/github/forks/mainparadox/cloudflare-manager-iac?style=social" alt="GitHub Forks" />
+  </a>
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Streamlit_GUI-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
+  <img src="https://img.shields.io/badge/Terraform_v5-844FBA?style=flat-square&logo=terraform&logoColor=white" />
+</p>
+
+> ⭐️ **Понравился инструмент? [Поставьте звёздочку проекту на GitHub](https://github.com/mainparadox/cloudflare-manager-iac) — это мотивирует развивать его дальше!**
+
+---
+
+> 🔒 **О коммерческом портфолио (2018 — настоящее время):**  
+> Значительная часть реализованных проектов (корпоративные порталы, e-commerce платформы на Joomla/PHP/MySQL, микросервисы автоматизации) находится под действием соглашений о неразглашении (**NDA**) в закрытых корпоративных репозиториях.
+
+---
+
+### 📊 Инженерная активность
+
+<p align="center">
+  <!-- Карточка коммитов Vercel -->
+  <a href="https://github.com/mainparadox">
+    <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&icon_color=2563eb&border_radius=16&count_private=true&include_all_commits=true&hide=prs,issues&hide_rank=true" width="49%" />
+  </a>
+  <!-- Карточка языков со строками кода (Идеально подогнана 400x195) -->
+  <a href="https://github.com/mainparadox">
+    <img src="https://raw.githubusercontent.com/mainparadox/mainparadox/main/languages-loc.svg" width="49%" />
+  </a>
+</p>
+
+---
+
+### 📫 Связаться со мной
+
+<p>
+  <a href="https://t.me/pavelmmx">
+    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
+  </a>
+  <a href="mailto:main.paradox@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+</p>
