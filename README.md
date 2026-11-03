@@ -172,11 +172,13 @@ graph LR
 ### 📊 Инженерная активность
 
 <p align="center">
+  <!-- Карточка коммитов Vercel -->
   <a href="https://github.com/mainparadox">
-    <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&icon_color=2563eb&border_radius=16&count_private=true&include_all_commits=true&hide=prs,issues&hide_rank=true&cache_seconds=3600" width="49%" />
+    <img src="https://github-stats-private-tau.vercel.app/api?username=mainparadox&show_icons=true&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&icon_color=2563eb&border_radius=16&count_private=true&include_all_commits=true&hide=prs,issues&hide_rank=true" width="49%" />
   </a>
+  <!-- Новая карточка языков с реальными строками кода (Tokei) -->
   <a href="https://github.com/mainparadox">
-    <img src="https://github-stats-private-tau.vercel.app/api/top-langs/?username=mainparadox&layout=compact&bg_color=ffffff&border_color=e2e8f0&title_color=0f172a&text_color=475569&border_radius=16&count_private=true&cache_seconds=3600" width="49%" />
+    <img src="https://raw.githubusercontent.com/mainparadox/mainparadox/main/languages-loc.svg" width="49%" />
   </a>
 </p>
 ---
