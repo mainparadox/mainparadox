@@ -58,7 +58,7 @@
 
 <a href="https://mainparadox.github.io/mainparadox/portfolio/ggs-video-engine/" target="_blank">
 #### ❄️ Флагманский проект (Production): Polar Recovery Club
-  </a>
+  </a><br>
 *Генеральная цифровая платформа для премиального велнес-клуба контрастных процедур в Риге (Евросоюз).*
 
 ```mermaid
