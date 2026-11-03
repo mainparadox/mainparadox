@@ -99,7 +99,7 @@ graph LR
 * **CI/CD и релизы:** Полностью автоматизированный пайплайн в **Codemagic**: сборка релизных бандлов, подписание сертификатами и прямая публикация релизов в **App Store** и **Google Play**, а также собственный движок моментальных OTA-обновлений бандла без прохождения повторной модерации в сторах ($0/мес).
 
 <p>
-  <img src="https://img.shields.io/badge/Codebase-~23.5K_LOC-0284c7?style=flat-square&logo=react&logoColor=white" />
+  <img src="https://raw.githubusercontent.com/mainparadox/mainparadox/main/badge-polar.svg" alt="Polar Codebase" />
   <a href="https://mainparadox.github.io/mainparadox/portfolio/polar-recovery-club/" target="_blank">
     <img src="https://img.shields.io/badge/Case_Study-Live_Presentation-2563eb?style=flat-square&logo=safari&logoColor=white" />
   </a>
@@ -124,7 +124,7 @@ graph LR
 * 🎛️ **Аппаратный мастеринг и Golden Master:** Сборка чанков на GPU (NVENC), контрастные вшитые субтитры (Hardsubs), микро-слой пленочного зерна и глубокая зачистка технических метаданных для 100% уникализации видеоряда под алгоритмы YouTube.
 
 <p>
-  <img src="https://img.shields.io/badge/Codebase-~17.2K_LOC-dc2626?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://raw.githubusercontent.com/mainparadox/mainparadox/main/badge-ggs.svg" alt="GGS Codebase" />
   <a href="https://mainparadox.github.io/mainparadox/portfolio/ggs-video-engine/" target="_blank">
     <img src="https://img.shields.io/badge/Interactive_Case_Study-Live_Presentation-4F46E5?style=flat-square&logo=safari&logoColor=white" />
   </a>
@@ -152,7 +152,7 @@ graph LR
 * **🚑 Самоисцеление стейта:** Автоматический перехват скрытых ошибок Cloudflare API (конфликты контейнеров 20217, сбои кириллицы .бел/.рф 1010, удаленные ключи 1014).
 
 <p>
-  <img src="https://img.shields.io/badge/Codebase-2.1K_LOC-ea580c?style=flat-square&logo=cloudflare&logoColor=white" />
+  <img src="https://raw.githubusercontent.com/mainparadox/mainparadox/main/badge-cloudflare.svg" alt="Cloudflare Codebase" />
   <a href="https://github.com/mainparadox/cloudflare-manager-iac">
     <img src="https://img.shields.io/github/stars/mainparadox/cloudflare-manager-iac?style=social" alt="GitHub Stars" />
   </a>
