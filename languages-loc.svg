@@ -2,37 +2,37 @@
   <rect width="400" height="192" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
 
   <text x="22" y="32" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="16" font-weight="700">Codebase Breakdown</text>
-  <text x="378" y="31" text-anchor="end" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">45.3K LOC</text>
+  <text x="378" y="31" text-anchor="end" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">33.2K LOC</text>
 
   <clipPath id="bar-clip">
     <rect x="22" y="44" width="356" height="7" rx="3.5"/>
   </clipPath>
   <rect x="22" y="44" width="356" height="7" rx="3.5" fill="#f1f5f9"/>
   <g clip-path="url(#bar-clip)">
-    <rect x="22.00" y="44" width="144.54" height="7" fill="#3b82f6"/>
-    <rect x="166.54" y="44" width="134.84" height="7" fill="#f59e0b"/>
-    <rect x="301.38" y="44" width="39.77" height="7" fill="#06b6d4"/>
-    <rect x="341.15" y="44" width="23.71" height="7" fill="#10b981"/>
-    <rect x="364.86" y="44" width="8.89" height="7" fill="#3178c6"/>
-    <rect x="373.75" y="44" width="2.00" height="7" fill="#8b5cf6"/>
+    <rect x="22.00" y="44" width="197.05" height="7" fill="#3b82f6"/>
+    <rect x="219.05" y="44" width="56.50" height="7" fill="#f59e0b"/>
+    <rect x="275.54" y="44" width="54.21" height="7" fill="#06b6d4"/>
+    <rect x="329.76" y="44" width="32.33" height="7" fill="#10b981"/>
+    <rect x="362.08" y="44" width="10.27" height="7" fill="#3178c6"/>
+    <rect x="372.35" y="44" width="2.73" height="7" fill="#8b5cf6"/>
   </g>
 
   <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
     <circle cx="28" cy="72" r="5" fill="#3b82f6"/>
     <text x="40" y="76" fill="#0f172a" font-size="13" font-weight="700">Python</text>
-    <text x="40" y="91" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">18384 строк (41%)</text>
+    <text x="40" y="91" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">18384 строк (55%)</text>
     <circle cx="212" cy="72" r="5" fill="#f59e0b"/>
     <text x="224" y="76" fill="#0f172a" font-size="13" font-weight="700">JavaScript</text>
-    <text x="224" y="91" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">17150 строк (38%)</text>
+    <text x="224" y="91" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">5271 строк (16%)</text>
     <circle cx="28" cy="114" r="5" fill="#06b6d4"/>
     <text x="40" y="118" fill="#0f172a" font-size="13" font-weight="700">React UI (JSX)</text>
-    <text x="40" y="133" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">5058 строк (11%)</text>
+    <text x="40" y="133" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">5058 строк (15%)</text>
     <circle cx="212" cy="114" r="5" fill="#10b981"/>
     <text x="224" y="118" fill="#0f172a" font-size="13" font-weight="700">HTML &amp; CSS</text>
-    <text x="224" y="133" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">3016 строк (7%)</text>
+    <text x="224" y="133" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">3016 строк (9%)</text>
     <circle cx="28" cy="156" r="5" fill="#3178c6"/>
     <text x="40" y="160" fill="#0f172a" font-size="13" font-weight="700">TypeScript</text>
-    <text x="40" y="175" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">1131 строк (2%)</text>
+    <text x="40" y="175" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">958 строк (3%)</text>
     <circle cx="212" cy="156" r="5" fill="#8b5cf6"/>
     <text x="224" y="160" fill="#0f172a" font-size="13" font-weight="700">Batch</text>
     <text x="224" y="175" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">255 строк (1%)</text>
