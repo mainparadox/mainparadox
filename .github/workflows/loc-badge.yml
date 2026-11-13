@@ -71,6 +71,7 @@ jobs:
               "mainparadox/GENERATOR_GENAI2_STORY",
               "polarrecoveryapp/polar-recovery-club",
               "mainparadox/github-stats-private",
+              "mainparadox/pinpoint-ai",
           ]:
               repos.setdefault(must_have, True)
 
@@ -165,7 +166,7 @@ jobs:
           total_loc = sum(grouped.values()) or 1
           f_total = f"{total_loc / 1000:.1f}K"
 
-          # Берём языки от 0.5% и выше (до 8 штук, чтобы карточка оставалась аккуратной)
+          # Берём языки от 0.5% и выше (до 8 штук)
           sorted_langs = sorted(grouped.items(), key=lambda x: x[1], reverse=True)
           display_langs = [
               (name, loc) for name, loc in sorted_langs if (loc * 100.0 / total_loc) >= 0.5
@@ -263,6 +264,7 @@ jobs:
           f_polar = repo_loc("polarrecoveryapp/polar-recovery-club")
           f_ggs = repo_loc("mainparadox/GENERATOR_GENAI2_STORY")
           f_cf = repo_loc("mainparadox/cloudflare-manager-iac")
+          f_pinpoint = repo_loc("mainparadox/pinpoint-ai")
 
           with open("badge-polar.svg", "w", encoding="utf-8") as f:
               f.write(f"""<svg xmlns="http://www.w3.org/2000/svg" width="145" height="20" role="img">
@@ -305,11 +307,25 @@ jobs:
             </g>
           </svg>
           """)
+
+          with open("badge-pinpoint.svg", "w", encoding="utf-8") as f:
+              f.write(f"""<svg xmlns="http://www.w3.org/2000/svg" width="145" height="20" role="img">
+            <clipPath id="r"><rect width="145" height="20" rx="4" fill="#fff"/></clipPath>
+            <g clip-path="url(#r)">
+              <rect width="65" height="20" fill="#0f172a"/>
+              <rect x="65" width="80" height="20" fill="#4f46e5"/>
+            </g>
+            <g fill="#fff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11">
+              <text x="32" y="14" fill="#94a3b8">codebase</text>
+              <text x="105" y="14" font-weight="bold">{f_pinpoint} LOC</text>
+            </g>
+          </svg>
+          """)
           PY
 
       - name: Commit Badge & Cards to Repository
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add loc-badge.svg languages-loc.svg badge-polar.svg badge-ggs.svg badge-cloudflare.svg
+          git add loc-badge.svg languages-loc.svg badge-polar.svg badge-ggs.svg badge-cloudflare.svg badge-pinpoint.svg
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update codebase stats and language cards [skip ci]" && git push)
