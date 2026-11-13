@@ -58,7 +58,10 @@ jobs:
                       break
                   for r in batch:
                       full_name = r.get("full_name", "")
-                      if r.get("fork") or full_name.lower() == "mainparadox/mainparadox":
+                      if r.get("fork") or full_name.lower() in {
+                          "mainparadox/mainparadox",
+                          "mainparadox/github-stats-private",
+                      }:
                           continue
                       repos[full_name] = True
                   if len(batch) < 100:
@@ -70,7 +73,6 @@ jobs:
               "mainparadox/cloudflare-manager-iac",
               "mainparadox/GENERATOR_GENAI2_STORY",
               "polarrecoveryapp/polar-recovery-club",
-              "mainparadox/github-stats-private",
               "mainparadox/pinpoint-ai",
           ]:
               repos.setdefault(must_have, True)
