@@ -2,19 +2,19 @@
   <rect width="400" height="192" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
 
   <text x="22" y="32" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="16" font-weight="700">Codebase Breakdown</text>
-  <text x="378" y="31" text-anchor="end" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">35.1K LOC</text>
+  <text x="378" y="31" text-anchor="end" fill="#2563eb" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">35.2K LOC</text>
 
   <clipPath id="bar-clip">
     <rect x="22" y="44" width="356" height="7" rx="3.5"/>
   </clipPath>
   <rect x="22" y="44" width="356" height="7" rx="3.5" fill="#f1f5f9"/>
   <g clip-path="url(#bar-clip)">
-    <rect x="22.00" y="44" width="191.15" height="7" fill="#3b82f6"/>
-    <rect x="213.15" y="44" width="56.27" height="7" fill="#f59e0b"/>
-    <rect x="269.42" y="44" width="53.40" height="7" fill="#06b6d4"/>
-    <rect x="322.82" y="44" width="30.56" height="7" fill="#10b981"/>
-    <rect x="353.39" y="44" width="18.38" height="7" fill="#3178c6"/>
-    <rect x="371.77" y="44" width="3.48" height="7" fill="#8b5cf6"/>
+    <rect x="22.00" y="44" width="190.69" height="7" fill="#3b82f6"/>
+    <rect x="212.69" y="44" width="56.14" height="7" fill="#f59e0b"/>
+    <rect x="268.82" y="44" width="53.27" height="7" fill="#06b6d4"/>
+    <rect x="322.10" y="44" width="30.49" height="7" fill="#10b981"/>
+    <rect x="352.59" y="44" width="18.34" height="7" fill="#3178c6"/>
+    <rect x="370.92" y="44" width="4.33" height="7" fill="#8b5cf6"/>
   </g>
 
   <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
@@ -35,6 +35,6 @@
     <text x="40" y="175" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">1814 строк (5%)</text>
     <circle cx="212" cy="156" r="5" fill="#8b5cf6"/>
     <text x="224" y="160" fill="#0f172a" font-size="13" font-weight="700">Batch</text>
-    <text x="224" y="175" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">343 строк (1%)</text>
+    <text x="224" y="175" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="11">428 строк (1%)</text>
   </g>
 </svg>
